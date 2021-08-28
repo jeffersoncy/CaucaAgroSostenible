@@ -1,0 +1,90 @@
+package co.unicauca.Usuario.presentation.rest;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RestController;
+
+import co.unicauca.Usuario.domain.service.IUsuarioService;
+import co.unicauca.Usuario.domain.entity.Usuario;
+
+/**
+ * 
+ * Servicios web de gestion usuario
+ * 
+ * @author Danny Diaz - Jefferson Campo
+ *
+ */
+@RestController
+@RequestMapping("usuarios")
+public class UsuarioController {
+	
+	@Autowired
+	private IUsuarioService usuarioService;
+	
+	/**
+	 * Lista todos los usuarios registrados
+	 * @return Lista de usuarios
+	 */
+	@RequestMapping(method = RequestMethod.GET, produces = "application/json")
+	@ResponseBody
+	public List<Usuario> findAll(){
+		return (List<Usuario>) usuarioService.findAll();
+	}
+	
+	/**
+	 * Metodo que busca un usuario por el id
+	 * @param Id Identificador del usuario
+	 * @return un objeto de tipo Usuario en formato json
+	 */
+	@RequestMapping(value = "{Id}", method = RequestMethod.GET, produces = "application/json")
+	@ResponseBody
+	public Usuario findById(@PathVariable Long Id) {
+		return usuarioService.findById(Id);
+	}
+	
+	/**
+	 * Crea un nuevo usuario
+	 * @param Usuario que se va a crear
+	 * @return objeto de tipo usuario
+	 */
+	@RequestMapping(method = RequestMethod.POST, produces = "application/json")
+	@ResponseBody
+	public Usuario create(@RequestBody Usuario user) {
+		return usuarioService.create(user);
+	}
+	
+	/**
+	 * Metodo para actualizar la informacion del usuario
+	 * 
+	 * @param user Usuario que se va a actualizar
+	 * @param Id Identificacion del usuario
+	 * @return Objeto de tipo usuario
+	 */
+	@RequestMapping(value = "{Id}",method = RequestMethod.PUT, produces = "application/json")
+	@ResponseBody
+	public Usuario update(@RequestBody Usuario user, @PathVariable Long Id) {
+		return usuarioService.update(Id, user);
+	}
+	
+	/**
+	 * Metodo para eliminar un usuario por el Id
+	 * 
+	 * @param Id Identificador del usuario a eliminar
+	 */
+	@RequestMapping(value = "{Id}",method = RequestMethod.DELETE, produces = "application/json")
+	@ResponseBody
+	@ResponseStatus(HttpStatus.NO_CONTENT)
+	public void delete(@PathVariable Long Id) {
+		usuarioService.deleteById(Id);
+	}
+	
+}
