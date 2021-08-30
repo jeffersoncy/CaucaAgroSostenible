@@ -14,5 +14,5 @@ public interface IProductoService {
 	
 	public Producto update(Long id, Producto producto);
 	
-	public Producto deleteByID(Long id);
+	public void deleteByID(Long id);
 }
