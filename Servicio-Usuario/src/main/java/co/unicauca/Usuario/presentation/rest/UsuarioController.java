@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import co.unicauca.Usuario.domain.service.IUsuarioService;
+import co.unicauca.Usuario.presentation.rest.exceptions.ResourceNotFoundException;
+import co.unicauca.Usuario.presentation.rest.exceptions.UsuarioDomainException;
 import co.unicauca.Usuario.domain.entity.Usuario;
 
 /**
@@ -23,6 +25,7 @@ import co.unicauca.Usuario.domain.entity.Usuario;
  * @author Danny Diaz - Jefferson Campo
  *
  */
+@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
 @RestController
 @RequestMapping("usuarios")
 public class UsuarioController {
@@ -47,7 +50,7 @@ public class UsuarioController {
 	 */
 	@RequestMapping(value = "{Id}", method = RequestMethod.GET, produces = "application/json")
 	@ResponseBody
-	public Usuario findById(@PathVariable Long Id) {
+	public Usuario findById(@PathVariable Long Id) throws ResourceNotFoundException {
 		return usuarioService.findById(Id);
 	}
 	
@@ -58,7 +61,7 @@ public class UsuarioController {
 	 */
 	@RequestMapping(method = RequestMethod.POST, produces = "application/json")
 	@ResponseBody
-	public Usuario create(@RequestBody Usuario user) {
+	public Usuario create(@RequestBody Usuario user) throws UsuarioDomainException{
 		return usuarioService.create(user);
 	}
 	
@@ -71,7 +74,8 @@ public class UsuarioController {
 	 */
 	@RequestMapping(value = "{Id}",method = RequestMethod.PUT, produces = "application/json")
 	@ResponseBody
-	public Usuario update(@RequestBody Usuario user, @PathVariable Long Id) {
+	public Usuario update(@RequestBody Usuario user, @PathVariable Long Id) 
+			throws UsuarioDomainException, ResourceNotFoundException {
 		return usuarioService.update(Id, user);
 	}
 	
@@ -83,7 +87,7 @@ public class UsuarioController {
 	@RequestMapping(value = "{Id}",method = RequestMethod.DELETE, produces = "application/json")
 	@ResponseBody
 	@ResponseStatus(HttpStatus.NO_CONTENT)
-	public void delete(@PathVariable Long Id) {
+	public void delete(@PathVariable Long Id) throws ResourceNotFoundException{
 		usuarioService.deleteById(Id);
 	}
 	
