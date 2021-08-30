@@ -47,6 +47,7 @@ public class UsuarioController {
 	 * Metodo que busca un usuario por el id
 	 * @param Id Identificador del usuario
 	 * @return un objeto de tipo Usuario en formato json
+	 *  @throws ResourceNotFoundException excepcion lanzada en caso de no encontrarse el usuario.
 	 */
 	@RequestMapping(value = "{Id}", method = RequestMethod.GET, produces = "application/json")
 	@ResponseBody
