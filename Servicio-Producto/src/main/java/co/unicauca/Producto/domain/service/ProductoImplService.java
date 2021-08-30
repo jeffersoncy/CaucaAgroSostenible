@@ -36,7 +36,7 @@ public class ProductoImplService implements IProductoService{
 
 	/**
 	 * Busca un producto por su id
-	 * @param Id identificacion del usuario
+	 * @param Id identificacion del producto
 	 * @return retorna un objeto de tipo Producto
 	 */
 	@Override
@@ -107,8 +107,8 @@ public class ProductoImplService implements IProductoService{
 	
 	
 	/**
-	 * Aplica validaciones o reglas del dominio para un usuario. Antes de ser agregado o modificado.
-	 * @param user usuario a validar
+	 * Aplica validaciones o reglas del dominio para un producto. Antes de ser agregado o modificado.
+	 * @param prod producto a validar
 	 * @return lista de errores de validación.
 	 */
 	private List<ProductoError> validateDomain(Producto prod){
