@@ -14,11 +14,11 @@ import co.unicauca.Usuario.presentation.rest.exceptions.UsuarioDomainException;
 import co.unicauca.Usuario.presentation.rest.exceptions.UsuarioError;
 
 /**
+ * Implementación de la interface 
  * 
  * @author Jefferson Eduardo Campo - Danny Albeto Diaz
  *
  */
-
 @Service
 public class UsuarioImplService implements IUsuarioService{
 	
