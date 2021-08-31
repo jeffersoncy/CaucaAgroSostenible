@@ -40,6 +40,12 @@ public class OrganizacionController {
 		return (List<Organizacion>) organizacionesService.findAll();
 	}
 	
+	/**
+	 * Metodo que busca una organización por el id
+	 * @param Id Identificador de la organizacióm
+	 * @return un objeto de tipo organización en formato json
+	 * @throws ResourceNotFoundException excepcion lanzada en caso de no encontrarse la organización.
+	 */
 	@RequestMapping(value = "{Id}", method = RequestMethod.GET, produces = "application/json")
 	@ResponseBody
 	public Organizacion findById(@PathVariable Long Id) throws ResourceNotFoundException {
@@ -47,7 +53,7 @@ public class OrganizacionController {
 	}
 	
 	/**
-	 * Crea un nuevo usuario
+	 * Crea una nueva organización
 	 * @param org objeto de tipo organizacion que se va a crear
 	 * @return objeto de tipo organización
 	 * @throws OrganizacionesDomainException excepcion lanzada en caso de que el objeto no contenga todos sus datos.
@@ -63,7 +69,7 @@ public class OrganizacionController {
 	 * 
 	 * @param org organización que se va a actualizar
 	 * @param Id Identificacion de la organización
-	 * @return Objeto de tipo usuario
+	 * @return Objeto de tipo organización
 	 * @throws ResourceNotFoundException excepcion lanzada en caso de no encontrarse la organización.
 	 * @throws OrganizacionesDomainException excepcion lanzada en caso de que el objeto no contenga todos sus datos.
 	 */
@@ -75,9 +81,9 @@ public class OrganizacionController {
 	}
 	
 	/**
-	 * Metodo para eliminar un usuario por el Id
+	 * Metodo para eliminar una organización por el Id
 	 * 
-	 * @param Id Identificador del usuario a eliminar
+	 * @param Id Identificador de la organización a eliminar
 	 * @throws ResourceNotFoundException excepcion lanzada en caso de no encontrarse la organización.
 	 */
 	@RequestMapping(value = "{Id}",method = RequestMethod.DELETE, produces = "application/json")
