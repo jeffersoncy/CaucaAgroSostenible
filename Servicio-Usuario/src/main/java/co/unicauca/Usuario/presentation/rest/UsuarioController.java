@@ -47,7 +47,7 @@ public class UsuarioController {
 	 * Metodo que busca un usuario por el id
 	 * @param Id Identificador del usuario
 	 * @return un objeto de tipo Usuario en formato json
-	 *  @throws ResourceNotFoundException excepcion lanzada en caso de no encontrarse el usuario.
+	 * @throws ResourceNotFoundException excepcion lanzada en caso de no encontrarse el usuario.
 	 */
 	@RequestMapping(value = "{Id}", method = RequestMethod.GET, produces = "application/json")
 	@ResponseBody
@@ -59,6 +59,7 @@ public class UsuarioController {
 	 * Crea un nuevo usuario
 	 * @param Usuario que se va a crear
 	 * @return objeto de tipo usuario
+	 * @throws UsuarioDomainException excepcion lanzada en caso de que el objeto no contenga todos sus datos.
 	 */
 	@RequestMapping(method = RequestMethod.POST, produces = "application/json")
 	@ResponseBody
@@ -72,6 +73,8 @@ public class UsuarioController {
 	 * @param user Usuario que se va a actualizar
 	 * @param Id Identificacion del usuario
 	 * @return Objeto de tipo usuario
+	 * @throws ResourceNotFoundException excepcion lanzada en caso de no encontrarse el usuario.
+	 * @throws UsuarioDomainException excepcion lanzada en caso de que el objeto no contenga todos sus datos.
 	 */
 	@RequestMapping(value = "{Id}",method = RequestMethod.PUT, produces = "application/json")
 	@ResponseBody
@@ -84,6 +87,7 @@ public class UsuarioController {
 	 * Metodo para eliminar un usuario por el Id
 	 * 
 	 * @param Id Identificador del usuario a eliminar
+	 * @throws ResourceNotFoundException excepcion lanzada en caso de no encontrarse el usuario.
 	 */
 	@RequestMapping(value = "{Id}",method = RequestMethod.DELETE, produces = "application/json")
 	@ResponseBody
