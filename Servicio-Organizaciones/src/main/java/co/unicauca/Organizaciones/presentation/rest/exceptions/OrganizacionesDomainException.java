@@ -4,7 +4,7 @@ import java.util.List;
 /**
  * Lista de errores del dominio para un Usuario
  * 
- * @author Jefferson Campo y Danny Díaz
+ * @author Jefferson Campo - Danny Díaz - Christian Tobar
  *
  */
 public class OrganizacionesDomainException extends Exception{

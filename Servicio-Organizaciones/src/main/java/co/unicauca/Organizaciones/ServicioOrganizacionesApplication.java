@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * Método de ejecución
  * 
- * @author Jefferson Campo y Danny Diaz
+ * @author Jefferson Campo - Danny Diaz - Christian Tobar
  *
  */
 @SpringBootApplication

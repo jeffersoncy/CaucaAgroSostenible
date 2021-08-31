@@ -7,7 +7,7 @@ import co.unicauca.Organizaciones.domain.entity.Organizacion;
 /**
  * Interfaz DAO de las organizaciones que extiende de la interfaz CrudRepository
  * 
- * @author Jefferson Campo y Danny Diaz
+ * @author Jefferson Campo - Danny Diaz - Christian Tobar
  *
  */
 public interface IOrganizacionesDao extends CrudRepository<Organizacion, Long>{

@@ -16,7 +16,7 @@ import co.unicauca.Usuario.presentation.rest.exceptions.UsuarioError;
 /**
  * Implementación de la interface 
  * 
- * @author Jefferson Eduardo Campo - Danny Albeto Diaz
+ * @author Jefferson Eduardo Campo - Danny Albeto Diaz - Christian Tobar
  *
  */
 @Service

@@ -9,7 +9,7 @@ import co.unicauca.Organizaciones.presentation.rest.exceptions.ResourceNotFoundE
 /**
  * Interfaz de operaciones de la bd de las organizaciones
  * 
- * @author Jefferson Campo y Danny Diaz
+ * @author Jefferson Campo - Danny Diaz - Christian Tobar
  *
  */
 public interface IOrganizacionesService {

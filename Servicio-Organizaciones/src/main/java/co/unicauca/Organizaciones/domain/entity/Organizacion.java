@@ -9,6 +9,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+ * Representa un usuario de una tienda agricola, mapeada con la base de datos
+ * 
+ * @author Jefferson Campo - Danny Diaz - Christian Tobar
+ *
+ */
 @Entity
 @Table(name="organizaciones")
 public class Organizacion implements Serializable{
@@ -32,7 +38,7 @@ public class Organizacion implements Serializable{
 	private String Ubicacion;
 	
 	@Column
-	private String telefono;
+	private int telefono;
 
 	public long getIdOrganizacion() {
 		return IdOrganizacion;
@@ -58,12 +64,13 @@ public class Organizacion implements Serializable{
 		Ubicacion = ubicacion;
 	}
 
-	public String getTelefono() {
+	public int getTelefono() {
 		return telefono;
 	}
 
-	public void setTelefono(String telefono) {
+	public void setTelefono(int telefono) {
 		this.telefono = telefono;
 	}
+	
 	
 }

@@ -17,7 +17,7 @@ import co.unicauca.Organizaciones.presentation.rest.exceptions.ResourceNotFoundE
 /**
  * Implementación de la interface IOrganizacionesService
  * 
- * @author Jefferson Eduardo Campo - Danny Albeto Diaz
+ * @author Jefferson Eduardo Campo - Danny Albeto Diaz - Christian Tobar
  *
  */
 @Service
@@ -29,12 +29,23 @@ public class OrganizacionesImplService implements IOrganizacionesService{
 	@Autowired
 	private IOrganizacionesDao OrganizacionDao;
 	
+	/**
+	 * Obtiene toda la lista de las organizaciones registradas
+	 * 
+	 * @return Retorna una lista de organizaciones
+	*/
 	@Override
 	@Transactional(readOnly = true)
 	public List<Organizacion> findAll() {
 		return (List<Organizacion>)OrganizacionDao.findAll();
 	}
 
+	/**
+	 * Busca una organización por su identificacion
+	 * 
+	 * @param Id de la organización a buscar
+	 * @return retorna un objeto de tipo Organización
+	 */
 	@Override
 	public Organizacion findById(Long id) throws ResourceNotFoundException {
 		Organizacion org = OrganizacionDao.findById(id).orElse(null);
@@ -44,6 +55,12 @@ public class OrganizacionesImplService implements IOrganizacionesService{
 		return org;
 	}
 
+	/**
+	 * Añade una nueva organización a la base de datos
+	 * 
+	 * @param Objeto de tipo organización
+	 * @return Retorna un Objeto de tipo organización
+	 */
 	@Override
 	@Transactional
 	public Organizacion create(Organizacion organizacion) throws OrganizacionesDomainException {
@@ -54,6 +71,13 @@ public class OrganizacionesImplService implements IOrganizacionesService{
 		return OrganizacionDao.save(organizacion); 
 	}
 
+	/**
+	 * Modifica la informacion de una organización
+	 * 
+	 * @param id Identificador de la organización a modificar
+	 * @param usuario Objeto de tipo organización con los datos a cambiar
+	 * @return Retorna un objeto de tipo organización
+	 */
 	@Override
 	@Transactional
 	public Organizacion update(Long id, Organizacion organizacion) throws ResourceNotFoundException, OrganizacionesDomainException {
@@ -71,6 +95,10 @@ public class OrganizacionesImplService implements IOrganizacionesService{
 	return OrganizacionDao.save(org);
 	}
 
+	/**
+	 * Elimina una organización por su id
+	 * @param Id Identificiacion de la organización
+	 */
 	@Override
 	@Transactional
 	public void deleteById(Long Id) throws ResourceNotFoundException {
@@ -79,29 +107,31 @@ public class OrganizacionesImplService implements IOrganizacionesService{
 			throw new ResourceNotFoundException();
 		}
 		OrganizacionDao.deleteById(Id);
-		
 	}
 
+	/**
+	 * Aplica validaciones o reglas del dominio para una organización antes de ser agregado o modificado.
+	 * @param org organizacion a validar
+	 * @return lista de errores de validación.
+	 */
 	private List<OrganizacionesError> validateDomain(Organizacion org) {
+		
 		List<OrganizacionesError> errors = new ArrayList<>();
 
 		if (org.getNombre() == null || org.getNombre().isBlank()) {
 			errors.add(new OrganizacionesError(EnumErrorCodes.EMPTY_FIELD, "name", "El nombre de la organización es obligatorio"));
 		}
-		/*
-		if (plato.getPrice() <= 0) {
-			errors.add(new PlatoError(EnumErrorCodes.INVALID_NUMBER, "price",
-					"El precio del plato es obligatorio y mayor a cero"));
+		if (org.getUbicacion() == null || org.getUbicacion().isBlank()) {
+			errors.add(new OrganizacionesError(EnumErrorCodes.EMPTY_FIELD, "Ubicación", "La ubicación de la organización es obligatorio"));
 		}
-		
-		if (plato.getIdRest() <= 0) {
-			errors.add(new PlatoError(EnumErrorCodes.INVALID_NUMBER, "id restaurante",
-					"El id del restaurante es obligatorio y mayor a cero"));
+		if (org.getTelefono() <= 0) {
+			errors.add(new OrganizacionesError(EnumErrorCodes.INVALID_NUMBER, "Telefono",
+					"El telefono es obligatorio y mayor a cero"));
 		}
-		
-		if (plato.getDescription() == null || plato.getDescription().isBlank()) {
-			errors.add(new PlatoError(EnumErrorCodes.EMPTY_FIELD, "description", "La descripcion del plato es obligatoria"));
-		}*/
+		if (org.getIdOrganizacion() <= 0) {
+			errors.add(new OrganizacionesError(EnumErrorCodes.INVALID_NUMBER, "Identificación",
+					"La identificación de la organización es obligatoria y mayor a cero"));
+		}
 		return errors;
 	}
 }

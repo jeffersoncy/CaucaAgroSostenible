@@ -1,10 +1,9 @@
 package co.unicauca.Organizaciones.domain.service;
 
 /**
- * Códigos de error. Lo usa OrganizacionImplService para hacer validaciones de
- * dominio
+ * Códigos de error. Lo usa OrganizacionImplService para hacer validaciones de dominio
  * 
- * @author Jefferson Campo y Danny Diaz
+ * @author Jefferson Campo - Danny Diaz - Christian Tobar
  *
  */
 public enum EnumErrorCodes {

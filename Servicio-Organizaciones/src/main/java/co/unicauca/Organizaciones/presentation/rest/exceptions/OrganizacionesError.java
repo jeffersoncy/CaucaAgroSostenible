@@ -5,7 +5,7 @@ import co.unicauca.Organizaciones.domain.service.EnumErrorCodes;
 /**
  * Manejo de excepciones de un usuario
  * 
- * @author Jefferson Campo y Danny Diaz
+ * @author Jefferson Campo - Danny Diaz - Christian Tobar
  */
 public class OrganizacionesError {
 

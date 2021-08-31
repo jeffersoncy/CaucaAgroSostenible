@@ -22,7 +22,7 @@ import co.unicauca.Usuario.domain.entity.Usuario;
  * 
  * Servicios web de gestion usuario
  * 
- * @author Danny Diaz - Jefferson Campo
+ * @author Danny Diaz - Jefferson Campo - Christian Tobar
  *
  */
 //@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
