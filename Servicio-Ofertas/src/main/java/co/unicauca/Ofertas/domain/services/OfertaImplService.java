@@ -140,11 +140,6 @@ public class OfertaImplService implements IOfertasService{
 			errors.add(new OfertaError(EnumErrorCodes.EMPTY_FIELD, "rutaImg", "La ruta de la Imagen es obligatoria"));
 		}
 		
-		if (oferta.getIdOferta() <= 0) {
-			errors.add(new OfertaError(EnumErrorCodes.INVALID_NUMBER, "id oferta",
-					"El id de la oferta es obligatorio y mayor a cero"));
-		}
-		
 		if (oferta.getCantidad() <= 0) {
 			errors.add(new OfertaError(EnumErrorCodes.INVALID_NUMBER, "cantidad",
 					"La cantidad de la oferta es obligatoria y mayor a cero"));
