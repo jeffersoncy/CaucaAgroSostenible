@@ -17,7 +17,7 @@ import javax.persistence.Table;
  */
 
 @Entity
-@Table(name="productos")
+@Table(name = "productos")
 public class Producto implements Serializable{
 
 	private static final long serialVersionUID = 1L;
@@ -27,10 +27,10 @@ public class Producto implements Serializable{
 	private long id;
 	
 	@Column
-	private String nomProducto;
+	private String nomproducto;
 	
 	@Column
-	private String rutaImagen;
+	private String rutaimagen;
 	
 	@Column
 	private long cantidad;
@@ -47,19 +47,19 @@ public class Producto implements Serializable{
 	}
 
 	public String getNomProducto() {
-		return nomProducto;
+		return nomproducto;
 	}
 
 	public void setNomProducto(String nomProducto) {
-		this.nomProducto = nomProducto;
+		this.nomproducto = nomProducto;
 	}
 
 	public String getRutaImagen() {
-		return rutaImagen;
+		return rutaimagen;
 	}
 
 	public void setRutaImagen(String rutaImagen) {
-		this.rutaImagen = rutaImagen;
+		this.rutaimagen = rutaImagen;
 	}
 
 	public long getCantidad() {
