@@ -1,0 +1,2 @@
+INSERT INTO organizaciones(NOMBRE, RUTAIMAGEN, UBICACION, TELEFONO) values('danny company','local1','av. siempre viva', 666);
+INSERT INTO organizaciones(NOMBRE, RUTAIMAGEN, UBICACION, TELEFONO) values('jefry company','local2','av. las americas', 777);

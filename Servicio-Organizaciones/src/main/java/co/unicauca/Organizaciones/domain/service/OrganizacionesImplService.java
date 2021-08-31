@@ -89,9 +89,10 @@ public class OrganizacionesImplService implements IOrganizacionesService{
 	if (!errors.isEmpty()) {
 		throw new OrganizacionesDomainException(errors);
 	}
-	org.setNombre(org.getNombre());
-	org.setTelefono(org.getTelefono());
-	org.setUbicacion(org.getUbicacion());
+	org.setNombre(organizacion.getNombre());
+	org.setTelefono(organizacion.getTelefono());
+	org.setRutaimagen(organizacion.getRutaimagen());
+	org.setUbicacion(organizacion.getUbicacion());
 	return OrganizacionDao.save(org);
 	}
 
@@ -128,10 +129,10 @@ public class OrganizacionesImplService implements IOrganizacionesService{
 			errors.add(new OrganizacionesError(EnumErrorCodes.INVALID_NUMBER, "Telefono",
 					"El telefono es obligatorio y mayor a cero"));
 		}
-		if (org.getIdOrganizacion() <= 0) {
+		/*if (org.getIdOrganizacion() <= 0) {
 			errors.add(new OrganizacionesError(EnumErrorCodes.INVALID_NUMBER, "Identificación",
 					"La identificación de la organización es obligatoria y mayor a cero"));
-		}
+		}*/
 		return errors;
 	}
 }

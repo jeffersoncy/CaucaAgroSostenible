@@ -26,42 +26,42 @@ public class Organizacion implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long IdOrganizacion;
+	private long id;
 	
 	@Column
-	private String Nombre;
-	
-	/*@Column
-	private String Imagen;*/
+	private String nombre;
 	
 	@Column
-	private String Ubicacion;
+	private String rutaimagen;
+	
+	@Column
+	private String ubicacion;
 	
 	@Column
 	private int telefono;
 
 	public long getIdOrganizacion() {
-		return IdOrganizacion;
+		return id;
 	}
 
-	public void setIdOrganizacion(long idOrganizacion) {
-		IdOrganizacion = idOrganizacion;
+	public void setIdOrganizacion(long Id) {
+		id = Id;
 	}
 
 	public String getNombre() {
-		return Nombre;
+		return nombre;
 	}
 
-	public void setNombre(String nombre) {
-		Nombre = nombre;
+	public void setNombre(String nomb) {
+		nombre = nomb;
 	}
 
 	public String getUbicacion() {
-		return Ubicacion;
+		return ubicacion;
 	}
 
-	public void setUbicacion(String ubicacion) {
-		Ubicacion = ubicacion;
+	public void setUbicacion(String ubic) {
+		ubicacion = ubic;
 	}
 
 	public int getTelefono() {
@@ -70,6 +70,14 @@ public class Organizacion implements Serializable{
 
 	public void setTelefono(int telefono) {
 		this.telefono = telefono;
+	}
+
+	public String getRutaimagen() {
+		return rutaimagen;
+	}
+
+	public void setRutaimagen(String rutaimagen) {
+		this.rutaimagen = rutaimagen;
 	}
 	
 	
