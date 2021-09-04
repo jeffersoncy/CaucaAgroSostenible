@@ -11,7 +11,7 @@ export class AppComponent {
 
   constructor(private router:Router){}
 
-  listar(){
+  Listar(){
     this.router.navigate(["listar"]);
   }
 
