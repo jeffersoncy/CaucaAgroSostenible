@@ -36,7 +36,13 @@ public class InversionistasImplService implements IInversionistasService {
 	public List<Inversionista> findAll() {
 		return (List<Inversionista>) invDao.findAll();
 	}
-
+	
+	/**
+	 * Metodo de busqueda por id de inversionista
+	 * 
+	 * @param id Identificador del inversionista
+	 * @return Objeto de tipo Inversionista
+	 */
 	@Override
 	public Inversionista findById(Long id) throws ResourceNotFoundException {
 		
@@ -48,7 +54,13 @@ public class InversionistasImplService implements IInversionistasService {
 		return inv;
 
 	}
-
+	
+	/**
+	 * Metodo de creacion que añade un nuevo inversionista a la BD.
+	 * 
+	 * @param invers Objeto de tipo Inversionista
+	 * @return Objeto de tipo Inversionista
+	 */
 	@Override
 	public Inversionista create(Inversionista invers) throws InversionistaDomainException {
 List<InversionistaError> errores = validateDomain(invers);
@@ -60,6 +72,13 @@ List<InversionistaError> errores = validateDomain(invers);
 		return invDao.save(invers);
 	}
 
+	/**
+	 * Metodo de actualizacion que modifica los atributos de un inversionista en la BD.
+	 * 
+	 * @param id Identificador
+	 * @param invers Objeto de tipo Inversionista
+	 * @return Objeto de tipo Inversionista
+	 */
 	@Override
 	public Inversionista update(Long id, Inversionista invers)
 			throws ResourceNotFoundException, InversionistaDomainException {
@@ -85,7 +104,13 @@ List<InversionistaError> errores = validateDomain(invers);
 		
 		return invDao.save(auxInv);
 	}
-
+	
+	
+	/**
+	 * Metodo de eliminacion que suprime un inversionista de la BD.
+	 * 
+	 * @param id Identificador
+	 */
 	@Override
 	@Transactional
 	public void deleteById(Long id) throws ResourceNotFoundException {
@@ -101,6 +126,11 @@ List<InversionistaError> errores = validateDomain(invers);
  
 	}
 	
+	/**
+	 * Aplica validaciones o reglas del dominio para un inversionista antes de ser agregado o modificado.
+	 * @param invers Inversionista a validar
+	 * @return lista de errores de validación.
+	 */
 	private List<InversionistaError> validateDomain(Inversionista invers){
 		
 		List<InversionistaError> errors = new ArrayList<>();
@@ -126,7 +156,6 @@ List<InversionistaError> errores = validateDomain(invers);
 					"El id del inversionista es obligatorio y mayor a cero"));
 		}
 		
-	
 		return errors;
 	}
 
