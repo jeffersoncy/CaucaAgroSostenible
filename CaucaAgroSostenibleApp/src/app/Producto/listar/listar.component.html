@@ -7,6 +7,7 @@
             <table class="table table-hover">
                 <thead>
                     <tr class="text-center">
+                        <th>ID</th>
                         <th>Nombre</th>
                         <th>Ruta imagen</th>
                         <th>Cantidad</th>
@@ -15,6 +16,7 @@
                 </thead>
                 <tbody>
                     <tr *ngFor = "let producto of productos" class="text-center">
+                        <td>{{producto.id}}</td>
                         <td>{{producto.nomproducto}}</td>
                         <td>{{producto.rutaimagen}}</td>
                         <td>{{producto.cantidad}}</td>
