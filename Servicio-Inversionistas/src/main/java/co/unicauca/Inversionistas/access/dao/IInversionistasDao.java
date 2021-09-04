@@ -6,6 +6,7 @@ import co.unicauca.Inversionistas.domain.entity.Inversionista;
 
 /**
  * Interface DAO que usa los metodos para el acceso a la BD
+ * 
  * @author Jefferson Campo - Danny Diaz - Christian Tobar
  *
  */
