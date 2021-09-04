@@ -7,6 +7,9 @@ import { ListarComponent } from './Producto/listar/listar.component';
 import { AgregarComponent } from './Producto/agregar/agregar.component';
 import { EditarComponent } from './Producto/editar/editar.component';
 import { EliminarComponent } from './Producto/eliminar/eliminar.component';
+import { FormsModule } from '@angular/forms';
+import { ServiceService } from '../app/Service/service.service';
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -18,9 +21,11 @@ import { EliminarComponent } from './Producto/eliminar/eliminar.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
