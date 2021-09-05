@@ -1,7 +1,7 @@
 export class Producto{
     id?:number;
-    nomproducto: String="";
-    rutaimagen: String="";
+    nomProducto?: String;
+    rutaImagen?: String;
     cantidad?: number;
     precio?: number;
 }
