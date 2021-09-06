@@ -19,5 +19,19 @@ export class ListarComponent implements OnInit {
       this.productos=data;
     })
   }
+  agregarProducto(){
+    this.router.navigate(["agregar"]);
+  }
+
+  actualizarProducto(producto:Producto){
+    localStorage.setItem("idProducto",producto.id.toString());
+    this.router.navigate(["editar"]);
+  }
+
+  eliminarProducto(producto:Producto){
+    this.service.deleteProducto(producto).subscribe(data =>{
+      this.productos = this.productos.filter(p=>p!==producto);
+    })
+  }
 
 }

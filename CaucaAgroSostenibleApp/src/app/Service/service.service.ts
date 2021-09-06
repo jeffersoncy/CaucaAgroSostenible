@@ -14,4 +14,21 @@ export class ServiceService {
   getProductos(){
     return this.http.get<Producto[]>(this.Url);
   }
+
+  newProducto(producto:Producto){
+    return this.http.post<Producto>(this.Url,producto);
+  }
+
+  editProducto(producto:Producto){
+    return this.http.put<Producto>(this.Url+"/"+producto.id,producto);
+  }
+
+  deleteProducto(producto:Producto){
+    return this.http.delete<Producto>(this.Url+"/"+producto.id);
+  }
+
+  getProductByID(id:Number){
+    return this.http.get<Producto>(this.Url+"/"+id);
+  }
+
 }
