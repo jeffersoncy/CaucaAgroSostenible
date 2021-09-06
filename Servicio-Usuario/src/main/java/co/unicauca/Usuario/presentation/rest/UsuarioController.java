@@ -25,7 +25,7 @@ import co.unicauca.Usuario.domain.entity.Usuario;
  * @author Danny Diaz - Jefferson Campo - Christian Tobar
  *
  */
-//@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
+@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
 @RestController
 @RequestMapping("usuarios")
 public class UsuarioController {
