@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EliminarComponent } from './eliminar.component';
+import { AgregarorgComponent } from './agregarorg.component';
 
-describe('EliminarComponent', () => {
-  let component: EliminarComponent;
-  let fixture: ComponentFixture<EliminarComponent>;
+describe('AgregarorgComponent', () => {
+  let component: AgregarorgComponent;
+  let fixture: ComponentFixture<AgregarorgComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EliminarComponent ]
+      declarations: [ AgregarorgComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(EliminarComponent);
+    fixture = TestBed.createComponent(AgregarorgComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

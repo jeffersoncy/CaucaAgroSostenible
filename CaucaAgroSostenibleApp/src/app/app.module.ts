@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { ListarComponent } from './administrador/Producto/listar/listar.component';
 import { AgregarComponent } from './administrador/Producto/agregar/agregar.component';
 import { EditarComponent } from './administrador/Producto/editar/editar.component';
-import { EliminarComponent } from './administrador/Producto/eliminar/eliminar.component';
 import { FormsModule } from '@angular/forms';
 import { ServiceService } from '../app/Service/service.service';
 import { HttpClientModule } from '@angular/common/http';
-import { AdministradorComponent } from './administrador/administrador.component'
+import { AdministradorComponent } from './administrador/administrador.component';
+import { ListarorgComponent } from './administrador/Organizaciones/listarorg/listarorg.component';
+import { AgregarorgComponent } from './administrador/Organizaciones/agregarorg/agregarorg.component';
+import { EditarorgComponent } from './administrador/Organizaciones/editarorg/editarorg.component';
 
 @NgModule({
   declarations: [
@@ -18,8 +20,10 @@ import { AdministradorComponent } from './administrador/administrador.component'
     ListarComponent,
     AgregarComponent,
     EditarComponent,
-    EliminarComponent,
-    AdministradorComponent
+    AdministradorComponent,
+    ListarorgComponent,
+    AgregarorgComponent,
+    EditarorgComponent
   ],
   imports: [
     BrowserModule,
