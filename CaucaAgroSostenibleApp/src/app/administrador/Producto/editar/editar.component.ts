@@ -16,8 +16,6 @@ export class EditarComponent implements OnInit {
   bandera: boolean = false;
   constructor(private service: ServiceService, private router: Router) { }
 
-
-
   ngOnInit(): void {
     this.obtenerDatos();
   }

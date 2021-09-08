@@ -1,1 +1,33 @@
-<p>listarorg works!</p>
+<div class="container" style="margin-top: 10px;">
+    <div class="card">
+        <div class="card header">
+            <h3>ORGANIZACIONES</h3>
+        </div>
+        <div class="card-body">
+            <button (click)="agregarOrganizacion()" class="btn btn-warning">Agregar Organización</button>
+            <table class="table table-hover">
+                <thead>
+                    <tr class="text-center">
+                        <th>Nombre</th>
+                        <th>Ruta imagen</th>
+                        <th>Ubicacion</th>
+                        <th>telefono</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor = "let organizacion of organizaciones" class="text-center">
+                        <td>{{organizacion.nombre}}</td>
+                        <td>{{organizacion.rutaimagen}}</td>
+                        <td>{{organizacion.ubicacion}}</td>
+                        <td>{{organizacion.telefono}}</td>
+                        <td>
+                            <button (click)="actualizarOrganizacion(organizacion)" class="btn btn-warning" style="margin-left: 5px;">Editar</button>
+                            <button (click)="eliminarOrganizacion(organizacion)" class="btn btn-danger" style="margin-left: 5px;">Eliminar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
