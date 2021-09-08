@@ -17,10 +17,10 @@ export class EditarorgComponent implements OnInit {
   constructor(private service: ServiceService, private router: Router) { }
 
   ngOnInit(): void {
-    this.obtenerDatos();
+    this.obtenerDatosOrg();
   }
 
-  obtenerDatos() {
+  obtenerDatosOrg() {
     let id = localStorage.getItem("idOrganizacion");
     this.service.getOrganizacionByID(+id).subscribe(data => {
       this.organizacion = data;

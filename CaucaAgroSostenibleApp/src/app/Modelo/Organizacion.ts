@@ -1,5 +1,5 @@
 export class Organizacion{
-    id:number;
+    idOrganizacion:number;
     nombre: String;
     rutaimagen: String;
     ubicacion: String;

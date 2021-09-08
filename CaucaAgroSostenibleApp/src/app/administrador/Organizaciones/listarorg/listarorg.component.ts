@@ -28,8 +28,8 @@ export class ListarorgComponent implements OnInit {
     this.router.navigate(["agregarorg"]);
   }
 
-  actualizarOrganizacion(Organizacion:Organizacion){
-    localStorage.setItem("idOrganizacion",Organizacion.id.toString());
+  actualizarOrganizacion(organizacion:Organizacion){
+    localStorage.setItem("idOrganizacion",organizacion.idOrganizacion.toString());
     this.router.navigate(["editarorg"]);
   }
 

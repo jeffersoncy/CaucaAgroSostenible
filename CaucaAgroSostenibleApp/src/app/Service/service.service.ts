@@ -42,11 +42,11 @@ export class ServiceService {
   }
 
   editOrganizacion(organizacion:Organizacion){
-    return this.http.put<Organizacion>(this.UrlOrg+"/"+organizacion.id,organizacion);
+    return this.http.put<Organizacion>(this.UrlOrg+"/"+organizacion.idOrganizacion,organizacion);
   }
 
   deleteOrganizacion(Organizacion:Organizacion){
-    return this.http.delete<Organizacion>(this.UrlOrg+"/"+Organizacion.id);
+    return this.http.delete<Organizacion>(this.UrlOrg+"/"+Organizacion.idOrganizacion);
   }
 
   getOrganizacionByID(id:Number){
