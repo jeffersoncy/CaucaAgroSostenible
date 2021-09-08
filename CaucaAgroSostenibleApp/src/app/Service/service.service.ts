@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Producto } from '../Modelo/Producto';
 import { Organizacion } from '../Modelo/Organizacion';
+import { Oferta } from '../Modelo/Oferta';
+
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +14,10 @@ export class ServiceService {
 
   Url='http://localhost:8002/productos';
   UrlOrg='http://localhost:8096/organizaciones';
+  UrlOfer='http://localhost:8004/oferta';
   
+  //CRUD Productos
+
   getProductos(){
     return this.http.get<Producto[]>(this.Url);
   }
@@ -32,6 +37,8 @@ export class ServiceService {
   getProductByID(id:Number){
     return this.http.get<Producto>(this.Url+"/"+id);
   }
+
+  //CRUD Organizaciones
 
   getOrganizaciones(){
     return this.http.get<Organizacion[]>(this.UrlOrg);
@@ -53,5 +60,25 @@ export class ServiceService {
     return this.http.get<Organizacion>(this.UrlOrg+"/"+id);
   }
 
+  //CRUD Ofertas
 
+  getOfertas(){
+    return this.http.get<Oferta[]>(this.UrlOfer);
+  }
+
+  newOferta(oferta:Oferta){
+    return this.http.post<Oferta>(this.UrlOfer,oferta);
+  }
+
+  editOferta(oferta:Oferta){
+    return this.http.put<Oferta>(this.UrlOfer+"/"+oferta.idOferta,oferta);
+  }
+
+  deleteOferta(oferta:Oferta){
+    return this.http.delete<Oferta>(this.UrlOfer+"/"+oferta.idOferta);
+  }
+
+  getOfertaByID(id:Number){
+    return this.http.get<Oferta>(this.UrlOfer+"/"+id);
+  }
 }

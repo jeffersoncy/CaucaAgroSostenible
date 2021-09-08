@@ -22,4 +22,8 @@ export class AppComponent implements OnInit{
     this.router.navigate(["listarorg"]);
   }
 
+  ListarOfer(){
+    this.router.navigate(["listarofer"]);
+  }
+
 }
