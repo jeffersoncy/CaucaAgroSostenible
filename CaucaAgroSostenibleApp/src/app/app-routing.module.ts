@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AgregarComponent } from './Producto/agregar/agregar.component';
-import { EditarComponent } from './Producto/editar/editar.component';
-import { EliminarComponent } from './Producto/eliminar/eliminar.component';
-import { ListarComponent } from './Producto/listar/listar.component';
+import { AgregarComponent } from './Admin/Producto/agregar/agregar.component';
+import { EditarComponent } from './Admin/Producto/editar/editar.component';
+import { EliminarComponent } from './Admin/Producto/eliminar/eliminar.component';
+import { ListarComponent } from './Admin/Producto/listar/listar.component';
 
 const routes: Routes = [
   {path:"listar", component:ListarComponent},
