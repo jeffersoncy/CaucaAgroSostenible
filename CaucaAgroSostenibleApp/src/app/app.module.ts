@@ -3,13 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ListarComponent } from './Admin/Producto/listar/listar.component';
-import { AgregarComponent } from './Admin/Producto/agregar/agregar.component';
-import { EditarComponent } from './Admin/Producto/editar/editar.component';
-import { EliminarComponent } from './Admin/Producto/eliminar/eliminar.component';
+import { ListarComponent } from './administrador/Producto/listar/listar.component';
+import { AgregarComponent } from './administrador/Producto/agregar/agregar.component';
+import { EditarComponent } from './administrador/Producto/editar/editar.component';
+import { EliminarComponent } from './administrador/Producto/eliminar/eliminar.component';
 import { FormsModule } from '@angular/forms';
 import { ServiceService } from '../app/Service/service.service';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { AdministradorComponent } from './administrador/administrador.component'
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { HttpClientModule } from '@angular/common/http'
     ListarComponent,
     AgregarComponent,
     EditarComponent,
-    EliminarComponent
+    EliminarComponent,
+    AdministradorComponent
   ],
   imports: [
     BrowserModule,
