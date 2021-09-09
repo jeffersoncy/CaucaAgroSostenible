@@ -4,34 +4,44 @@
             <h3>Agregar Oferta</h3>
         </div>
         <div class="card-body">
-            <form action="">
+            <form action="" class="was-validated">
                 <div class="form-group">
                     <label for="nomOferta">Nombre de la oferta:</label>
                     <input type="text" class="form-control" [(ngModel)]="oferta.nomOferta" name="nomOferta" ngModel required>
+                    <div class="valid-feedback">Valido.</div>
+                    <div class="invalid-feedback">Este campo es obligatorio.</div>
                     <div class="alert">{{mensajeError("nomOferta")}}</div>
                 </div>
                 <div class="form-group">
                     <label for="rutaImg">Subir Imagen:</label>
                     <input type="text" class="form-control" [(ngModel)]="oferta.rutaImg" name="rutaImg" ngModel required>
+                    <div class="valid-feedback">Valido.</div>
+                    <div class="invalid-feedback">Este campo es obligatorio.</div>
                     <div class="alert">{{mensajeError("rutaImg")}}</div>
                 </div>
                 <div class="form-group">
                     <label for="cantidad">Cantidad:</label>
                     <input type="number" class="form-control" [(ngModel)]="oferta.cantidad" name="cantidad" ngModel required>
+                    <div class="valid-feedback">Valido.</div>
+                    <div class="invalid-feedback">Este campo es obligatorio.</div>
                     <div class="alert">{{mensajeError("cantidad")}}</div>
                 </div>
                 <div class="form-group">
                     <label for="precio">Precio:</label>
                     <input type="number" class="form-control" [(ngModel)]="oferta.precio" name="precio" ngModel required>
+                    <div class="valid-feedback">Valido.</div>
+                    <div class="invalid-feedback">Este campo es obligatorio.</div>
                     <div class="alert">{{mensajeError("precio")}}</div>
                 </div>
                 <div class="form-group">
                     <label for="descuento">Descuento:</label>
                     <input type="number" class="form-control" [(ngModel)]="oferta.descuento" name="descuento" ngModel required>
+                    <div class="valid-feedback">Valido.</div>
+                    <div class="invalid-feedback">Este campo es obligatorio.</div>
                     <div class="alert">{{mensajeError("descuento")}}</div>
                 </div>
 
-                <button (click)="guardar()" class="btn btn-danger">Guardar</button>
+                <button (click)="guardar()" type="submit" class="btn btn-danger">Guardar</button>
                 <button (click)="atras()" class="btn btn-danger" style="margin-left: 10px;">Cancelar</button>
             </form>
         </div>

@@ -16,6 +16,8 @@ import { EditarorgComponent } from './administrador/Organizaciones/editarorg/edi
 import { ListaroferComponent } from './administrador/Ofertas/listarofer/listarofer.component';
 import { AgregaroferComponent } from './administrador/Ofertas/agregarofer/agregarofer.component';
 import { EditaroferComponent } from './administrador/Ofertas/editarofer/editarofer.component';
+import { VerproductosComponent } from './cliente/productos/verproductos/verproductos.component';
+import { CarritoComponent } from './cliente/productos/carrito/carrito.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { EditaroferComponent } from './administrador/Ofertas/editarofer/editarof
     EditarorgComponent,
     ListaroferComponent,
     AgregaroferComponent,
-    EditaroferComponent
+    EditaroferComponent,
+    VerproductosComponent,
+    CarritoComponent
   ],
   imports: [
     BrowserModule,
