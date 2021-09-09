@@ -1,0 +1,41 @@
+<div class="container col-md-6" style="margin-top: 10px;">
+    <div class="card">
+        <div class="card header">
+            <h3>Agregar Inversionista</h3>
+        </div>
+        <div class="card-body">
+            <form action="" class="was-validated">
+                <div class="form-group">
+                    <label for="nomInvers">Nombre del Inversionista:</label>
+                    <input type="text" class="form-control" [(ngModel)]="invers.nomInvers" name="nomInvers" ngModel required>
+                    <div class="valid-feedback">Valido.</div>
+                    <div class="invalid-feedback">Este campo es obligatorio.</div>
+                    <div class="alert">{{mensajeError("nomInvers")}}</div>
+                </div>
+                <div class="form-group">
+                    <label for="rutaImg">Subir Imagen:</label>
+                    <input type="text" class="form-control" [(ngModel)]="invers.rutaImg" name="rutaImg" ngModel required>
+                    <div class="valid-feedback">Valido.</div>
+                    <div class="invalid-feedback">Este campo es obligatorio.</div>
+                    <div class="alert">{{mensajeError("rutaImg")}}</div>
+                </div>
+                <div class="form-group">
+                    <label for="descripInvers">Descripción del Inversionista:</label>
+                    <input type="text" class="form-control" [(ngModel)]="invers.descripInvers" name="descripInvers" ngModel required>
+                    <div class="valid-feedback">Valido.</div>
+                    <div class="invalid-feedback">Este campo es obligatorio.</div>
+                    <div class="alert">{{mensajeError("descripInvers")}}</div>
+                </div>
+                <div class="form-group">
+                    <label for="correoInvers">Correo del Inversionista:</label>
+                    <input type="text" class="form-control" [(ngModel)]="invers.correoInvers" name="correoInvers" ngModel required>
+                    <div class="valid-feedback">Valido.</div>
+                    <div class="invalid-feedback">Este campo es obligatorio.</div>
+                    <div class="alert">{{mensajeError("correoInvers")}}</div>
+                </div>
+                <button (click)="guardar()" type="submit" class="btn btn-danger">Guardar</button>
+                <button (click)="atras()" class="btn btn-danger" style="margin-left: 10px;">Cancelar</button>
+            </form>
+        </div>
+    </div>
+</div>
