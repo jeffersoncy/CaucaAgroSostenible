@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Producto } from '../Modelo/Producto';
 import { Organizacion } from '../Modelo/Organizacion';
 import { Oferta } from '../Modelo/Oferta';
+import { Inversionista } from '../Modelo/Inversionista';
 
 
 @Injectable({
@@ -15,6 +16,7 @@ export class ServiceService {
   Url='http://localhost:8002/productos';
   UrlOrg='http://localhost:8096/organizaciones';
   UrlOfer='http://localhost:8004/oferta';
+  UrlInvers='http://localhost:8006/inversionista';
   
   //CRUD Productos
 
@@ -80,5 +82,27 @@ export class ServiceService {
 
   getOfertaByID(id:Number){
     return this.http.get<Oferta>(this.UrlOfer+"/"+id);
+  }
+
+  //CRUD Inversionistas
+
+  getInversionista(){
+    return this.http.get<Inversionista[]>(this.UrlInvers);
+  }
+
+  newInversionista(invers:Inversionista){
+    return this.http.post<Inversionista>(this.UrlInvers,invers);
+  }
+
+  editInversionista(invers:Inversionista){
+    return this.http.put<Inversionista>(this.UrlInvers+"/"+invers.idInvers,invers);
+  }
+
+  deleteInversionista(invers:Inversionista){
+    return this.http.delete<Inversionista>(this.UrlInvers+"/"+invers.idInvers);
+  }
+
+  getInversionistaByID(id:Number){
+    return this.http.get<Inversionista>(this.UrlInvers+"/"+id);
   }
 }
