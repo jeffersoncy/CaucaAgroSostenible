@@ -11,10 +11,14 @@ export class AppComponent implements OnInit{
 
   constructor(private router:Router){}
   ngOnInit(): void {
-    this.Listar();
+    this.Home();
   }
 
-  Listar(){
+  Home(){
+    this.router.navigate(["home"]);
+  }
+
+  AdminProd(){
     this.router.navigate(["listar"]);
   }
 

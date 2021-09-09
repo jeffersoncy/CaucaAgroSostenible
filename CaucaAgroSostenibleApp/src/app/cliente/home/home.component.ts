@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Producto } from 'src/app/Modelo/Producto';
-import { ServiceService } from '../../../Service/service.service';
+import { ServiceService } from 'src/app/Service/service.service';
 
 @Component({
-  selector: 'app-verproductos',
-  templateUrl: './verproductos.component.html',
-  styleUrls: ['./verproductos.component.css']
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
 })
-export class VerproductosComponent implements OnInit {
-
+export class HomeComponent implements OnInit {
+  
   productos!:Producto[];
   constructor(private service:ServiceService, private router:Router) { }
 

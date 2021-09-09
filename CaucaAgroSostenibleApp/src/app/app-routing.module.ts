@@ -10,8 +10,7 @@ import { EditarorgComponent } from './administrador/Organizaciones/editarorg/edi
 import { ListaroferComponent } from './administrador/Ofertas/listarofer/listarofer.component';
 import { EditaroferComponent } from './administrador/Ofertas/editarofer/editarofer.component';
 import { AgregaroferComponent } from './administrador/Ofertas/agregarofer/agregarofer.component';
-import { VerproductosComponent } from './cliente/productos/verproductos/verproductos.component';
-import { CarritoComponent } from './cliente/productos/carrito/carrito.component';
+import { HomeComponent } from './cliente/home/home.component';
 
 const routes: Routes = [
   {path:"listar", component:ListarComponent},
@@ -24,8 +23,7 @@ const routes: Routes = [
   {path:"listarofer", component:ListaroferComponent},
   {path:"editarofer", component:EditaroferComponent},
   {path:"agregarofer", component:AgregaroferComponent},
-  {path:"verproductos", component:VerproductosComponent},
-  {path:"carrito", component:CarritoComponent}
+  {path:"home", component:HomeComponent}
 ];
 
 @NgModule({

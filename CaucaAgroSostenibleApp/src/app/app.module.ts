@@ -16,8 +16,9 @@ import { EditarorgComponent } from './administrador/Organizaciones/editarorg/edi
 import { ListaroferComponent } from './administrador/Ofertas/listarofer/listarofer.component';
 import { AgregaroferComponent } from './administrador/Ofertas/agregarofer/agregarofer.component';
 import { EditaroferComponent } from './administrador/Ofertas/editarofer/editarofer.component';
-import { VerproductosComponent } from './cliente/productos/verproductos/verproductos.component';
-import { CarritoComponent } from './cliente/productos/carrito/carrito.component';
+import { HeaderComponent } from './header/header.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { HomeComponent } from './cliente/home/home.component';
 
 @NgModule({
   declarations: [
@@ -32,8 +33,9 @@ import { CarritoComponent } from './cliente/productos/carrito/carrito.component'
     ListaroferComponent,
     AgregaroferComponent,
     EditaroferComponent,
-    VerproductosComponent,
-    CarritoComponent
+    HeaderComponent,
+    SidebarComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Producto } from 'src/app/Modelo/Producto';
 import { Error } from 'src/app/Modelo/Error';
 import { ServiceService } from 'src/app/Service/service.service';
+import { DomSanitizer } from '@angular/platform-browser';
 
 
 @Component({
@@ -12,18 +13,25 @@ import { ServiceService } from 'src/app/Service/service.service';
 })
 export class AgregarComponent implements OnInit {
 
-  constructor(private service:ServiceService, private router:Router) {
+  public previsualizacion:string;
+  producto:Producto = new Producto;
+  public archivo: any = []
+  errores?:Error[];
+  constructor(private service:ServiceService, private router:Router, private sanitizer: DomSanitizer) {
 
   }
-  producto:Producto = new Producto;
-  errores?:Error[];
+
 
   ngOnInit(): void {
   }
 
   guardar(){
-    this.service.newProducto(this.producto).subscribe(data=>{
+    const formularioDeDatos = new FormData();
+    this.service.newProducto(this.producto).subscribe(data=>
+      {
       if (this.producto.compareTo(data)) {
+        //var cadena = formularioDeDatos.rutaImagen.slice(12);
+        //console.log(cadena);
         this.producto = data;
         alert("Producto añadido correctamente");
         this.router.navigate(["listar"]);
@@ -33,12 +41,22 @@ export class AgregarComponent implements OnInit {
       }
     });
   }
-
+ 
   atras(){
     this.router.navigate(["listar"]);
   }
 
-  
+  capturarFile(event):any{
+    const archivoCapturado = event.target.files[0]
+    this.extraerBase64(archivoCapturado).then((imagen:any) => {
+      this.previsualizacion = imagen.base;
+      console.log(imagen);
+    })
+    this.archivo.push(archivoCapturado);
+    console.log(event.target.files[0]);
+    //data.rutaImagen = archivoCapturado;
+  }
+
   mensajeError(formato:String): String{
     if(this.errores == undefined){
       return "";
@@ -50,5 +68,26 @@ export class AgregarComponent implements OnInit {
     }
     return "";
   }
+
+  extraerBase64 = async ($event: any) => new Promise((resolve, reject) => {
+    try {
+      const unsafeImg = window.URL.createObjectURL($event);
+      const image = this.sanitizer.bypassSecurityTrustUrl(unsafeImg);
+      const reader = new FileReader();
+      reader.readAsDataURL($event);
+      reader.onload = () => {
+        resolve ({
+          base:reader.result
+        });
+      };
+      reader.onerror = error => {
+        resolve({
+          base: null
+        });
+      };
+    } catch (e) {
+      return null;
+    }
+  })
 
 }
