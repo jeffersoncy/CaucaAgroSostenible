@@ -9,6 +9,9 @@ import { AgregarorgComponent } from './administrador/Organizaciones/agregarorg/a
 import { EditarorgComponent } from './administrador/Organizaciones/editarorg/editarorg.component';
 import { ListaroferComponent } from './administrador/Ofertas/listarofer/listarofer.component';
 import { EditaroferComponent } from './administrador/Ofertas/editarofer/editarofer.component';
+import { AgregarInversComponent } from './administrador/Inversionistas/agregarinvers/agregarinvers.component';
+import { EditarInversComponent } from './administrador/Inversionistas/editarinvers/editarinvers.component';
+import { ListarInversComponent } from './administrador/Inversionistas/listarinvers/listarinvers.component';
 import { AgregaroferComponent } from './administrador/Ofertas/agregarofer/agregarofer.component';
 import { HomeComponent } from './cliente/home/home.component';
 
@@ -23,7 +26,15 @@ const routes: Routes = [
   {path:"listarofer", component:ListaroferComponent},
   {path:"editarofer", component:EditaroferComponent},
   {path:"agregarofer", component:AgregaroferComponent},
+<<<<<<< HEAD
   {path:"home", component:HomeComponent}
+=======
+  {path:"agregarinvers", component:AgregarInversComponent},
+  {path:"editarinvers", component:EditarInversComponent},
+  {path:"listarinvers", component:ListarInversComponent},
+  {path:"verproductos", component:VerproductosComponent},
+  {path:"carrito", component:CarritoComponent}
+>>>>>>> a2483439c641612530cd1f29c30ddd6321747681
 ];
 
 @NgModule({

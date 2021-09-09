@@ -30,4 +30,8 @@ export class AppComponent implements OnInit{
     this.router.navigate(["listarofer"]);
   }
 
+  ListarInvers(){
+    this.router.navigate(["listarinvers"]);
+  }
+
 }
