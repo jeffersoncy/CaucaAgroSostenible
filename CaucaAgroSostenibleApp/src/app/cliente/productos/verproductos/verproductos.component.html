@@ -20,12 +20,13 @@
       </div>
       <div class="col-sm-9">
         <h2 class="text-center">PRODUCTOS</h2>
-        <div class="fakeimg">Fake Image</div>
+        <div class="fakeimg">insertar imagen relacionada con el filtro</div>
         <div class="galery" *ngFor="let producto of productos.slice(0, productos.length)">
                 <img src="" alt="Prod2" width="600" height="400">
               <div class="desc">Add a dedscription of the image here</div>
                 <p>{{ producto.nomProducto}}</p>
                 <p>{{ producto.precio}}</p>
+                <button class="btn btn-info" style="margin-left: 5px;">Add Carrito</button>
         </div>
       </div>
     </div>
