@@ -6,32 +6,32 @@
         <div class="card-body">
             <form action="" class="was-validated">
                 <div class="form-group">
-                    <label for="nomInvers">Nombre del Inversionista:</label>
-                    <input type="text" class="form-control" [(ngModel)]="invers.nomInvers" name="nomInvers" ngModel required>
+                    <label for="nombre">Nombre del Inversionista:</label>
+                    <input type="text" class="form-control" [(ngModel)]="invers.nombre" name="nombre" ngModel required>
                     <div class="valid-feedback">Valido.</div>
                     <div class="invalid-feedback">Este campo es obligatorio.</div>
                     <div class="alert">{{mensajeError("nomInvers")}}</div>
                 </div>
                 <div class="form-group">
-                    <label for="rutaImg">Subir Imagen:</label>
-                    <input type="text" class="form-control" [(ngModel)]="invers.rutaImg" name="rutaImg" ngModel required>
+                    <label for="rutaimg">Subir Imagen:</label>
+                    <input type="text" class="form-control" [(ngModel)]="invers.rutaimg" name="rutaimg" ngModel required>
                     <div class="valid-feedback">Valido.</div>
                     <div class="invalid-feedback">Este campo es obligatorio.</div>
-                    <div class="alert">{{mensajeError("rutaImg")}}</div>
+                    <div class="alert">{{mensajeError("rutaimg")}}</div>
                 </div>
                 <div class="form-group">
-                    <label for="descripInvers">Descripción del Inversionista:</label>
-                    <input type="text" class="form-control" [(ngModel)]="invers.descripInvers" name="descripInvers" ngModel required>
+                    <label for="descripcion">Descripción del Inversionista:</label>
+                    <input type="text" class="form-control" [(ngModel)]="invers.descripcion" name="descripcion" ngModel required>
                     <div class="valid-feedback">Valido.</div>
                     <div class="invalid-feedback">Este campo es obligatorio.</div>
-                    <div class="alert">{{mensajeError("descripInvers")}}</div>
+                    <div class="alert">{{mensajeError("descripcion")}}</div>
                 </div>
                 <div class="form-group">
-                    <label for="correoInvers">Correo del Inversionista:</label>
-                    <input type="text" class="form-control" [(ngModel)]="invers.correoInvers" name="correoInvers" ngModel required>
+                    <label for="correo">Correo del Inversionista:</label>
+                    <input type="text" class="form-control" [(ngModel)]="invers.correo" name="correo" ngModel required>
                     <div class="valid-feedback">Valido.</div>
                     <div class="invalid-feedback">Este campo es obligatorio.</div>
-                    <div class="alert">{{mensajeError("correoInvers")}}</div>
+                    <div class="alert">{{mensajeError("correo")}}</div>
                 </div>
 
                 <button (click)="actualizarInvers(invers)" class="btn btn-danger">Actualizar</button>

@@ -1,12 +1,12 @@
 export class Inversionista{
-    idInvers:number;
-    nomInvers: String;
-    rutaImg: String;
-    descripInvers: String;
-    correoInvers: String;
+    id:number;
+    nombre: String;
+    rutaimg: String;
+    descripcion: String;
+    correo: String;
  
     compareTo(invers:Inversionista) : boolean{
-        if(invers.nomInvers == this.nomInvers && invers.rutaImg == this.rutaImg && invers.descripInvers == this.descripInvers && invers.correoInvers == this.correoInvers){
+        if(invers.nombre == this.nombre && invers.rutaimg == this.rutaimg && invers.descripcion == this.descripcion && invers.correo == this.correo){
             return true;
         }
         return false;

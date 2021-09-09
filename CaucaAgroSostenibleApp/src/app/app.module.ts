@@ -16,17 +16,12 @@ import { EditarorgComponent } from './administrador/Organizaciones/editarorg/edi
 import { ListaroferComponent } from './administrador/Ofertas/listarofer/listarofer.component';
 import { AgregaroferComponent } from './administrador/Ofertas/agregarofer/agregarofer.component';
 import { EditaroferComponent } from './administrador/Ofertas/editarofer/editarofer.component';
-<<<<<<< HEAD
 import { HeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { HomeComponent } from './cliente/home/home.component';
-=======
 import { AgregarInversComponent } from './administrador/Inversionistas/agregarinvers/agregarinvers.component';
 import { EditarInversComponent } from './administrador/Inversionistas/editarinvers/editarinvers.component';
 import { ListarInversComponent } from './administrador/Inversionistas/listarinvers/listarinvers.component';
-import { VerproductosComponent } from './cliente/productos/verproductos/verproductos.component';
-import { CarritoComponent } from './cliente/productos/carrito/carrito.component';
->>>>>>> a2483439c641612530cd1f29c30ddd6321747681
 
 @NgModule({
   declarations: [
@@ -41,17 +36,12 @@ import { CarritoComponent } from './cliente/productos/carrito/carrito.component'
     ListaroferComponent,
     AgregaroferComponent,
     EditaroferComponent,
-<<<<<<< HEAD
     HeaderComponent,
     SidebarComponent,
-    HomeComponent
-=======
-    EditarInversComponent,
+    HomeComponent,
     AgregarInversComponent,
-    ListarInversComponent,
-    VerproductosComponent,
-    CarritoComponent
->>>>>>> a2483439c641612530cd1f29c30ddd6321747681
+    EditarInversComponent,
+    ListarInversComponent
   ],
   imports: [
     BrowserModule,

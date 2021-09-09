@@ -29,7 +29,7 @@ export class ListarInversComponent implements OnInit {
   }
 
   actualizarInvers(invers:Inversionista){
-    localStorage.setItem("idInvers",invers.idInvers.toString());
+    localStorage.setItem("idInvers",invers.id.toString());
     this.router.navigate(["editarinvers"]);
   }
 

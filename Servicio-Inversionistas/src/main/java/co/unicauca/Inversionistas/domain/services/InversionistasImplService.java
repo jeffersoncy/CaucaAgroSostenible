@@ -150,12 +150,6 @@ List<InversionistaError> errores = validateDomain(invers);
 		if(invers.getCorreo() == null || invers.getCorreo().isBlank()) {
 			errors.add(new InversionistaError(EnumErrorCodes.EMPTY_FIELD, "correo", "El correo del inversionista es obligatorio"));
 		}
-		
-		if (invers.getId() <= 0) {
-			errors.add(new InversionistaError(EnumErrorCodes.INVALID_NUMBER, "id inversionista",
-					"El id del inversionista es obligatorio y mayor a cero"));
-		}
-		
 		return errors;
 	}
 

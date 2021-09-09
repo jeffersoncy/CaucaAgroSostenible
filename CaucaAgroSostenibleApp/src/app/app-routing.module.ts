@@ -26,15 +26,10 @@ const routes: Routes = [
   {path:"listarofer", component:ListaroferComponent},
   {path:"editarofer", component:EditaroferComponent},
   {path:"agregarofer", component:AgregaroferComponent},
-<<<<<<< HEAD
-  {path:"home", component:HomeComponent}
-=======
+  {path:"home", component:HomeComponent},
   {path:"agregarinvers", component:AgregarInversComponent},
   {path:"editarinvers", component:EditarInversComponent},
-  {path:"listarinvers", component:ListarInversComponent},
-  {path:"verproductos", component:VerproductosComponent},
-  {path:"carrito", component:CarritoComponent}
->>>>>>> a2483439c641612530cd1f29c30ddd6321747681
+  {path:"listarinvers", component:ListarInversComponent}
 ];
 
 @NgModule({

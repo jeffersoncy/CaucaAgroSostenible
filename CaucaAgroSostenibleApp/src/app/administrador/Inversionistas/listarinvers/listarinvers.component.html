@@ -8,6 +8,7 @@
             <table class="table table-hover">
                 <thead>
                     <tr class="text-center">
+                        <th>Id</th>
                         <th>Nombre</th>
                         <th>Ruta imagen</th>
                         <th>Descripción</th>
@@ -16,14 +17,15 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor = "let oferta of ofertas" class="text-center">
-                        <td>{{invers.nomInvers}}</td>
-                        <td>{{invers.rutaImg}}</td>
-                        <td>{{invers.descripInvers}}</td>
-                        <td>{{invers.correoInvers}}</td>
+                    <tr *ngFor = "let inversionista of invers" class="text-center">
+                        <td>{{inversionista.id}}</td>
+                        <td>{{inversionista.nombre}}</td>
+                        <td>{{inversionista.rutaimg}}</td>
+                        <td>{{inversionista.descripcion}}</td>
+                        <td>{{inversionista.correo}}</td>
                         <td>
-                            <button (click)="actualizarInvers(invers)" class="btn btn-warning" style="margin-left: 5px;">Editar</button>
-                            <button (click)="eliminarInvers(invers)" class="btn btn-danger" style="margin-left: 5px;">Eliminar</button>
+                            <button (click)="actualizarInvers(inversionista)" class="btn btn-warning" style="margin-left: 5px;">Editar</button>
+                            <button (click)="eliminarInvers(inversionista)" class="btn btn-danger" style="margin-left: 5px;">Eliminar</button>
                         </td>
                     </tr>
                 </tbody>

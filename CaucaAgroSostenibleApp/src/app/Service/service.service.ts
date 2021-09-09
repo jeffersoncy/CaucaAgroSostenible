@@ -95,11 +95,11 @@ export class ServiceService {
   }
 
   editInversionista(invers:Inversionista){
-    return this.http.put<Inversionista>(this.UrlInvers+"/"+invers.idInvers,invers);
+    return this.http.put<Inversionista>(this.UrlInvers+"/"+invers.id,invers);
   }
 
   deleteInversionista(invers:Inversionista){
-    return this.http.delete<Inversionista>(this.UrlInvers+"/"+invers.idInvers);
+    return this.http.delete<Inversionista>(this.UrlInvers+"/"+invers.id);
   }
 
   getInversionistaByID(id:Number){

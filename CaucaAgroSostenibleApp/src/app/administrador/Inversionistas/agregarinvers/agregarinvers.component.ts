@@ -21,6 +21,7 @@ export class AgregarInversComponent implements OnInit {
   guardar(){
     this.service.newInversionista(this.invers).subscribe(data=>{
       if (this.invers.compareTo(data)) {
+        console.log(data);
         this.invers = data;
         alert("Inversionista añadido correctamente");
         this.router.navigate(["listarinvers"]);
