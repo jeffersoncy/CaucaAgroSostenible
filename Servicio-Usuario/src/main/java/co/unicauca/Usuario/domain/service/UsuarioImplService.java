@@ -135,16 +135,16 @@ public class UsuarioImplService implements IUsuarioService{
 	}
 
 	@Override
-	public boolean verificarEmailPassword(Usuario user) {
+	public Usuario verificarEmailPassword(Usuario user) {
 		System.out.println("Invocando al método verificar user");
-		Boolean bandera = false;
+		Usuario usuario = new Usuario();
 		 List<Usuario> lista = (List<Usuario>) usuarioDao.findAll();
 		 for (int i = 0; i < lista.size(); i++) {
 			if(lista.get(i).getNameuser().compareTo(user.getNameuser()) == 0 && lista.get(i).getClave().compareTo(user.getClave()) == 0) {
-				bandera =  true;
+				usuario =  lista.get(i);
 				break;
 			}
 		}
-		return bandera;
+		return usuario;
 	}
 }

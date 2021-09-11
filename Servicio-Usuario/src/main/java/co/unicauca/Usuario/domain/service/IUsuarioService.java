@@ -24,6 +24,6 @@ public interface IUsuarioService {
 	
 	public void deleteById(Long Id) throws ResourceNotFoundException;
 
-	public boolean verificarEmailPassword(Usuario user);
+	public Usuario verificarEmailPassword(Usuario user);
 	
 }

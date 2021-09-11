@@ -4,6 +4,7 @@ import { Producto } from '../Modelo/Producto';
 import { Organizacion } from '../Modelo/Organizacion';
 import { Oferta } from '../Modelo/Oferta';
 import { Inversionista } from '../Modelo/Inversionista';
+import { Usuario } from '../Modelo/Usuario';
 
 
 @Injectable({
@@ -13,11 +14,18 @@ export class ServiceService {
 
   constructor(private http:HttpClient) { }
 
+  UrlUser='http://localhost:8001/login';
   Url='http://localhost:8002/productos';
   UrlOrg='http://localhost:8096/organizaciones';
   UrlOfer='http://localhost:8004/oferta';
   UrlInvers='http://localhost:8006/inversionista';
   
+  //Login
+
+  login(usuario:Usuario){
+    return this.http.post<Usuario>(this.UrlUser+"/",usuario);
+  }
+
   //CRUD Productos
 
   getProductos(){

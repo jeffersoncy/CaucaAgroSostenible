@@ -1,6 +1,7 @@
 package co.unicauca.Usuario.presentation.rest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -12,6 +13,7 @@ import co.unicauca.Usuario.domain.service.IUsuarioService;
 import co.unicauca.Usuario.presentation.rest.exceptions.ResourceNotFoundException;
 import co.unicauca.Usuario.presentation.rest.exceptions.UsuarioDomainException;
 
+@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
 @RestController
 @RequestMapping("login")
 public class LoginController {
@@ -29,10 +31,6 @@ public class LoginController {
 	@RequestMapping(method = RequestMethod.POST, produces = "application/json")
 	@ResponseBody
 	public Usuario login(@RequestBody Usuario user) throws UsuarioDomainException{
-		if(usuarioService.verificarEmailPassword(user)) {
-			return user;
-		} else {
-			return null;	
-		}
+			return usuarioService.verificarEmailPassword(user);
 	}
 }

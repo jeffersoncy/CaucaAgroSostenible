@@ -49,14 +49,31 @@
         
         <!-- Modal body -->
         <div class="modal-body">
-          IMPLEMENTAR FORMULARIO DE VALIDACIÓN
+          <div class="container" style="margin-top: 10px;">
+            <div class="card">
+                <div class="card-body">
+                    <form action="" class="was-validated">
+                        <div class="form-group">
+                            <label for="nameuser">Usuario:</label>
+                            <input type="text" class="form-control" [(ngModel)]="user.nameuser" name="nameuser" ngModel required>
+                            <div class="invalid-feedback">Este campo es obligatorio.</div>
+                            <div class="alert">{{mensajeError("nameuser")}}</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="clave">Contraseña:</label>
+                            <input type="text" class="form-control" [(ngModel)]="user.clave" name="clave" ngModel required>
+                            <div class="invalid-feedback">Este campo es obligatorio.</div>
+                            <div class="alert">{{mensajeError("clave")}}</div>
+                        </div>
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <button (click)="login(user)" class="btn btn-danger" data-dismiss="modal">Iniciar sesión</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
-        
-        <!-- Modal footer -->
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
         </div>
-        
       </div>
     </div>
   </div>
