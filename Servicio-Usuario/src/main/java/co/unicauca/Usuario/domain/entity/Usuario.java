@@ -34,6 +34,18 @@ public class Usuario  implements Serializable{
 	
 	@Column
 	private String Clave;
+	
+	@Column
+	private String Token;
+
+	
+	public String getToken() {
+		return Token;
+	}
+
+	public void setToken(String token) {
+		Token = token;
+	}
 
 	public long getID() {
 		return ID;
