@@ -1,6 +1,7 @@
 package co.unicauca.Usuario.domain.service;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -131,5 +132,19 @@ public class UsuarioImplService implements IUsuarioService{
 					"El id del usuario es obligatorio y mayor a cero"));
 		}
 		return errors;
+	}
+
+	@Override
+	public boolean verificarEmailPassword(Usuario user) {
+		System.out.println("Invocando al método verificar user");
+		Boolean bandera = false;
+		 List<Usuario> lista = (List<Usuario>) usuarioDao.findAll();
+		 for (int i = 0; i < lista.size(); i++) {
+			if(lista.get(i).getNameuser().compareTo(user.getNameuser()) == 0 && lista.get(i).getClave().compareTo(user.getClave()) == 0) {
+				bandera =  true;
+				break;
+			}
+		}
+		return bandera;
 	}
 }

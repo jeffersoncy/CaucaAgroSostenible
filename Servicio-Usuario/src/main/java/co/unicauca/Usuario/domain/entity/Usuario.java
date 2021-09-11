@@ -36,15 +36,15 @@ public class Usuario  implements Serializable{
 	private String Clave;
 	
 	@Column
-	private String Token;
+	private String role;
 
 	
-	public String getToken() {
-		return Token;
+	public String getRole() {
+		return role;
 	}
 
-	public void setToken(String token) {
-		Token = token;
+	public void setRole(String role) {
+		this.role = role;
 	}
 
 	public long getID() {

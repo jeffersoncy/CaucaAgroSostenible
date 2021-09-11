@@ -23,5 +23,7 @@ public interface IUsuarioService {
 	public Usuario update(Long id, Usuario usuario) throws UsuarioDomainException, ResourceNotFoundException;
 	
 	public void deleteById(Long Id) throws ResourceNotFoundException;
+
+	public boolean verificarEmailPassword(Usuario user);
 	
 }
