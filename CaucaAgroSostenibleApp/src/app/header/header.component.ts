@@ -11,6 +11,7 @@ import { ServiceService } from 'src/app/Service/service.service';
 })
 export class HeaderComponent implements OnInit {
 
+  
   user:Usuario = new Usuario;
   result:Usuario = new Usuario;
   errores?:Error[];
@@ -18,6 +19,8 @@ export class HeaderComponent implements OnInit {
   constructor(private service:ServiceService, private router:Router) { }
 
   ngOnInit(): void {
+    this.user.role = localStorage.getItem("role");
+    this.user.nameuser = localStorage.getItem("nameuser");
   }
 
   login(parUser:Usuario){
@@ -28,7 +31,7 @@ export class HeaderComponent implements OnInit {
           localStorage.setItem("nameuser",this.user.nameuser);
           localStorage.setItem("role",this.user.nameuser);
           if(this.user.role == "ADMIN"){
-            this.router.navigate(["listarorg"]);
+            this.router.navigate(["listar"]);
           } else {
             this.router.navigate(["home"]);
           }
@@ -41,6 +44,11 @@ export class HeaderComponent implements OnInit {
         }
       }
     );
+  }
+
+  logout(){
+    localStorage.setItem("role","null");
+    window.location.reload();
   }
 
   atras(){

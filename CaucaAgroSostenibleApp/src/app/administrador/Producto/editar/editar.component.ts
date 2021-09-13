@@ -17,6 +17,8 @@ export class EditarComponent implements OnInit {
   constructor(private service: ServiceService, private router: Router) { }
 
   ngOnInit(): void {
+    let role = localStorage.getItem("role");
+
     this.obtenerDatos();
   }
 

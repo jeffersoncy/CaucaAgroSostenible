@@ -11,7 +11,12 @@ export class AppComponent implements OnInit{
 
   constructor(private router:Router){}
   ngOnInit(): void {
-    this.Home();
+    let user = localStorage.getItem("role");
+    if(user == "ADMIN") {
+      this.AdminProd();
+    } else {
+      this.Home();
+    }     
   }
 
   Home(){
