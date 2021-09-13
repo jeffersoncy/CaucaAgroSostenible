@@ -3,7 +3,7 @@
 <div class="jumbotron text-center" style="margin-bottom:0">
     <h1>#CaucaAgroSostenible</h1>
     <p>Resize this responsive page to see the effect!</p> 
-    <div *ngIf="user.role == 'ADMIN' ">
+    <div *ngIf="user.role == 'ADMIN'">
       <P>Bienvenido {{user.nameuser}}</P>
     </div>
     <div *ngIf="user.role == 'user' ">
@@ -11,7 +11,7 @@
     </div>
 </div>
 
-    <!--    ---------------            -->
+    <!--    ---   Barra de navegación   --- Menú      -->
     <div *ngIf="user.role == 'ADMIN'; else cliente">
       <!-- Barra de navegación -->
 <nav class="navbar navbar-expand-md bg-dark navbar-dark " style="margin-bottom:30px">
@@ -58,16 +58,16 @@
         <a class="nav-link" routerLink="/home" routerLinkActive="active">CANASTA AGRICOLA</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/" routerLinkActive="active">EMPRENDIMIENTO Y ASOCIACIONES</a>
+        <a class="nav-link" routerLink="/vistaorganizaciones" routerLinkActive="active">EMPRENDIMIENTO Y ASOCIACIONES</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/" routerLinkActive="active">AGRO OFERTAS</a>
+        <a class="nav-link" routerLink="/vistaofertas" routerLinkActive="active">AGRO OFERTAS</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/" routerLinkActive="active">INVERSIONISTAS</a>
+        <a class="nav-link" routerLink="/vistainversionistas" routerLinkActive="active">INVERSIONISTAS</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/" routerLinkActive="active"href="#">EVENTOS</a>
+        <a class="nav-link" routerLink="/vistaeventos" routerLinkActive="active"href="#">EVENTOS</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" data-toggle="modal" href="#myModal"> LOGIN </a>

@@ -29,16 +29,14 @@ export class HeaderComponent implements OnInit {
         this.user = data;
         if(this.user.role!=null){
           localStorage.setItem("nameuser",this.user.nameuser);
-          localStorage.setItem("role",this.user.nameuser);
+          localStorage.setItem("role",this.user.role);
           if(this.user.role == "ADMIN"){
             this.router.navigate(["listar"]);
           } else {
             this.router.navigate(["home"]);
           }
-          console.log(this.user);
         }
         else{
-          console.log(this.user);
           alert("Usuario no encontrado");
           this.router.navigate(["home"]);
         }

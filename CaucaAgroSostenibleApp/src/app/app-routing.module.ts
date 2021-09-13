@@ -14,6 +14,10 @@ import { EditarInversComponent } from './administrador/Inversionistas/editarinve
 import { ListarInversComponent } from './administrador/Inversionistas/listarinvers/listarinvers.component';
 import { AgregaroferComponent } from './administrador/Ofertas/agregarofer/agregarofer.component';
 import { HomeComponent } from './cliente/home/home.component';
+import { OrganizacionesComponent } from './cliente/organizaciones/organizaciones.component';
+import { OfertasComponent } from './cliente/ofertas/ofertas.component';
+import { InversionistasComponent } from './cliente/inversionistas/inversionistas.component';
+import { EventosComponent } from './cliente/eventos/eventos.component';
 
 const routes: Routes = [
   {path:"listar", component:ListarComponent},
@@ -29,7 +33,11 @@ const routes: Routes = [
   {path:"home", component:HomeComponent},
   {path:"agregarinvers", component:AgregarInversComponent},
   {path:"editarinvers", component:EditarInversComponent},
-  {path:"listarinvers", component:ListarInversComponent}
+  {path:"listarinvers", component:ListarInversComponent},
+  {path:"vistaorganizaciones", component:OrganizacionesComponent},
+  {path:"vistaofertas", component:OfertasComponent},
+  {path:"vistainversionistas", component:InversionistasComponent},
+  {path:"vistaeventos", component:EventosComponent}
 ];
 
 @NgModule({

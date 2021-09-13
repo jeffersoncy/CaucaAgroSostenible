@@ -19,10 +19,30 @@ export class AppComponent implements OnInit{
     }     
   }
 
+  // vistas cliente 
+
   Home(){
     this.router.navigate(["home"]);
   }
 
+  organizaciones(){
+    this.router.navigate(["vistaorganizaciones"]);
+  }
+
+  ofertas(){
+    this.router.navigate(["vistaofertas"]);
+  }
+
+  inversionistas(){
+    this.router.navigate(["vistainversionistas"]);
+  }
+
+  eventos(){
+    this.router.navigate(["vistaeventos"]);
+  }
+
+  //vistas administrador 
+  
   AdminProd(){
     this.router.navigate(["listar"]);
   }

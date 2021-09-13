@@ -22,6 +22,10 @@ import { HomeComponent } from './cliente/home/home.component';
 import { AgregarInversComponent } from './administrador/Inversionistas/agregarinvers/agregarinvers.component';
 import { EditarInversComponent } from './administrador/Inversionistas/editarinvers/editarinvers.component';
 import { ListarInversComponent } from './administrador/Inversionistas/listarinvers/listarinvers.component';
+import { OrganizacionesComponent } from './cliente/organizaciones/organizaciones.component';
+import { OfertasComponent } from './cliente/ofertas/ofertas.component';
+import { InversionistasComponent } from './cliente/inversionistas/inversionistas.component';
+import { EventosComponent } from './cliente/eventos/eventos.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +45,11 @@ import { ListarInversComponent } from './administrador/Inversionistas/listarinve
     HomeComponent,
     AgregarInversComponent,
     EditarInversComponent,
-    ListarInversComponent
+    ListarInversComponent,
+    OrganizacionesComponent,
+    OfertasComponent,
+    InversionistasComponent,
+    EventosComponent
   ],
   imports: [
     BrowserModule,
