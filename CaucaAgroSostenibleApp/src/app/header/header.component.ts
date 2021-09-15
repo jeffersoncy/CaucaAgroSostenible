@@ -13,6 +13,7 @@ export class HeaderComponent implements OnInit {
 
   
   user:Usuario = new Usuario;
+  parUsuario:Usuario = new Usuario;
   result:Usuario = new Usuario;
   errores?:Error[];
 
@@ -24,29 +25,35 @@ export class HeaderComponent implements OnInit {
   }
 
   login(parUser:Usuario){
+    console.log(parUser.clave);
     this.service.login(parUser).subscribe(data=>
       {
+        if(data.role!=null){
         this.user = data;
-        if(this.user.role!=null){
           localStorage.setItem("nameuser",this.user.nameuser);
           localStorage.setItem("role",this.user.role);
           if(this.user.role == "ADMIN"){
             this.router.navigate(["listar"]);
           } else {
+            window.location.reload();
             this.router.navigate(["home"]);
           }
         }
         else{
           alert("Usuario no encontrado");
-          this.router.navigate(["home"]);
+          //this.router.navigate(["home"]);
         }
       }
-    );
+    )
   }
 
   logout(){
     localStorage.setItem("role","null");
     window.location.reload();
+  }
+
+  registrar(){
+    alert("falta implementar");
   }
 
   atras(){

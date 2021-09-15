@@ -3,15 +3,14 @@
 <div class="jumbotron text-center" style="margin-bottom:0">
     <h1>#CaucaAgroSostenible</h1>
     <p>Resize this responsive page to see the effect!</p> 
-    <div *ngIf="user.role == 'ADMIN'">
+    <div *ngIf="user.role == 'ADMIN' or user.role == 'user'">
       <P>Bienvenido {{user.nameuser}}</P>
     </div>
     <div *ngIf="user.role == 'user' ">
       <P>Bienvenido {{user.nameuser}}</P>
     </div>
 </div>
-
-    <!--    ---   Barra de navegación   --- Menú      -->
+    <!--    ---   Barra de navegación Administrador     -->
     <div *ngIf="user.role == 'ADMIN'; else cliente">
       <!-- Barra de navegación -->
 <nav class="navbar navbar-expand-md bg-dark navbar-dark " style="margin-bottom:30px">
@@ -69,9 +68,16 @@
       <li class="nav-item">
         <a class="nav-link" routerLink="/vistaeventos" routerLinkActive="active"href="#">EVENTOS</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="modal" href="#myModal"> LOGIN </a>
-      </li>
+      <div *ngIf="user.role == 'user'; else cliente2">
+        <li class="nav-item">
+          <a class="nav-link" (click)="logout()" routerLink="/" routerLinkActive="active"> LOGOUT </a>
+        </li>
+      </div>
+      <ng-template #cliente2>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="modal" href="#myModal"> LOGIN </a>
+        </li>
+      </ng-template>
     </ul>
   </div>
 </nav>
@@ -103,13 +109,14 @@
                         </div>
                         <div class="form-group">
                             <label for="clave">Contraseña:</label>
-                            <input type="text" class="form-control" [(ngModel)]="user.clave" name="clave" ngModel required>
+                            <input type="password" class="form-control" [(ngModel)]="user.clave" name="clave" ngModel required>
                             <div class="invalid-feedback">Este campo es obligatorio.</div>
                             <div class="alert">{{mensajeError("clave")}}</div>
                         </div>
                         <!-- Modal footer -->
-                        <div class="modal-footer">
-                            <button (click)="login(user)" class="btn btn-danger" data-dismiss="modal">Iniciar sesión</button>
+                        <div class="modal-footer justify-content-between">
+                            <button (click)="registrar()" class="btn btn-outline-success" data-dismiss="modal">Registrate</button>
+                            <button (click)="login(user)" class="btn btn-success" data-dismiss="modal">Iniciar sesión</button>
                         </div>
                     </form>
                 </div>
