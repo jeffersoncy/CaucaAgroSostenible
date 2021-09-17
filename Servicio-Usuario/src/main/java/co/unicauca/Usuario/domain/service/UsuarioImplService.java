@@ -69,7 +69,7 @@ public class UsuarioImplService implements IUsuarioService{
 		if (!errors.isEmpty()) {
 			throw new UsuarioDomainException(errors);
 		}
-		
+		usuario.setRole("user");
 		return usuarioDao.save(usuario); 
 	}
 	
@@ -121,15 +121,14 @@ public class UsuarioImplService implements IUsuarioService{
 		if(user.getNombre() == null || user.getNombre().isBlank()) {
 			errors.add(new UsuarioError(EnumErrorCodes.EMPTY_FIELD, "name", "El nombre del usuario es obligatorio"));
 		}
+		if(user.getApellidos() == null || user.getApellidos().isBlank()) {
+			errors.add(new UsuarioError(EnumErrorCodes.EMPTY_FIELD, "apellidos", "los apellidos del usuario son obligatorio"));
+		}
 		if(user.getNameuser() == null || user.getNameuser().isBlank()) {
 			errors.add(new UsuarioError(EnumErrorCodes.EMPTY_FIELD, "nameUser", "El nickname del usuario es obligatorio"));
 		}
 		if(user.getClave() == null || user.getClave().isBlank()) {
 			errors.add(new UsuarioError(EnumErrorCodes.EMPTY_FIELD, "clave", "La clave del usuario es obligatoria"));
-		}
-		if (user.getID() <= 0) {
-			errors.add(new UsuarioError(EnumErrorCodes.INVALID_NUMBER, "id usuario",
-					"El id del usuario es obligatorio y mayor a cero"));
 		}
 		return errors;
 	}

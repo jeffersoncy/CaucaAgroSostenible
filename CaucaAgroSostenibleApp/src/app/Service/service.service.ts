@@ -13,17 +13,23 @@ import { Usuario } from '../Modelo/Usuario';
 export class ServiceService {
 
   constructor(private http:HttpClient) { }
-
-  UrlUser='http://localhost:8001/login';
+  UrlUser='http://localhost:8001/usuarios';
+  UrlLogin='http://localhost:8001/login';
   Url='http://localhost:8002/productos';
   UrlOrg='http://localhost:8096/organizaciones';
   UrlOfer='http://localhost:8004/oferta';
   UrlInvers='http://localhost:8006/inversionista';
   
+  //Registro de usuarios
+
+  newUsuario(usuario:Usuario){
+    return this.http.post<Usuario>(this.UrlUser,usuario);
+  }
+
   //Login
 
   login(usuario:Usuario){
-    return this.http.post<Usuario>(this.UrlUser+"/",usuario);
+    return this.http.post<Usuario>(this.UrlLogin+"/",usuario);
   }
 
   //CRUD Productos

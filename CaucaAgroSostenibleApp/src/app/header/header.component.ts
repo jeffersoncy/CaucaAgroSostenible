@@ -40,7 +40,7 @@ export class HeaderComponent implements OnInit {
           }
         }
         else{
-          alert("Usuario no encontrado");
+          alert("Credenciales incorrectas");
           //this.router.navigate(["home"]);
         }
       }
@@ -53,7 +53,7 @@ export class HeaderComponent implements OnInit {
   }
 
   registrar(){
-    alert("falta implementar");
+    this.router.navigate(["vistaregistros"]);
   }
 
   atras(){

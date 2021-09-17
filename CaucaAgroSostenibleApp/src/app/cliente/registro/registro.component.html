@@ -1,0 +1,50 @@
+<div class="container col-md-6" style="margin-top: 10px;">
+    <div class="card">
+        <div class="card header">
+            <h3>Formulario de registro</h3>
+        </div>
+        <div class="card-body">
+            <form action="" class="was-validated">
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" class="form-control" [(ngModel)]="user.nombre" name="nombre" ngModel required>
+                    <div class="valid-feedback">Valido.</div>
+                    <div class="invalid-feedback">Este campo es obligatorio.</div>
+                    <div class="alert">{{mensajeError("nombre")}}</div>
+                </div>
+                <div class="form-group">
+                    <label for="apellidos">Apellido</label>
+                    <input type="text" class="form-control" [(ngModel)]="user.apellidos" name="apellidos" ngModel required>
+                    <div class="valid-feedback">Valido.</div>
+                    <div class="invalid-feedback">Este campo es obligatorio.</div>
+                    <div class="alert">{{mensajeError("apellidos")}}</div>
+                </div>
+                <div class="form-group">
+                    <label for="nameuser">Nickname</label>
+                    <input type="text" class="form-control" [(ngModel)]="user.nameuser" name="nameuser" ngModel required>
+                    <div class="valid-feedback">Valido.</div>
+                    <div class="invalid-feedback">Este campo es obligatorio.</div>
+                    <div class="alert">{{mensajeError("nameuser")}}</div>
+                </div>
+                <div class="form-group">
+                    <label for="clave">Clave</label>
+                    <input type="password" class="form-control" [(ngModel)]="user.clave" name="clave" ngModel required>
+                    <div class="valid-feedback">Valido.</div>
+                    <div class="invalid-feedback">Este campo es obligatorio.</div>
+                    <div class="alert">{{mensajeError("clave")}}</div>
+                </div>
+                <!--<div class="form-group">
+                    <label for="userClaveConfirm">Confirmar clave</label>
+                    <input type="password" class="form-control" name="userClaveConfirm" required>
+                    <div class="valid-feedback">Valido.</div>
+                    <div class="invalid-feedback">Este campo es obligatorio.</div>
+                </div>-->
+                <div class="modal-footer justify-content-between">
+                    <button (click)="atras()" class="btn btn-outline-danger" style="margin-left: 10px;">Cancelar</button>
+                    <button (click)="guardar()" class="btn btn-success">Registrarse</button>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+</div>

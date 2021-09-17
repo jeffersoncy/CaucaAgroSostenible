@@ -18,6 +18,7 @@ import { OrganizacionesComponent } from './cliente/organizaciones/organizaciones
 import { OfertasComponent } from './cliente/ofertas/ofertas.component';
 import { InversionistasComponent } from './cliente/inversionistas/inversionistas.component';
 import { EventosComponent } from './cliente/eventos/eventos.component';
+import { RegistroComponent } from './cliente/registro/registro.component';
 
 const routes: Routes = [
   {path:"listar", component:ListarComponent},
@@ -37,7 +38,8 @@ const routes: Routes = [
   {path:"vistaorganizaciones", component:OrganizacionesComponent},
   {path:"vistaofertas", component:OfertasComponent},
   {path:"vistainversionistas", component:InversionistasComponent},
-  {path:"vistaeventos", component:EventosComponent}
+  {path:"vistaeventos", component:EventosComponent},
+  {path:"vistaregistros", component:RegistroComponent}
 ];
 
 @NgModule({

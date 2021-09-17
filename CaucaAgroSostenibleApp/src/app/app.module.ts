@@ -26,6 +26,7 @@ import { OrganizacionesComponent } from './cliente/organizaciones/organizaciones
 import { OfertasComponent } from './cliente/ofertas/ofertas.component';
 import { InversionistasComponent } from './cliente/inversionistas/inversionistas.component';
 import { EventosComponent } from './cliente/eventos/eventos.component';
+import { RegistroComponent } from './cliente/registro/registro.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { EventosComponent } from './cliente/eventos/eventos.component';
     OrganizacionesComponent,
     OfertasComponent,
     InversionistasComponent,
-    EventosComponent
+    EventosComponent,
+    RegistroComponent
   ],
   imports: [
     BrowserModule,

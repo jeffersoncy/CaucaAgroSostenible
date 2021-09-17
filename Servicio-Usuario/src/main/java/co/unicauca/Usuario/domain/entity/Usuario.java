@@ -30,6 +30,9 @@ public class Usuario  implements Serializable{
 	private String Nombre;
 	
 	@Column
+	private String Apellidos;
+	
+	@Column
 	private String Nameuser;
 	
 	@Column
@@ -39,6 +42,14 @@ public class Usuario  implements Serializable{
 	private String role;
 
 	
+	public String getApellidos() {
+		return Apellidos;
+	}
+
+	public void setApellidos(String apellidos) {
+		Apellidos = apellidos;
+	}
+
 	public String getRole() {
 		return role;
 	}
