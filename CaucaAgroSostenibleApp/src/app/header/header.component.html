@@ -1,8 +1,8 @@
 
 <!-- Banner -->
 <div class="jumbotron text-center" style="margin-bottom:0">
-    <h1>#CaucaAgroSostenible</h1>
-    <p>Resize this responsive page to see the effect!</p> 
+		<img src="../../assets/BANN.jpg" width="100%" height="110px"/>
+    <img src="../../assets/logo.png" class="eye">
     <div *ngIf="user.role == 'ADMIN' or user.role == 'user'">
       <P>Bienvenido {{user.nameuser}}</P>
     </div>
@@ -13,6 +13,7 @@
     <!--    ---   Barra de navegación Administrador     -->
     <div *ngIf="user.role == 'ADMIN'; else cliente">
       <!-- Barra de navegación -->
+      
 <nav class="navbar navbar-expand-md bg-dark navbar-dark " style="margin-bottom:30px">
   <!-- Toggler/collapsibe Button -->
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
