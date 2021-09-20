@@ -38,7 +38,7 @@ public class Organizacion implements Serializable{
 	private String ubicacion;
 	
 	@Column
-	private int telefono;
+	private long telefono;
 
 	public long getIdOrganizacion() {
 		return id;
@@ -64,11 +64,11 @@ public class Organizacion implements Serializable{
 		ubicacion = ubic;
 	}
 
-	public int getTelefono() {
+	public long getTelefono() {
 		return telefono;
 	}
 
-	public void setTelefono(int telefono) {
+	public void setTelefono(long telefono) {
 		this.telefono = telefono;
 	}
 

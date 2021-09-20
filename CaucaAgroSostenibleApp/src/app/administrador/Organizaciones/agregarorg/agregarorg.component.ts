@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Organizacion } from 'src/app/Modelo/Organizacion';
 import { Error } from 'src/app/Modelo/Error';
 import { ServiceService } from 'src/app/Service/service.service';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-agregarorg',
@@ -11,12 +12,15 @@ import { ServiceService } from 'src/app/Service/service.service';
 })
 export class AgregarorgComponent implements OnInit {
 
+  public previsualizacion:string;
+  public ruta:string;
   organizacion:Organizacion = new Organizacion;
+  public archivo: any = []
   errores?:Error[];
 
-  constructor(private service:ServiceService, private router:Router) { }
+  constructor(private service:ServiceService, private router:Router, private sanitizer: DomSanitizer) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void { 
   }
 
   guardar(){
@@ -30,6 +34,16 @@ export class AgregarorgComponent implements OnInit {
         this.router.navigate(["listarorg"]);
       }
     });
+  }
+
+  capturarFile(event):any{
+    const archivoCapturado = event.target.files[0]
+    this.extraerBase64(archivoCapturado).then((imagen:any) => {
+      this.previsualizacion = imagen.base;
+    })
+    this.archivo.push(archivoCapturado);
+    this.organizacion.rutaimagen = this.organizacion.rutaimagen.slice(12);
+    console.log(this.organizacion.rutaimagen);
   }
 
   atras(){
@@ -48,4 +62,25 @@ export class AgregarorgComponent implements OnInit {
     }
     return "";
   }
+
+  extraerBase64 = async ($event: any) => new Promise((resolve, reject) => {
+    try {
+      const unsafeImg = window.URL.createObjectURL($event);
+      const image = this.sanitizer.bypassSecurityTrustUrl(unsafeImg);
+      const reader = new FileReader();
+      reader.readAsDataURL($event);
+      reader.onload = () => {
+        resolve ({
+          base:reader.result
+        });
+      };
+      reader.onerror = error => {
+        resolve({
+          base: null
+        });
+      };
+    } catch (e) {
+      return null;
+    }
+  })
 }
