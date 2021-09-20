@@ -6,7 +6,7 @@
         <div class="col-sm-10" >
             <div class="fakeimg">insertar imagen relacionada con el filtro</div>
             <div class="gallery" *ngFor="let producto of productos.slice(0, productos.length)" style="margin-top: 20px;">
-                <img src="../../../../assets/{{producto.rutaImagen}}" alt="Prod2" width="600" height="400">
+                <img src="../../../../assets/Productos/{{producto.rutaImagen}}" alt="Prod2" width="600" height="400">
                 <div class="desc ">{{ producto.nomProducto}} </div>
                 <div class="desc text-success">${{ producto.precio}}</div>
                 <div class="desc text-primary">Cantidad: {{ producto.cantidad}}</div>
