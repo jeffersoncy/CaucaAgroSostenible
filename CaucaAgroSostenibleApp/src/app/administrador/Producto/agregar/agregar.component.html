@@ -18,8 +18,9 @@
                 </div> 
                 <div class="form-group">
                     <label for="rutaImagen">Subir Imagen:</label>
-                    <input (change)="capturarFile($event)" type="file" class="form-control-file border" [(ngModel)]="producto.rutaImagen" name="rutaImagen" ngModel required>
+                    <input (change)="capturarFile($event)" type="file" class="form-control-file border" [(ngModel)]="producto.rutaImagen" name="rutaImagen1" id="img1" ngModel required>
                     <div class="valid-feedback">Valido.</div>
+
                     <div class="invalid-feedback">Este campo es obligatorio.</div>
                     <div class="alert">{{mensajeError("rutaImagen")}}</div>
                 </div>

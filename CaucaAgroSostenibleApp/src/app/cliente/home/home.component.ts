@@ -15,13 +15,21 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.listarProductos();
+    
   }
 
+  //var cadena = data.rutaImagen.slice(12);
+  //console.log(cadena);
   listarProductos(){
     this.service.getProductos()
     .subscribe(data=>{
       this.productos=data;
+      
     })
+    for (let index = 0; index < this.productos.length; index++) {
+      this.productos[index].rutaImagen = this.productos[index].rutaImagen.slice(12);
+      
+    }
   }
 
 }

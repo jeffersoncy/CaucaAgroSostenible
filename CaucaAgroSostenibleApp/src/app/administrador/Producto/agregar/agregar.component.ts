@@ -14,6 +14,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class AgregarComponent implements OnInit {
 
   public previsualizacion:string;
+  public ruta:string;
   producto:Producto = new Producto;
   public archivo: any = []
   errores?:Error[];
@@ -26,12 +27,9 @@ export class AgregarComponent implements OnInit {
   }
 
   guardar(){
-    const formularioDeDatos = new FormData();
     this.service.newProducto(this.producto).subscribe(data=>
       {
       if (this.producto.compareTo(data)) {
-        //var cadena = formularioDeDatos.rutaImagen.slice(12);
-        //console.log(cadena);
         this.producto = data;
         alert("Producto añadido correctamente");
         this.router.navigate(["listar"]);
@@ -40,6 +38,11 @@ export class AgregarComponent implements OnInit {
         this.router.navigate(["listar"]);
       }
     });
+    console.log(this.producto.rutaImagen);
+    /*this.service.editProducto(this.producto).subscribe(datos=>
+      {
+
+      });*/
   }
  
   atras(){
@@ -50,11 +53,10 @@ export class AgregarComponent implements OnInit {
     const archivoCapturado = event.target.files[0]
     this.extraerBase64(archivoCapturado).then((imagen:any) => {
       this.previsualizacion = imagen.base;
-      console.log(imagen);
     })
     this.archivo.push(archivoCapturado);
-    console.log(event.target.files[0]);
-    //data.rutaImagen = archivoCapturado;
+    this.producto.rutaImagen = this.producto.rutaImagen.slice(12);
+    console.log(this.producto.rutaImagen);
   }
 
   mensajeError(formato:String): String{
