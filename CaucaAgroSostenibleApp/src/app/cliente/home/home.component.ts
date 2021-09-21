@@ -26,10 +26,6 @@ export class HomeComponent implements OnInit {
       this.productos=data;
       
     })
-    for (let index = 0; index < this.productos.length; index++) {
-      this.productos[index].rutaImagen = this.productos[index].rutaImagen.slice(12);
-      
-    }
   }
 
 }
