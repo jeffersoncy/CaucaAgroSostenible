@@ -27,6 +27,8 @@ import { OfertasComponent } from './cliente/ofertas/ofertas.component';
 import { InversionistasComponent } from './cliente/inversionistas/inversionistas.component';
 import { EventosComponent } from './cliente/eventos/eventos.component';
 import { RegistroComponent } from './cliente/registro/registro.component';
+import { CarritoComponent } from './cliente/carrito/carrito.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -51,13 +53,15 @@ import { RegistroComponent } from './cliente/registro/registro.component';
     OfertasComponent,
     InversionistasComponent,
     EventosComponent,
-    RegistroComponent
+    RegistroComponent,
+    CarritoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
   providers: [ServiceService],
   bootstrap: [AppComponent]

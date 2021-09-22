@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Producto } from 'src/app/Modelo/Producto';
 import { ServiceService } from 'src/app/Service/service.service';
 
@@ -11,7 +12,8 @@ import { ServiceService } from 'src/app/Service/service.service';
 export class HomeComponent implements OnInit {
   
   productos!:Producto[];
-  constructor(private service:ServiceService, private router:Router) { }
+  productoAux: Producto;
+  constructor(private service:ServiceService, private router:Router, public modal:NgbModal) { }
 
   ngOnInit(): void {
     this.listarProductos();
@@ -26,6 +28,11 @@ export class HomeComponent implements OnInit {
       this.productos=data;
       
     })
+  }
+
+  openModalAgregarProducto(contenido, productos:Producto){
+    this.productoAux = productos;
+    this.modal.open(contenido,{size:'m', centered:true});
   }
 
 }

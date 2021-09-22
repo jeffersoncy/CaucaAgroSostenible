@@ -1,8 +1,9 @@
 
 <!-- Banner -->
-<div class="jumbotron text-center" style="margin-bottom:0">
-		<img src="../../assets/BANN.jpg" width="100%" height="110px"/>
+<div class="text-center" style="margin-bottom:0">
+		<img src="../../assets/BANN.jpg" width="100%" height="110px"/> <app-carrito></app-carrito>
     <img src="../../assets/logo.png" class="eye">
+    
     <div *ngIf="user.role == 'ADMIN' or user.role == 'user'">
       <P>Bienvenido {{user.nameuser}}</P>
     </div>

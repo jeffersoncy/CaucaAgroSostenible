@@ -10,8 +10,32 @@
                 <div class="desc ">{{ producto.nomProducto}} </div>
                 <div class="desc text-success">${{ producto.precio}}</div>
                 <div class="desc text-primary">Cantidad: {{ producto.cantidad}}</div>
-                <div class="desc"><button class="btn btn-success " style="margin-left: 5px;">Add Carrito</button></div>                
+                <div class="desc"><button (click) ="openModalAgregarProducto(modalAgregarProducto, producto)" class="btn btn-success " style="margin-left: 5px;">Add Carrito</button></div>                
             </div>
         </div>
     </div>
 </div>
+
+<ng-template #modalAgregarProducto let-modal>
+    <div class="modal-header">
+        <h3>Producto</h3>
+        <!--<button class="close" aria-label="close" type="button" (click)="modal.dismiss()">
+            <span  aria-hidden="true">&times;</span>
+        </button>-->
+    </div>
+    <div class="modal-body">
+        <div>
+            <h3>{{productoAux.nombre}}</h3>
+            <!--{{platoAux.description}}-->
+        </div>
+    </div>
+    <div class="modal-footer">
+        <div class="quantity">
+            <!--<button class="disminuir" (click)="disminuirInput(inputCantidad)">-</button>
+            <input #inputCantidad type="number" class="cantidad" value="1" min="1" max="20" (change)="actualizarPrecio(inputCantidad)">     
+            <button class="aumentar" (click)="aumentarInput(inputCantidad)">+</button>-->
+        </div>
+        <!--<button type="button" class="btn btn-danger" (click)="agregarItem(modal.close())">Agregar a mi pedido ({{platoAux.price * cantidad}})</button>
+        -->
+    </div>
+</ng-template>

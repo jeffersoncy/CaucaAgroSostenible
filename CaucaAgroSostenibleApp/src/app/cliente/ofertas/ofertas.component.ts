@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Oferta } from 'src/app/Modelo/Oferta';
+import { Producto } from 'src/app/Modelo/Producto';
 import { ServiceService } from 'src/app/Service/service.service';
 
 @Component({
@@ -11,7 +12,6 @@ import { ServiceService } from 'src/app/Service/service.service';
 export class OfertasComponent implements OnInit {
 
   ofertas!:Oferta[];
-
   constructor(private service:ServiceService, private router:Router) { }
 
   ngOnInit(): void {

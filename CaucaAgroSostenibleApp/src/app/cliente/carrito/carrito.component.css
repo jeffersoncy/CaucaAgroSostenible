@@ -1,0 +1,30 @@
+.miPedido{
+    margin-left: 80%;
+    margin-top: 10px;
+    border-radius: 20px;
+    height: 35px;
+    width: 120px;
+    background: #FF0000;
+    color: white;
+}
+
+.circle{
+    width: 25px;
+    height: 25px;
+    background-color: #ffaa00;
+    border-radius: 100%;
+    position: absolute;
+    margin-left: 995px;
+}
+
+.circle:disabled,
+.circle[disabled]{
+    background: transparent;
+    color: transparent;
+}
+
+.miPedido:disabled,
+.miPedido[disabled]{
+    background: gray;
+    color: rgba(53, 44, 44, 0.767);
+}

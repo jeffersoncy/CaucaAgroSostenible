@@ -11,4 +11,25 @@ export class Producto{
         }
         return false;
     }
+    getid_producto():number{
+        return this.id
+    }
+
+    getprecio_producto():number{
+        return this.precio
+    }
+
+    getcantidad_producto():number{
+        return this.cantidad
+    }
+
+    setcantidad_producto(cantidad:number){
+        this.cantidad=cantidad;
+    }
+
+    setprecio_item(cantidad:number){
+        this.precio=cantidad;
+    }
+
+
 }

@@ -1,0 +1,30 @@
+<div class="contenedorMiPedido">
+    <div class="circle" id="circle">{{getNumeroItems()}}</div>
+    <button class="miPedido" id="miPedido" (click)="modal.open(modalCarrito)">ver mi pedido</button>
+</div>
+<ng-template #modalCarrito let-modal>
+    <div class="modal-header">
+        <h3>Mi Pedido</h3>
+        <button class="close" aria-label="close" type="button" (click)="modal.dismiss()">
+            <span  aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div>
+            <table class="table table-hover">
+                <tbody>
+                    <!--<tr *ngFor = "let item of pedido.getItems()" class="text-center">
+                        <td>{{item.getcantidad_producto()}}X</td>
+                        <td><strong>{{item.getnombre_product()}}</strong></td>         
+                        <td>${{item.getprecio_item()}}</td>
+                    </tr>-->
+                </tbody>
+            </table>
+            <div style="text-align: center;"><strong>Total ${{pedido.getValorPedido()}}</strong>  </div>    
+        </div>
+    </div>
+    <div class="modal-footer">
+        <!--<button type="button" class="btn btn-danger" (click)="openModalTelDir(modalDirTel)">continuar</button>-->
+    </div>
+</ng-template>
+
