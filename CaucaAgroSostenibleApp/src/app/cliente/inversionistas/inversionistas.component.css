@@ -1,5 +1,8 @@
 .bodyInvers {
   background-image: url('../../../assets/Inversionistas/fondo.jpeg');
+  background-size: cover;
+  width: 100%;
+  height: 100%;
   border: rgb(26, 37, 18) 2px solid;
 }
 
