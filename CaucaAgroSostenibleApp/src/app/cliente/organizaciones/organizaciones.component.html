@@ -1,15 +1,16 @@
-
-<div class="container" style="margin-top:30px">
-    <div class="row">
-
-        <div class="col-sm-10">
-            <div class="gallery" *ngFor="let organizacion of organizaciones.slice(0, organizaciones.length)"
-                style="margin-top: 20px;">
-                <img src="../../../../assets/Organizaciones/{{organizacion.rutaimagen}}" alt="Org2" width="600"
-                    height="400">
-                <div class="desc ">{{ organizacion.nombre}} </div>
-                <div class="desc ">{{ organizacion.ubicacion}}</div>
-                <div class="desc ">Telefono: {{ organizacion.telefono}}</div>
+<div class="bodyOrg">
+    <h1 class="tituloOrg"> Emprendedores de nuestro departamento</h1>
+    <div class="container" style="margin-top:30px">
+        <div class="row">
+            <div class="col-sm-30">
+                <div class="gallery3" *ngFor="let organizacion of organizaciones.slice(0, organizaciones.length)"
+                    style="margin-top: 20px;">
+                    <img src="../../../../assets/Organizaciones/{{organizacion.rutaimagen}}" alt="Org2" width="600"
+                        height="400">
+                    <div class="nomOrg">{{ organizacion.nombre}} </div>
+                    <div class="desc ">{{ organizacion.ubicacion}}</div>
+                    <div class="desc ">Telefono: {{ organizacion.telefono}}</div>
+                </div>
             </div>
         </div>
     </div>
