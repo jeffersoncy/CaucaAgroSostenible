@@ -4,6 +4,12 @@
   width: 100%;
   height: 100%;
   border: rgb(26, 37, 18) 2px solid;
+
+}
+
+.nose{
+  margin-left: auto;
+  margin-left: auto;
 }
 
 div.gallery3 {
@@ -12,8 +18,8 @@ div.gallery3 {
   background-color: rgba(33, 36, 32, 0.7);
   border-radius: 10px;
   float: left;
-  width:220px;
-  height: 300px;
+  width:250px;
+  height: 320px;
   color: white;
 }
 
@@ -43,8 +49,8 @@ div.gallery3:hover {
   text-align: center;
  }
 div.gallery3 img {
-  margin-top: 10px;
-  width: 90%;
-  margin-left: 10px;
+  margin-top: 17px;
+  width: 85%;
+  margin-left: 18px;
   height: 150px;
 }
