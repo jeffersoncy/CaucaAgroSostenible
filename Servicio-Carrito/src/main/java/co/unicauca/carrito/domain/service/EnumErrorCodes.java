@@ -1,4 +1,4 @@
-package co.unicauca.Producto.domain.service;
+package co.unicauca.carrito.domain.service;
 
 /**
  * Códigos de error. Lo usa IUsuarioImplService para hacer validaciones de

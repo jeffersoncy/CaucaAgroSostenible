@@ -12,7 +12,7 @@ import javax.persistence.Table;
 /**
  * Representa un producto de una tienda agricola, mapeada con la base de datos
  * 
- * @author Danny Diaz - Jefferson Campo
+ * @author Danny Diaz - Jefferson Campo - Christian Tobar
  *
  */
 
