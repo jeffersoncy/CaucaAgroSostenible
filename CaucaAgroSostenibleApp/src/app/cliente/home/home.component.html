@@ -1,3 +1,9 @@
+<script type="application/javascript">
+    $(function () {
+        $('#modal.close').click();
+    });
+</script>
+
 <div class="container" style="margin-top:30px">
     <div class="row">
         <div class="col-sm-2">
@@ -6,36 +12,76 @@
         <div class="col-sm-10" >
             <div class="fakeimg">insertar imagen relacionada con el filtro</div>
             <div class="gallery" *ngFor="let producto of productos.slice(0, productos.length)" style="margin-top: 20px;">
-                <img src="../../../../assets/Productos/{{producto.rutaImagen}}" alt="Prod2" width="600" height="400">
-                <div class="desc ">{{ producto.nomProducto}} </div>
-                <div class="desc text-success">${{ producto.precio}}</div>
-                <div class="desc text-primary">Cantidad: {{ producto.cantidad}}</div>
-                <div class="desc"><button (click) ="openModalAgregarProducto(modalAgregarProducto, producto)" class="btn btn-success " style="margin-left: 5px;">Add Carrito</button></div>                
+                <div *ngIf="producto.cantidad > 0; else productos">
+                    <img src="../../../../assets/Productos/{{producto.rutaImagen}}" alt="Prod2" width="600" height="400">
+                    <div class="desc ">{{ producto.nomProducto}} </div>
+                    <div class="desc text-success">${{ producto.precio}}</div>
+                    <div class="desc text-primary">Cantidad: {{ producto.cantidad}}</div>
+                    <div class="desc"><button (click) ="openModalAgregarProducto(modalAgregarProducto, producto)" class="btn btn-success " style="margin-left: 5px;">Add Carrito</button></div>                
+                </div>
+                <ng-template #productos>
+                    <img class = "gris" src="../../../../assets/Productos/{{producto.rutaImagen}}" alt="Prod2" width="600" height="400">
+                    <div class="desc text-muted">{{ producto.nomProducto}} </div>
+                    <div class="desc text-muted">${{ producto.precio}}</div>
+                    <div class="desc text-muted">Sin unidades</div>
+                    <div class="desc"><button class="btn btn-danger disabled" style="margin-left: 5px;">Add Carrito</button></div>                
+                </ng-template>
             </div>
         </div>
     </div>
 </div>
 
+<div class="contenedorMiPedido">
+    <!--<div class="circle" id="circle">{{getNumeroItems()}}</div>-->
+    <button class="miPedido" id="miPedido" (click)="modalService.open(modalCarrito)">ver mi pedido</button>
+</div>
+
+<ng-template #modalCarrito let-modal>
+    <div class="modal-header">
+        <h3>Mi Pedido</h3>
+        <button class="close" aria-label="close" type="button" (click)="modal.dismiss()">
+            <span  aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div>
+            <table class="table table-hover">
+                <tbody>
+                    <tr *ngFor = "let pedido of pedidos" class="text-center">
+                        <td>{{pedido.cantidad}}X</td>
+                        <td><strong>{{pedido.nomproducto}</strong></td>         
+                        <td>${{pedido.precio}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <!--<div style="text-align: center;"><strong>Total ${{pedido.getValorPedido()}}</strong>  </div> -->
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-danger" >Vaciar lista</button>
+    </div>
+</ng-template>
+
 <ng-template #modalAgregarProducto let-modal>
     <div class="modal-header">
         <h3>Producto</h3>
-        <!--<button class="close" aria-label="close" type="button" (click)="modal.dismiss()">
+        <button class="close" aria-label="close" type="button" (click)="modal.dismiss()">
             <span  aria-hidden="true">&times;</span>
-        </button>-->
+        </button>
     </div>
     <div class="modal-body">
         <div>
             <h3>{{productoAux.nomProducto}}</h3>
-            <!--{{platoAux.description}}-->
+                {{productoAux.precio}}
         </div>
     </div>
     <div class="modal-footer">
         <div class="quantity">
-            <!--<button class="disminuir" (click)="disminuirInput(inputCantidad)">-</button>
+            <button class="disminuir" (click)="disminuirInput(inputCantidad,productoAux.cantidad)">-</button>
             <input #inputCantidad type="number" class="cantidad" value="1" min="1" max="20" (change)="actualizarPrecio(inputCantidad)">     
-            <button class="aumentar" (click)="aumentarInput(inputCantidad)">+</button>-->
+            <button class="aumentar" (click)="aumentarInput(inputCantidad,productoAux.cantidad)">+</button>-->
         </div>
-        <!--<button type="button" class="btn btn-danger" (click)="agregarItem(modal.close())">Agregar a mi pedido ({{platoAux.price * cantidad}})</button>
-        -->
+        
+        <button type="button" class="btn btn-danger" (click)="agregarItem(modal.close())">Agregar a mi pedido ({{productoAux.precio * cantidad}})</button>
     </div>
 </ng-template>

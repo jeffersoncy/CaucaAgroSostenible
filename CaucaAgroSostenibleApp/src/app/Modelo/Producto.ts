@@ -11,6 +11,11 @@ export class Producto{
         }
         return false;
     }
+
+    getnom_producto():string{
+        return this.nomProducto;
+    }
+
     getid_producto():number{
         return this.id
     }
@@ -19,7 +24,7 @@ export class Producto{
         return this.precio
     }
 
-    getcantidad_producto():number{
+    public getcantidad_producto():number{
         return this.cantidad
     }
 

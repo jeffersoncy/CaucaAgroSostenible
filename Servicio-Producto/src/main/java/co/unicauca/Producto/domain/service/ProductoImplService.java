@@ -119,7 +119,7 @@ public class ProductoImplService implements IProductoService{
 		if(prod.getRutaImagen() == null || prod.getRutaImagen().isBlank()) {
 			errors.add(new ProductoError(EnumErrorCodes.EMPTY_FIELD, "nameUser", "La ruta de la imagen no puede estar nula"));
 		}
-		if (prod.getCantidad() <= 0) {
+		if (prod.getCantidad() < 0) {
 			errors.add(new ProductoError(EnumErrorCodes.INVALID_NUMBER, "Cantidad del producto",
 					"La cantidad del producto es obligatoria y mayor a cero"));
 		}
