@@ -46,6 +46,11 @@ export class CarritoComponent implements OnInit {
     alert("La lista esta vacía");
     this.router.navigate(["home"]);
   }
+
+  formatoNumeros(id):number{
+    let result = id.toFixed(2);
+    return result;
+  }
 }
 
 

@@ -34,12 +34,12 @@
         <div class="col-sm-12" >
           <div class="gallery2" *ngFor="let oferta of ofertas.slice(0, ofertas.length)" style="margin-top: 20px;">
               <div *ngIf="oferta.cantidad > 0; else ofertas">
-                <div class="circle" id="circle">%{{oferta.descuento}} OFF</div>
+                <div class="circle" id="circle">{{oferta.descuento}} % OFF</div>
                   <img src="../../../../assets/Ofertas/{{oferta.rutaImg}}" alt="Ofertas" width="600" height="400">
                   <div class="desc ">{{oferta.nomOferta}} </div>
-                  <div class="desc text-success">${{oferta.precio}}</div>
+                  <div class="desc text-secondary" style ="text-decoration:line-through">${{oferta.precio}}</div>
                   <!--<div class="desc text-primary">Cantidad: {{oferta.cantidad}}</div>-->
-                  <div class="desc text-primary">{{oferta.precio-((oferta.precio*oferta.descuento)/100)}}</div>
+                  <div class="desc text-success">${{oferta.precio-((oferta.precio*oferta.descuento)/100)}}</div>
                   <div class="quantity " style="display: inline">
                       <div style="float:left; width: 25%; margin-left: 6px;" display="inline-block">
                           <button class="disminuir" (click)="disminuirInput(inputCantidad)">-</button>

@@ -65,7 +65,7 @@ export class OfertasComponent implements OnInit {
   }
 
   agregarItem(oferta:Oferta,input):void{
-    this.carrito = new Pedido(oferta.nomOferta, oferta.precio * this.cantidad, this.cantidad, "Ofertas/"+oferta.rutaImg);
+    this.carrito = new Pedido(oferta.nomOferta, oferta.precio-((oferta.precio*oferta.descuento)/100), this.cantidad, "Ofertas/"+oferta.rutaImg);
     this.service.addItem(this.carrito).subscribe(data=>
       {
         this.carrito = data;
