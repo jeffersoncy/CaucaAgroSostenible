@@ -37,11 +37,6 @@ export class HomeComponent implements OnInit {
     })
   }
 
-  openModalAgregarProducto(contenido, productos:Producto){
-    this.productoAux = productos;
-    this.modalService.open(contenido,{size:'m', centered:true});
-  }
-
   disminuirInput(input){
     if(input.value > 1){
       input.value--;
@@ -62,7 +57,9 @@ export class HomeComponent implements OnInit {
   }
 
   agregarItem(productoAux:Producto):void{
-    this.carrito = new Pedido(productoAux.nomProducto, productoAux.precio * this.cantidad, this.cantidad);
+    console.log(productoAux.rutaImagen);
+    this.carrito = new Pedido(productoAux.nomProducto, productoAux.precio * this.cantidad, this.cantidad, "Productos/"+productoAux.rutaImagen);
+    console.log(this.carrito.rutaimg);
     this.service.addItem(this.carrito).subscribe(data=>
       {
         this.carrito = data;

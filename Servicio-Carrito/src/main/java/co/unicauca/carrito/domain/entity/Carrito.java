@@ -34,7 +34,11 @@ public class Carrito implements Serializable{
 	
 	@Column
 	private int cantidad;
+	
+	@Column 
+	private String rutaimg;
 
+	
 	public long getId() {
 		return id;
 	}
@@ -66,6 +70,15 @@ public class Carrito implements Serializable{
 	public void setCantidad(int cantidad) {
 		this.cantidad = cantidad;
 	}
+
+	public String getRutaimg() {
+		return rutaimg;
+	}
+
+	public void setRutaimg(String rutaimg) {
+		this.rutaimg = rutaimg;
+	}
+	
 	
 	
 	
