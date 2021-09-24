@@ -1,15 +1,3 @@
-<script>
-  function limpia(elemento)
-  {
-  elemento.value = "";
-  }
-  
-  function verifica(elemento)
-  {
-  if(elemento.value = "")
-  elemento.value = "Default Value";
-  }
-  </script>
   <div id="demo" class="carousel slide" data-ride="carousel" >
 
     <!-- Indicators -->
@@ -45,7 +33,6 @@
       <div class="col-sm-1">
         <!--<div class="circle" id="circle">{{getNumeroItems()}}</div>
         <button class="miPedido" id="miPedido" (click)="modalService.open(modalCarrito)">ver mi pedido</button>-->
-        <app-carrito></app-carrito>
     </div>
         <div class="col-sm-12" >
           <div class="gallery2" *ngFor="let oferta of ofertas.slice(0, ofertas.length)" style="margin-top: 20px;">

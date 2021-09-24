@@ -41,9 +41,10 @@ export class CarritoComponent implements OnInit {
     })
   }
 
-  borrarLista(modal:NgbModalRef){
+  borrarLista(){
     this.service.EliminarTodos().subscribe(data =>{});
-    window.location.reload();
+    alert("La lista esta vacía");
+    this.router.navigate(["home"]);
   }
 }
 

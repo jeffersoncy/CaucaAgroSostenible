@@ -56,7 +56,7 @@ export class HomeComponent implements OnInit {
     }else this.cantidad = +input.value;
   }
 
-  agregarItem(productoAux:Producto):void{
+  agregarItem(productoAux:Producto,input):void{
     console.log(productoAux.rutaImagen);
     this.carrito = new Pedido(productoAux.nomProducto, productoAux.precio * this.cantidad, this.cantidad, "Productos/"+productoAux.rutaImagen);
     console.log(this.carrito.rutaimg);
@@ -64,7 +64,8 @@ export class HomeComponent implements OnInit {
       {
         this.carrito = data;
         alert("Producto añadido al carrito");
-        window.location.reload();
+        input.value = 1;
+        this.cantidad = 1;
       });
     //if(this.pedido == undefined || this.pedido == null){
       //document.getElementById("miPedido").removeAttribute("disabled");

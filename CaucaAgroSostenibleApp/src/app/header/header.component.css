@@ -24,3 +24,12 @@
     left : 90%;
     z-index: 1;
   }
+
+  .miPedido{
+    margin-top: 10px;
+    border-radius: 20px;
+    height: 35px;
+    width: 120px;
+    background: #55b02f;
+    color: white;
+}
