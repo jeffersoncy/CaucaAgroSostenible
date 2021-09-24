@@ -80,3 +80,8 @@ input[type=number]::-webkit-outer-spin-button {
 .gris {
     filter: grayscale(1);
 }
+
+.fakeimg{
+    width: 860px;
+    height: 150px;
+}
