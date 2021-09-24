@@ -1,7 +1,8 @@
 <div class="contenedorMiPedido">
-    <!--<div class="circle" id="circle">{{getNumeroItems()}}</div>
-    <button class="miPedido" id="miPedido" (click)="modal.open(modalCarrito)">ver mi pedido</button>-->
+    <!--<div class="circle" id="circle">{{getNumeroItems()}}</div>-->
+    <button class="miPedido" id="miPedido" (click)="modalService.open(modalCarrito)">ver mi pedido</button>
 </div>
+
 <ng-template #modalCarrito let-modal>
     <div class="modal-header">
         <h3>Mi Pedido</h3>
@@ -13,17 +14,18 @@
         <div>
             <table class="table table-hover">
                 <tbody>
-                    <!--<tr *ngFor = "let pedido of pedidos" class="text-center">
-                        <td>dd{{item.getcantidad_producto()}}X</td>
-                        <td><strong>{{item.getnombre_product()}}</strong></td>         
-                        <td>${{item.getprecio_item()}}</td>
-                    </tr>-->
+                    <tr *ngFor = "let pedido of pedidos" class="text-center">
+                        <td>{{pedido.cantidad}}X</td>
+                        <td><strong>{{pedido.nomproducto}}</strong></td>         
+                        <td>${{pedido.precio}}</td>
+                    </tr>
                 </tbody>
             </table>
-            <!--<div style="text-align: center;"><strong>Total ${{pedido.getValorPedido()}}</strong>  </div> -->
+            <div style="text-align: center;"><strong>Total ${{calcularvalortotal()}}</strong>  </div>
         </div>
     </div>
     <div class="modal-footer">
         <!--<button type="button" class="btn btn-danger" (click)="openModalTelDir(modalDirTel)">continuar</button>-->
+        <button type="button" class="btn btn-danger" (click)="borrarLista(modal.close())">Borrar lista</button>
     </div>
 </ng-template>

@@ -29,13 +29,11 @@ export class HomeComponent implements OnInit {
   cerrar() {
     this.modal.close();
   }
-  //var cadena = data.rutaImagen.slice(12);
-  //console.log(cadena);
+
   listarProductos(){
     this.service.getProductos()
     .subscribe(data=>{
       this.productos=data;
-      
     })
   }
 
@@ -44,23 +42,16 @@ export class HomeComponent implements OnInit {
     this.modalService.open(contenido,{size:'m', centered:true});
   }
 
-  disminuirInput(input,cantidad:number){
+  disminuirInput(input){
     if(input.value > 1){
       input.value--;
       this.cantidad--;
     }
-    if(cantidad == 0){
-      input.value = 0;
-    }
   }
 
-  aumentarInput(input,cantidad:number){
-    console.log(cantidad);
-    if(input.value < cantidad){
+  aumentarInput(input){
       input.value++;
       this.cantidad++;
-    }
-    
   }
 
   actualizarPrecio(input){
@@ -70,10 +61,8 @@ export class HomeComponent implements OnInit {
     }else this.cantidad = +input.value;
   }
 
-  agregarItem(modal:NgbModalRef):void{
-    var precioTotal = this.productoAux.precio * this.cantidad;
-    var objCarrito = new Pedido(this.productoAux.id, this.productoAux.nomProducto, precioTotal, this.cantidad);
-    this.carrito = objCarrito;
+  agregarItem(productoAux:Producto):void{
+    this.carrito = new Pedido(productoAux.nomProducto, productoAux.precio * this.cantidad, this.cantidad);
     this.service.addItem(this.carrito).subscribe(data=>
       {
         this.carrito = data;
@@ -81,12 +70,8 @@ export class HomeComponent implements OnInit {
         window.location.reload();
       });
     //if(this.pedido == undefined || this.pedido == null){
-      document.getElementById("miPedido").removeAttribute("disabled");
-      document.getElementById("circle").removeAttribute("disabled");
-      modal.close();
-     
+      //document.getElementById("miPedido").removeAttribute("disabled");
+      //document.getElementById("circle").removeAttribute("disabled");
     //} 
-    
-    //this.pedido.addItem(item)
-  } 
+  }
 }

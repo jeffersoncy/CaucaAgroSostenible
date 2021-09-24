@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Usuario } from 'src/app/Modelo/Usuario';
 import { Error } from 'src/app/Modelo/Error';
 import { ServiceService } from 'src/app/Service/service.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-header',
@@ -17,7 +18,7 @@ export class HeaderComponent implements OnInit {
   result:Usuario = new Usuario;
   errores?:Error[];
 
-  constructor(private service:ServiceService, private router:Router) { }
+  constructor(private service:ServiceService, private router:Router, public modalService:NgbModal) { }
 
   ngOnInit(): void {
     this.user.role = localStorage.getItem("role");

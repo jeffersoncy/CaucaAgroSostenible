@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Pedido } from 'src/app/Modelo/Pedido';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal, NgbModalRef} from '@ng-bootstrap/ng-bootstrap';
 import { Router } from '@angular/router';
 import { ServiceService } from 'src/app/Service/service.service';
 import { Producto } from 'src/app/Modelo/Producto';
@@ -18,20 +18,33 @@ export class CarritoComponent implements OnInit {
   bandera:boolean =  false;
   producto:Producto = new Producto;
   item:Item;
-  constructor(private service: ServiceService, private router: Router,public modal:NgbModal) { }
+  modal: NgbModalRef;
+  constructor(private service: ServiceService, private router: Router,public modalService:NgbModal) { }
 
   ngOnInit(): void {
-    //this.obtenerDatos();
+    this.obtenerDatos();
+    this.calcularvalortotal();
     //document.getElementById("miPedido").setAttribute("disabled","true");
     //document.getElementById("circle").setAttribute("disabled","true");
-    //this.modal.open(this.OpenModalAgregarProducto(this.producto));
+  }
+  calcularvalortotal():number{
+    let valorTotal = 0;
+    this.pedidos.forEach(pedido => {
+      valorTotal = pedido.precio + valorTotal;
+    });
+    return valorTotal;
   }
 
-  OpenModalAgregarProducto(producto:Producto) {
-    //this.platoAux = plato;
-    //this.modal.open(contenido,{size:'m', centered:true});
+  obtenerDatos(){
+    this.service.obtenerTodos().subscribe(data=>{
+      this.pedidos = data;
+    })
   }
 
+  borrarLista(modal:NgbModalRef){
+    this.service.EliminarTodos().subscribe(data =>{});
+    window.location.reload();
+  }
 }
 
 

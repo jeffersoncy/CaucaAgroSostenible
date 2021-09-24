@@ -1,11 +1,10 @@
 export class Pedido{
-    id:number;
     nomproducto:string;
     precio:number;
     cantidad:number;
-
-    constructor(id:number,nomproducto:string, precio:number, cantidad:number){
-        this.id=id;
+    valortotal:number;
+    
+    constructor(nomproducto:string, precio:number, cantidad:number){
         this.nomproducto=nomproducto;
         this.precio=precio;
         this.cantidad=cantidad;

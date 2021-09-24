@@ -1,8 +1,8 @@
 export class Oferta{
     idOferta:number;
-    nomOferta: String;
+    nomOferta: string;
     precio: number;
-    rutaImg: String;
+    rutaImg: string;
     cantidad: number;
     descuento: number;
 
