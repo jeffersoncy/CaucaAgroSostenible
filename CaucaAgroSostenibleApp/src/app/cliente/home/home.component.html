@@ -4,7 +4,9 @@
             <app-sidebar></app-sidebar>
         </div>
         <div class="col-sm-10" >
-            <div class="fakeimg">insertar imagen relacionada con el filtro</div>
+            <div class="fakeimg">
+                <img src="../../../assets/banner-06.png" class="fakeimg">
+            </div>
             <div class="gallery" *ngFor="let producto of productos.slice(0, productos.length)" style="margin-top: 20px;">
                 <div *ngIf="producto.cantidad > 0; else productos">
                     <img src="../../../../assets/Productos/{{producto.rutaImagen}}" alt="Prod2" width="600" height="400">

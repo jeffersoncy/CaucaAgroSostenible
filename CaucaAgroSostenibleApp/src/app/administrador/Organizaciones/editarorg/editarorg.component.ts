@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Organizacion } from 'src/app/Modelo/Organizacion';
 import { Error } from 'src/app/Modelo/Error';
 import { ServiceService } from 'src/app/Service/service.service';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-editarorg',
@@ -14,7 +15,10 @@ export class EditarorgComponent implements OnInit {
   organizacion: Organizacion = new Organizacion;
   errores: Error[];
   bandera: boolean = false;
-  constructor(private service: ServiceService, private router: Router) { }
+  public previsualizacion:String;
+  public ruta:string;
+  public archivo: any = []
+  constructor(private service: ServiceService, private router: Router,private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
     this.obtenerDatosOrg();
@@ -46,6 +50,16 @@ export class EditarorgComponent implements OnInit {
     )
   }
 
+  capturarFile(event):any{
+    const archivoCapturado = event.target.files[0]
+    this.extraerBase64(archivoCapturado).then((imagen:any) => {
+      this.previsualizacion = imagen.base;
+    })
+    this.archivo.push(archivoCapturado);
+    this.organizacion.rutaimagen = this.organizacion.rutaimagen.slice(12);
+    console.log(this.organizacion.rutaimagen);
+  }
+
   atras() {
     this.router.navigate(["listarorg"]);
   }
@@ -61,4 +75,26 @@ export class EditarorgComponent implements OnInit {
     }
     return "";
   }
+
+  extraerBase64 = async ($event: any) => new Promise((resolve, reject) => {
+    try {
+      const unsafeImg = window.URL.createObjectURL($event);
+      const image = this.sanitizer.bypassSecurityTrustUrl(unsafeImg);
+      const reader = new FileReader();
+      reader.readAsDataURL($event);
+      reader.onload = () => {
+        resolve ({
+          base:reader.result
+        });
+      };
+      reader.onerror = error => {
+        resolve({
+          base: null
+        });
+      };
+    } catch (e) {
+      return null;
+    }
+  })
+
 }

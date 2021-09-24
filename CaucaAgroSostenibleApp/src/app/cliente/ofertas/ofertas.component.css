@@ -69,5 +69,27 @@ div.gallery2 img {
   width: 75px;
   margin-right: 80px;
   text-align: center;
-  border-color: #55b02f;
+  border-color: #1a350e;
+}
+
+.circle{
+  width: 50px;
+  height: 50px;
+  background-color: #bdf100;
+  border-radius: 15px;
+  position: absolute;
+  margin-left: 10px;
+  margin-top: 10px;
+  color: #343738;
+  text-align: center;
+  text-shadow: 1px  0px 0px #55b02f,
+               0px  1px 0px #55b02f,
+              -1px  0px 0px #55b02f,
+               0px -1px 0px #55b02f;
+}
+
+.circle:disabled,
+.circle[disabled]{
+  background: transparent;
+  color: transparent;
 }
