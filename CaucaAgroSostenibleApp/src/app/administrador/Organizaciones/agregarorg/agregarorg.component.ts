@@ -34,6 +34,7 @@ export class AgregarorgComponent implements OnInit {
         this.router.navigate(["listarorg"]);
       }
     });
+    console.log(this.previsualizacion);
   }
 
   capturarFile(event):any{
