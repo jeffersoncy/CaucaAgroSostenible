@@ -1,16 +1,14 @@
 <div class="bodyOrg">
     <h1 class="tituloOrg"> Emprendedores de nuestro departamento</h1>
-    <div class="container" style="margin-top:30px">
+    <div class="container" >
         <div class="row">
-            <div class="nose">
-                <div class="gallery3" *ngFor="let organizacion of organizaciones.slice(0, organizaciones.length)"
-                    style="margin-top: 20px;">
-                    <img src="../../../../assets/Organizaciones/{{organizacion.rutaimagen}}" alt="Org2" width="600"
-                        height="400">
-                    <div class="nomOrg">{{ organizacion.nombre}} </div>
-                    <div class="desc ">{{ organizacion.ubicacion}}</div>
-                    <div class="desc ">Telefono: {{ organizacion.telefono}}</div>
-                </div>
+            <div class="gallery3" *ngFor="let organizacion of organizaciones.slice(0, organizaciones.length)"
+                style="margin-top: 20px;">
+                <img src="../../../../assets/Organizaciones/{{organizacion.rutaimagen}}" alt="Org2" width="600"
+                    height="400">
+                <div class="nomOrg">{{ organizacion.nombre}} </div>
+                <div class="desc ">{{ organizacion.ubicacion}}</div>
+                <div class="desc ">Telefono: {{ organizacion.telefono}}</div>
             </div>
         </div>
     </div>
