@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Error } from 'src/app/Modelo/Error';
 import { Inversionista } from 'src/app/Modelo/Inversionista';
 import { ServiceService } from 'src/app/Service/service.service';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-agregarinvers',
@@ -11,9 +12,12 @@ import { ServiceService } from 'src/app/Service/service.service';
 })
 export class AgregarInversComponent implements OnInit {
 
+  public previsualizacion:string;
+  public ruta:string;
   invers:Inversionista = new Inversionista;
+  public archivo: any = []
   errores?:Error[];
-  constructor(private service:ServiceService, private router:Router) { }
+  constructor(private service:ServiceService, private router:Router, private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
   }
@@ -21,7 +25,6 @@ export class AgregarInversComponent implements OnInit {
   guardar(){
     this.service.newInversionista(this.invers).subscribe(data=>{
       if (this.invers.compareTo(data)) {
-        console.log(data);
         this.invers = data;
         alert("Inversionista añadido correctamente");
         this.router.navigate(["listarinvers"]);
@@ -36,6 +39,16 @@ export class AgregarInversComponent implements OnInit {
     this.router.navigate(["listarinvers"]);
   }
 
+  capturarFile(event):any{
+    const archivoCapturado = event.target.files[0]
+    this.extraerBase64(archivoCapturado).then((imagen:any) => {
+      this.previsualizacion = imagen.base;
+    })
+    this.archivo.push(archivoCapturado);
+    this.invers.rutaimg = this.invers.rutaimg.slice(12);
+    console.log(this.invers.rutaimg);
+  }
+
   mensajeError(formato:String): String{
     if(this.errores == undefined){
       return "";
@@ -47,6 +60,27 @@ export class AgregarInversComponent implements OnInit {
     }
     return "";
   }
+
+  extraerBase64 = async ($event: any) => new Promise((resolve, reject) => {
+    try {
+      const unsafeImg = window.URL.createObjectURL($event);
+      const image = this.sanitizer.bypassSecurityTrustUrl(unsafeImg);
+      const reader = new FileReader();
+      reader.readAsDataURL($event);
+      reader.onload = () => {
+        resolve ({
+          base:reader.result
+        });
+      };
+      reader.onerror = error => {
+        resolve({
+          base: null
+        });
+      };
+    } catch (e) {
+      return null;
+    }
+  })
 
 
 }
