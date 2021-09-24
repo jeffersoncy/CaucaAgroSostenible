@@ -29,3 +29,45 @@ div.gallery2 img {
   width: 100%;
   height: 200px;
 }
+
+.disminuir{
+  border: 0px;
+  background:transparent;
+  position: absolute;
+  margin-left: 5px;
+  margin-top: 3px;
+  color: #343738;
+}
+
+.aumentar{
+  border: none;
+  background:none;
+  position: absolute;
+  margin-left: 37px;
+  margin-top: -31px;
+  color: #343738;
+}
+
+.alert{
+  color: rgb(253, 0, 0);
+  text-align: left;
+  margin-top: -12px;
+  font: 12px Verdana; 
+}
+.modal-header{
+  color: #ffffff
+}
+
+.gris {
+  filter: grayscale(1);
+}
+
+.cantidad{
+  border-radius: 15px;
+  border: 1.5px solid black;
+  height: 35px;
+  width: 75px;
+  margin-right: 80px;
+  text-align: center;
+  border-color: #55b02f;
+}

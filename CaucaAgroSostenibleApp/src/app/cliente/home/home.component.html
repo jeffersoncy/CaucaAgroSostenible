@@ -17,7 +17,7 @@
                             <button class="aumentar" (click)="aumentarInput(inputCantidad)">+</button>
                         </div>
                         <div style="float:right; width:68%;  margin-right: 6px;" display="inline-block">
-                            <button (click) ="agregarItem(producto)" class="btn btn-success " style="margin-left: 30px;">Add Carrito</button>               
+                            <button (click) ="agregarItem(producto,inputCantidad)" class="btn btn-success " style="margin-left: 30px;">Add Carrito</button>               
                         </div>
                     </div>
                 </div>
@@ -27,7 +27,7 @@
                     <div class="desc text-muted">${{ producto.precio}}</div>
                     <div class="quantity " style="display: inline">
                         <div style="float:center; width:100%;" display="inline-block">
-                            <button (click) ="agregarItem(producto)" class="btn btn-secondary disabled" style="margin-left: 51px;">Sin unidades</button>               
+                            <button class="btn btn-secondary disabled" style="margin-left: 51px;">Sin unidades</button>               
                         </div>
                     </div>
                 </ng-template>

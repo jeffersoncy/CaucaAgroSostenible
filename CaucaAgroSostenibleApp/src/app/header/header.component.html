@@ -6,8 +6,11 @@
     <div *ngIf="user.role == 'ADMIN' or user.role == 'user'">
       <P>Bienvenido {{user.nameuser}}</P>
     </div>
-    <div *ngIf="user.role == 'user' ">
+    <div *ngIf="user.role == 'user'" > 
       <P>Bienvenido {{user.nameuser}}</P>
+    </div>
+    <div *ngIf="user.role != 'ADMIN'" > 
+      <button class="miPedido" id="miPedido" routerLink="/carrito" routerLinkActive="active">ver mi pedido</button>
     </div>
 </div>
     <!--    ---   Barra de navegación Administrador     -->

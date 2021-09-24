@@ -1,6 +1,43 @@
-<div class="contenedorMiPedido">
-    <!--<div class="circle" id="circle">{{getNumeroItems()}}</div>-->
-    <button class="miPedido" id="miPedido" (click)="modalService.open(modalCarrito)">ver mi pedido</button>
+<div class="container" style="margin-top: 10px;">
+    <div class="card">
+        <div class="card header">
+            <h3> &nbsp; Carrito de compras  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Total: ${{calcularvalortotal()}} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; <button  class="btn btn-danger" style="margin-left: 5px;" (click)="borrarLista()">Eliminar Lista</button></h3>
+        </div>
+        <div class="card-body">
+            <table class="table table-hover">
+                <thead>
+                    <tr class="text-center">
+                        <th>Ruta imagen</th>
+                        <th>Nombre</th>
+                        <th>Cantidad</th>
+                        <th>Precio Unitario</th>
+                        <th>Precio Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor = "let pedido of pedidos" class="text-center">
+                        <td>
+                            <img src="../../../assets/{{pedido.rutaimg}}" alt="Prod2" width="150" height="120">
+                        </td>
+                        <td>{{pedido.nomproducto}}</td>
+                        <td>{{pedido.cantidad}}X</td>
+                        <td>${{pedido.precio/pedido.cantidad}}</td>
+                        <td>${{pedido.precio}}</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>Total: ${{calcularvalortotal()}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<!--<div class="contenedorMiPedido">
+    <div class="circle" id="circle">{{getNumeroItems()}}</div>
 </div>
 
 <ng-template #modalCarrito let-modal>
@@ -25,7 +62,7 @@
         </div>
     </div>
     <div class="modal-footer">
-        <!--<button type="button" class="btn btn-danger" (click)="openModalTelDir(modalDirTel)">continuar</button>-->
-        <button type="button" class="btn btn-danger" (click)="borrarLista(modal.close())">Borrar lista</button>
+        <<button type="button" class="btn btn-danger" (click)="openModalTelDir(modalDirTel)">continuar</button>
+        <button type="button" class="btn btn-danger" (click)="borrarLista()">Borrar lista</button>
     </div>
-</ng-template>
+</ng-template>-->
