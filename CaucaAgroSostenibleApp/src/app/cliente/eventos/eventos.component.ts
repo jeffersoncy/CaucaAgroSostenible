@@ -7,8 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventosComponent implements OnInit {
   title = 'My first AGM project';
-  lat = 51.678418;
-  lng = 7.809007;
+  lat = 2.4453523;
+  lng = -76.6136989;
   constructor() { }
 
   ngOnInit(): void {
