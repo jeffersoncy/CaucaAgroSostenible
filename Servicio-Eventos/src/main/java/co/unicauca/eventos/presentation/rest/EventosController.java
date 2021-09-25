@@ -6,12 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import co.unicauca.eventos.presentation.exceptions.EventosDomainException;
 import co.unicauca.eventos.presentation.exceptions.ResourceNotFoundException;
 import co.unicauca.eventos.domain.entity.Eventos;
 import co.unicauca.eventos.domain.service.IEventosService;
@@ -55,6 +57,12 @@ public class EventosController {
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void delete(@PathVariable Long Id) throws ResourceNotFoundException{
 		eventosService.deleteByID(Id);
+	}
+	
+	@RequestMapping(method = RequestMethod.POST, produces = "application/json")
+	@ResponseBody
+	public Eventos create(@RequestBody Eventos event) throws EventosDomainException {
+		return eventosService.create(event);
 	}
 	
 	
