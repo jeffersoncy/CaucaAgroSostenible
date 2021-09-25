@@ -29,6 +29,7 @@ import { EventosComponent } from './cliente/eventos/eventos.component';
 import { RegistroComponent } from './cliente/registro/registro.component';
 import { CarritoComponent } from './cliente/carrito/carrito.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [
@@ -59,11 +60,14 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyD01ZoVUq6YPpGV3tjGJxX5D6LcbFvQo58'
+    }),
     FormsModule,
     HttpClientModule,
     NgbModule
   ],
   providers: [ServiceService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent,EventosComponent]
 })
 export class AppModule { }

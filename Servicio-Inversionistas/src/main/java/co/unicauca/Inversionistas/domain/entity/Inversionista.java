@@ -66,7 +66,5 @@ public class Inversionista implements Serializable{
 	public void setCorreo(String correo) {
 		this.correo = correo;
 	}
-	
-	
-	
+
 }
