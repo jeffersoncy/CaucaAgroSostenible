@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./eventos.component.css']
 })
 export class EventosComponent implements OnInit {
-  title = 'My first AGM project';
+  title = 'Eventos del Departamento del Cauca';
   lat = 2.4453523;
   lng = -76.6136989;
   constructor() { }
