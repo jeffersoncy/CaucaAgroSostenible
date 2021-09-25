@@ -20,10 +20,10 @@ public class Eventos implements Serializable{
 	private long id;
 	
 	@Column
-	private long latitud;
+	private float latitud;
 	
 	@Column
-	private long longitud;
+	private float longitud;
 	
 	@Column
 	private String nombre;
@@ -39,19 +39,19 @@ public class Eventos implements Serializable{
 		this.id = id;
 	}
 
-	public long getLatitud() {
+	public float getLatitud() {
 		return latitud;
 	}
 
-	public void setLatitud(long latitud) {
+	public void setLatitud(float latitud) {
 		this.latitud = latitud;
 	}
 
-	public long getLongitud() {
+	public float getLongitud() {
 		return longitud;
 	}
 
-	public void setLongitud(long longitud) {
+	public void setLongitud(float longitud) {
 		this.longitud = longitud;
 	}
 

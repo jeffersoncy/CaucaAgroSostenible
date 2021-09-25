@@ -20,6 +20,7 @@ export class EventosComponent implements OnInit {
 
   ngOnInit(): void {
     this.UbicacionCentral = new Evento(this.lat,this.lng);
+    this.obtenerDatos();
   }
 
   obtenerDatos(){
