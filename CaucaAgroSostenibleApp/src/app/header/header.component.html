@@ -1,8 +1,20 @@
 <!-- Banner -->
 <div class="banner">
   <div class="bnlogo"></div>
-  <div class="bncarrito"></div>
-  <div class="bnuser"></div>
+  <div class="bncarrito">
+    <div *ngIf="user.role != 'ADMIN'" > 
+      <button class="miPedido" id="miPedido" routerLink="/carrito" routerLinkActive="active">ver mi pedido</button>
+    </div>
+  </div>
+  <div class="bnuser">
+    <div *ngIf="user.role == 'ADMIN' or user.role == 'user'">
+      <P>Bienvenido {{user.nameuser}}</P>
+    </div>
+    <div *ngIf="user.role == 'user'" > 
+      <P>Bienvenido {{user.nameuser}}</P>
+    </div>
+
+  </div>
 </div>
 
 
@@ -13,21 +25,13 @@
 <!--<div class= "text-center" style="margin-bottom:0">
 		<img src="../../assets/BANN.jpg" width="100%" height="110px"/>
     <img src="../../assets/logo.png" class="eye">
-    <div *ngIf="user.role == 'ADMIN' or user.role == 'user'">
-      <P>Bienvenido {{user.nameuser}}</P>
-    </div>
-    <div *ngIf="user.role == 'user'" > 
-      <P>Bienvenido {{user.nameuser}}</P>
-    </div>
-    <div *ngIf="user.role != 'ADMIN'" > 
-      <button class="miPedido" id="miPedido" routerLink="/carrito" routerLinkActive="active">ver mi pedido</button>
-    </div>
+    
 </div> -->
 <!--    ---   Barra de navegación Administrador     -->
 <div *ngIf="user.role == 'ADMIN'; else cliente">
   <!-- Barra de navegación -->
 
-  <nav class="navbar" style="margin-bottom:0px">
+  <nav class="navbar navbar-expand-md bg-dark navbar-dark " style="margin-bottom:0px">
     <!-- Toggler/collapsibe Button -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
       <span class="navbar-toggler-icon"></span>
