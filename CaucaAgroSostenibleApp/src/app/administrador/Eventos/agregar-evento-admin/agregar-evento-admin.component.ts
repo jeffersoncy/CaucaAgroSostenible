@@ -16,9 +16,12 @@ export class AgregarEventoAdminComponent implements OnInit {
 
   UbicacionCentral: Evento;
 
+  bandera: boolean = false;
+
   eventos:Evento[];
-  evento:Evento = new Evento(0,0,"","");
-  
+  evento:Evento;
+  marcador: Evento;
+
   constructor(private service:ServiceService, private router:Router) { }
 
   ngOnInit(): void {
@@ -28,7 +31,10 @@ export class AgregarEventoAdminComponent implements OnInit {
 
   mapClicked($event: MouseEvent){
     let coord = new Evento($event.coords.lat, $event.coords.lng,"","");
-    this.eventos.push(coord);
+    this.marcador = coord;
+    this.bandera = true;
+    this.evento.longitud = this.marcador.longitud;
+    this.evento.latitud = this.marcador.latitud;
   }
 
   obtenerDatos(){
@@ -36,6 +42,19 @@ export class AgregarEventoAdminComponent implements OnInit {
     .subscribe(data=>{
       this.eventos=data;
     })
+  }
+
+  cancelarUbicacion(){
+    this.bandera =false;
+    this.marcador = null;
+  }
+
+  registrar(){
+    this.service.agregarEvento(this.evento).subscribe(data=>{
+      this.evento = data;
+        alert("Evento añadido correctamente");
+        this.router.navigate(["listareventos"]);
+    });
   }
 
 }
