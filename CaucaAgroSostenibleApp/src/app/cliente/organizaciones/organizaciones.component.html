@@ -1,17 +1,14 @@
 <div class="bodyOrg">
     <h1 class="tituloOrg"> Emprendedores de nuestro departamento</h1>
-    <div class="container">
-        <div class="row">
-            <iframe width="1000" height="640" src="https://www.youtube.com/embed/hiP65ZX8WJs" ></iframe>
-            <div class="gallery3" *ngFor="let organizacion of organizaciones.slice(0, organizaciones.length)"
-                style="margin-top: 20px;">
-                <img src="../../../../assets/Organizaciones/{{organizacion.rutaimagen}}" alt="Org2" width="600"
-                    height="400">
-                <div class="nomOrg">{{ organizacion.nombre}} </div>
-                <div class="desc ">{{ organizacion.ubicacion}}</div>
-                <div class="desc ">Telefono: {{ organizacion.telefono}}</div>
-            </div>
+    <div class="vidOrg"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/hiP65ZX8WJs"></iframe> </div>
+    <div class="containerOrg">
+
+        <div class="galleryOrg" *ngFor="let organizacion of organizaciones.slice(0, organizaciones.length)">
+            <div class="imgOrg"><img src="../../../../assets/Organizaciones/{{organizacion.rutaimagen}}" width="150px" height="100px"/></div>
+            <div class="nomOrg">{{ organizacion.nombre}} </div>
+            <div class="descOrg">{{ organizacion.ubicacion}}</div>
+            <div class="telOrg">Telefono: {{ organizacion.telefono}}</div>
         </div>
+
     </div>
 </div>
-

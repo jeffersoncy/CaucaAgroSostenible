@@ -3,54 +3,86 @@
   background-size: cover;
   width: 100%;
   height: 100%;
-  border: rgb(26, 37, 18) 2px solid;
-
-}
-
-div.gallery3 {
-  margin: 10px;
-  border: 1px solid rgb(17, 16, 16);
-  background-color: rgba(24, 26, 24, 0.7);
-  border-radius: 10px;
-  float: left;
-  width:250px;
-  height: 320px;
-
-  color: white;
+  padding: 0px;
 }
 
 .tituloOrg {
-  margin-top: 2%;
-  margin-bottom: 1%;
+  padding: 40px;
   margin-left: auto;
   margin-right: auto;
   width: 70%;
-  color: rgb(255, 255, 255);
+  color: rgba(255, 255, 255, 0.89);
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
   font-weight: bold;
-  font-size: 35px;
 }
 
-div.gallery3:hover {
-  background-color: rgba(33, 36, 32, 0.9);
+.vidOrg {
+  
+  width: 95%;
+  height: 400px;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+
+}
+
+.containerOrg {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.galleryOrg {
+  background-color: rgba(33, 36, 32, 0.7);
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 10px;
+  border: rgb(26, 37, 18) 2px solid;
+  grid-auto-flow: dense;
+}
+
+.galleryOrg:hover {
   transform: scale(1.04);
   transition: all .3s ease-in-out;
-  border: 1px solid rgba(5, 5, 5, 0.7);
+  background-color: rgba(33, 36, 32, 0.9);
 }
 
-.nomOrg{
-  color: white;
+.imgOrg {
+  margin-top: 10%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 150px;
+  height: 100px;
+}
+
+.nomOrg {
+  color: rgba(8, 240, 0, 0.719);
   font-size: large;
   font-weight: bold;
   width: 80%;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
- }
-div.gallery3 img {
-  margin-top: 17px;
-  width: 85%;
-  margin-left: 18px;
-  height: 150px;
+}
+
+.descOrg {
+  color: rgba(255, 255, 255, 0.63);
+  margin-top: 4%;
+  font-size: medium;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  line-height: 16px;
+}
+
+.telOrg {
+  color: rgba(255, 255, 255, 0.699);
+  margin-top: 4%;
+  font-size: medium;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin-bottom: 10%;
 }
