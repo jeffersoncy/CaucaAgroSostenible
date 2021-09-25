@@ -1,1 +1,32 @@
-<p>listar-evento-admin works!</p>
+<div class="container" style="margin-top: 10px;">
+    <div class="card">
+        <div class="card header">
+            <h3>Eventos</h3>
+        </div>
+        <div class="card-body">
+            <button (click)="agregarEvento()" class="btn btn-warning">Agregar Evento</button>
+            <table class="table table-hover">
+                <thead>
+                    <tr class="text-center">
+                        <th>Nombre</th>
+                        <th>Descripción</th>
+                        <th>Latitud</th>
+                        <th>Longitud</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor = "let evento of eventos" class="text-center">
+                        <td>{{evento.nombre}}</td>
+                        <td>{{evento.descripcion}}</td>
+                        <td>{{evento.latitud}}</td>
+                        <td>{{evento.longitud}}</td>
+                        <td>
+                            <button (click)="eliminarEvento(evento)" class="btn btn-danger" style="margin-left: 5px;">Eliminar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

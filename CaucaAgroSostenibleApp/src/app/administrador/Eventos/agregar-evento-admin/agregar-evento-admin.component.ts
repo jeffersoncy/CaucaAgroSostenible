@@ -18,11 +18,11 @@ export class AgregarEventoAdminComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.UbicacionCentral = new Evento(this.lat,this.lng);
+    this.UbicacionCentral = new Evento(this.lat,this.lng,"","");
   }
 
   mapClicked($event: MouseEvent){
-    let coord = new Evento($event.coords.lat, $event.coords.lng);
+    let coord = new Evento($event.coords.lat, $event.coords.lng,"","");
     this.coordenadas.push(coord);
   }
 
