@@ -1,0 +1,2 @@
+INSERT INTO eventos(ID, latitud, longitud, nombre, descripcion) values(1, 200, -756221, 'PArty Loca' , 'La mejor fiesta del barrio');
+INSERT INTO eventos(ID, latitud, longitud, nombre, descripcion) values(2, 400, -7000, 'Paseo a timbio' , 'Lo mejor de timbio');
