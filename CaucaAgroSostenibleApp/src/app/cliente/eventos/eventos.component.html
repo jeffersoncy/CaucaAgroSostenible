@@ -1,9 +1,12 @@
 <h1>{{ title }}</h1>
 
-<!-- this creates a google map on the page with the given lat/lng from -->
-<!-- the component as the initial center of the map: -->
-<agm-map [latitude]="lat" [longitude]="lng">
-  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
-  <agm-marker [latitude]="2.459482" [longitude]="-76.5970164"></agm-marker>
-
-</agm-map>
+<div class="container">
+    <agm-map class="mapa" [latitude]="UbicacionCentral.latitud" [longitude]="UbicacionCentral.longitud" [zoom]="12">
+        <agm-marker *ngFor="let coord of coordenadas" [latitude]="coord.latitud" [longitude]="coord.longitud">
+            <agm-info-window>
+                <p>La mejor party de la ciudad es : {{coord?.latitud}}</p>
+                <p>La mejor party de la ciudad es : {{coord?.longitud}}</p>
+            </agm-info-window>
+        </agm-marker>
+    </agm-map>
+</div>
