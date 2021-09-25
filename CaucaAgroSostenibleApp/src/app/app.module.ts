@@ -28,6 +28,8 @@ import { InversionistasComponent } from './cliente/inversionistas/inversionistas
 import { EventosComponent } from './cliente/eventos/eventos.component';
 import { RegistroComponent } from './cliente/registro/registro.component';
 import { CarritoComponent } from './cliente/carrito/carrito.component';
+import { AgregarEventoAdminComponent } from './administrador/Eventos/agregar-evento-admin/agregar-evento-admin.component';
+import { ListarEventoAdminComponent } from './administrador/Eventos/listar-evento-admin/listar-evento-admin.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AgmCoreModule } from '@agm/core';
 
@@ -55,7 +57,9 @@ import { AgmCoreModule } from '@agm/core';
     InversionistasComponent,
     EventosComponent,
     RegistroComponent,
-    CarritoComponent
+    CarritoComponent,
+    AgregarEventoAdminComponent,
+    ListarEventoAdminComponent
   ],
   imports: [
     BrowserModule,

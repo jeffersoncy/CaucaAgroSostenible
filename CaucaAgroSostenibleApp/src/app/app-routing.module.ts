@@ -20,6 +20,8 @@ import { InversionistasComponent } from './cliente/inversionistas/inversionistas
 import { EventosComponent } from './cliente/eventos/eventos.component';
 import { RegistroComponent } from './cliente/registro/registro.component';
 import { CarritoComponent } from './cliente/carrito/carrito.component';
+import { AgregarEventoAdminComponent } from './administrador/Eventos/agregar-evento-admin/agregar-evento-admin.component'; 
+import { ListarEventoAdminComponent } from './administrador/Eventos/listar-evento-admin/listar-evento-admin.component';
 
 const routes: Routes = [
   {path:"listar", component:ListarComponent},
@@ -42,6 +44,8 @@ const routes: Routes = [
   {path:"vistaeventos", component:EventosComponent},
   {path:"vistaregistros", component:RegistroComponent},
   {path:"carrito", component:CarritoComponent},
+  {path:"listareventos", component:ListarEventoAdminComponent},
+  {path:"agregareventos", component:AgregarEventoAdminComponent}
 ];
 
 @NgModule({
