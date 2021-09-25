@@ -6,6 +6,7 @@ import { Oferta } from '../Modelo/Oferta';
 import { Inversionista } from '../Modelo/Inversionista';
 import { Usuario } from '../Modelo/Usuario';
 import { Pedido } from '../Modelo/Pedido';
+import { Evento } from '../Modelo/Evento';
 
 
 @Injectable({
@@ -21,6 +22,21 @@ export class ServiceService {
   UrlOfer='http://localhost:8004/oferta';
   UrlInvers='http://localhost:8006/inversionista';
   UrlCarrito='http://localhost:8022/carritos';
+  UrlEventos='http://localhost:8023/eventos';
+
+  //Eventos
+  listarEventos(){
+    return this.http.get<Evento[]>(this.UrlEventos);
+  }
+
+  deleteEvento(evento:Evento){
+    return this.http.delete<Evento>(this.UrlEventos+"/"+evento.id);
+  }
+
+  agregarEvento(evento:Evento){
+    return this.http.post<Evento>(this.UrlEventos,evento);
+  }
+
 
   //Carrito
   addItem(carrito:Pedido){
