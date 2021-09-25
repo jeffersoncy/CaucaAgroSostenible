@@ -19,7 +19,7 @@ export class AgregarEventoAdminComponent implements OnInit {
   bandera: boolean = false;
 
   eventos:Evento[];
-  evento:Evento;
+  evento:Evento = new Evento(0,0,"","");
   marcador: Evento;
 
   constructor(private service:ServiceService, private router:Router) { }
