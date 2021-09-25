@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MouseEvent } from '@agm/core';
 import { Evento } from 'src/app/Modelo/Evento';
+import { ServiceService } from 'src/app/Service/service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-agregar-evento-admin',
@@ -14,16 +16,45 @@ export class AgregarEventoAdminComponent implements OnInit {
 
   UbicacionCentral: Evento;
 
-  coordenadas: Evento  [] = [];
-  constructor() { }
+  bandera: boolean = false;
+
+  eventos:Evento[];
+  evento:Evento;
+  marcador: Evento;
+
+  constructor(private service:ServiceService, private router:Router) { }
 
   ngOnInit(): void {
+    this.obtenerDatos();
     this.UbicacionCentral = new Evento(this.lat,this.lng,"","");
   }
 
   mapClicked($event: MouseEvent){
     let coord = new Evento($event.coords.lat, $event.coords.lng,"","");
-    this.coordenadas.push(coord);
+    this.marcador = coord;
+    this.bandera = true;
+    this.evento.longitud = this.marcador.longitud;
+    this.evento.latitud = this.marcador.latitud;
+  }
+
+  obtenerDatos(){
+    this.service.listarEventos()
+    .subscribe(data=>{
+      this.eventos=data;
+    })
+  }
+
+  cancelarUbicacion(){
+    this.bandera =false;
+    this.marcador = null;
+  }
+
+  registrar(){
+    this.service.agregarEvento(this.evento).subscribe(data=>{
+      this.evento = data;
+        alert("Evento añadido correctamente");
+        this.router.navigate(["listareventos"]);
+    });
   }
 
 }

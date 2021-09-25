@@ -11,7 +11,7 @@
   margin-left: auto;
   margin-right: auto;
   width: 70%;
-  color: rgba(255, 255, 255, 0.89);
+  color: #075109;
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
   font-weight: bold;
@@ -19,10 +19,10 @@
 
 .vidOrg {
   
-  width: 95%;
+  width: 85%;
   height: 400px;
-  margin-left: 2.5%;
-  margin-right: 2.5%;
+  margin-left: 7.5%;
+  margin-right: 7.5%;
 
 }
 
@@ -56,7 +56,8 @@
 }
 
 .nomOrg {
-  color: rgba(8, 240, 0, 0.719);
+  text-shadow: #075109;
+  color: #07C509;
   font-size: large;
   font-weight: bold;
   width: 80%;

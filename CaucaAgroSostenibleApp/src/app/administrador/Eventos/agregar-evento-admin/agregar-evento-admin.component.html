@@ -1,12 +1,58 @@
-<h1>{{ title }}</h1>
 
-<div class="container">
-    <agm-map class="mapa" [latitude]="UbicacionCentral.latitud" [longitude]="UbicacionCentral.longitud" [zoom]="12" (mapClick)="mapClicked($event)">
-        <agm-marker *ngFor="let coord of coordenadas" [latitude]="coord.latitud" [longitude]="coord.longitud">
-            <agm-info-window>
-                <p>La mejor party de la ciudad es : {{coord?.latitud}}</p>
-                <p>La mejor party de la ciudad es : {{coord?.longitud}}</p>
-            </agm-info-window>
-        </agm-marker>
-    </agm-map>
+<div class="container" style="margin-top: 10px;">
+    <h1>{{ title }}</h1>
+    <div *ngIf="bandera == true;">
+        <h2>Ubicación ingresada  <button (click)="cancelarUbicacion()" class="btn btn-outline-success">Cancelar Ubicación</button></h2>
+       
+    </div>
+
+    <div class="row">
+        <div class="col-60">
+            <div *ngIf="bandera == false; else mostrarMapa">
+                <agm-map class="mapa" [latitude]="UbicacionCentral.latitud" [longitude]="UbicacionCentral.longitud" [zoom]="12" (mapClick)="mapClicked($event)">
+                    <agm-marker *ngFor="let evento of eventos" [latitude]="evento.latitud" [longitude]="evento.longitud">
+                        <agm-info-window>
+                            <p>La mejor party de la ciudad es : {{evento?.latitud}}</p>
+                            <p>La mejor party de la ciudad es : {{evento?.longitud}}</p>
+                        </agm-info-window>
+                    </agm-marker>
+                </agm-map>
+            </div>
+            <ng-template #mostrarMapa>
+                <agm-map class="mapa" [latitude]="marcador.latitud" [longitude]="marcador.longitud" [zoom]="12">
+                    <agm-marker [latitude]="marcador.latitud" [longitude]="marcador.longitud">
+                        <agm-info-window>
+                            <p></p>
+                            <p>La mejor party de la ciudad es : {{marcador?.latitud}}</p>
+                            <p>La mejor party de la ciudad es : {{marcador?.longitud}}</p>
+                        </agm-info-window>
+                    </agm-marker>
+                </agm-map>
+            </ng-template>
+        </div>
+        <div class="col-40">
+            <form action="" class="was-validated">
+                <br>
+                <div class="form-group">
+                    <label for="nombre">Nombre del evento:</label>
+                    <input type="text" class="form-control" [(ngModel)]="evento.nombre" name="nombre" ngModel required>
+                    <div class="valid-feedback">Valido.</div>
+                    <div class="invalid-feedback">Este campo es obligatorio.</div>
+                </div>
+                <div class="form-group">
+                    <label for="descripcion">Descripcion:</label>
+                    <textarea class="form-control" id="descripcion" [(ngModel)]="evento.descripcion" name="descripcion" placeholder="Write something.." style="height:200px" ngModel required></textarea>
+                    <div class="valid-feedback">Valido.</div>
+                    <div class="invalid-feedback">Este campo es obligatorio.</div>
+                </div>
+                <div *ngIf="bandera == true; else invalid">
+                    <button (click)="registrar()" class="btn btn-outline-success" data-dismiss="modal">Guardar</button>
+                </div>
+                <ng-template #invalid>
+                    <button  class="btn btn-outline-success disabled" data-dismiss="modal">Guardar</button>
+                </ng-template>
+            </form>
+        </div>
+    </div>
+    
 </div>
