@@ -65,6 +65,9 @@ public class EventosImplService implements IEventosService{
 		if(event.getDescripcion() == null || event.getDescripcion().isBlank()) {
 			errors.add(new EventosError(EnumErrorCodes.EMPTY_FIELD, "descripcion", "La descripcion no puede ser nula"));
 		}
+		if(event.getDireccion() == null || event.getDireccion().isBlank()) {
+			errors.add(new EventosError(EnumErrorCodes.EMPTY_FIELD, "direccion", "La direccion no puede ser nula"));
+		}
 		
 		
 		return errors;

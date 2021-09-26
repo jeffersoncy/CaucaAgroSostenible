@@ -30,6 +30,9 @@ public class Eventos implements Serializable{
 	
 	@Column
 	private String descripcion;
+	
+	@Column
+	private String direccion;
 
 	public long getId() {
 		return id;
@@ -70,6 +73,17 @@ public class Eventos implements Serializable{
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
-	
 
+	public String getDireccion() {
+		return direccion;
+	}
+
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
+	}
+
+	
+	
+	
+	
 }
