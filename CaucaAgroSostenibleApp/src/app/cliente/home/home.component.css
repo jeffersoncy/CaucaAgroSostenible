@@ -1,3 +1,34 @@
+.col-sm-10 {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.galleryHome {
+    border-radius: 10px;
+    border: #28a745 2px solid;
+}
+
+.galleryHome:hover {
+    transform: scale(1.04);
+    transition: all .3s ease-in-out;
+
+}
+
+.imgProd {
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    height: 150px;
+}
+
+.btncar {
+    margin-bottom: 10%;
+}
+
+
 .miPedido{
     margin-left: 80%;
     margin-top: 10px;
