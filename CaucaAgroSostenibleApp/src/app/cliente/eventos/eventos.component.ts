@@ -30,4 +30,8 @@ export class EventosComponent implements OnInit {
     })
   }
 
+  ubicar(coord:Evento){
+    this.UbicacionCentral = coord;
+  }
+
 }
