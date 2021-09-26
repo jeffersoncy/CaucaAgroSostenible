@@ -8,7 +8,7 @@
                     <div *ngFor="let coord of coordenadas">
                         <div class="card btn btn-outline-light text-dark">
                             <div class="card-head">{{coord.nombre}}</div>
-                            <div class="card-body">{{coord.descripcion}}</div>
+                            <div class="card-body">Dirección: {{coord.direccion}}<br>{{coord.descripcion}}</div>
                             <button type="button" class="btn btn-outline-success" (click)="ubicar(coord)">Ver ubicación</button>
                         </div>
                         <br>
@@ -16,14 +16,29 @@
                 </div>
             </div>
             <div class="col-70">
-                <agm-map class="mapa" [latitude]="UbicacionCentral.latitud" [longitude]="UbicacionCentral.longitud" [zoom]="12">
-                    <agm-marker *ngFor="let coord of coordenadas" [latitude]="coord.latitud" [longitude]="coord.longitud">
-                        <agm-info-window [isOpen]="false">
-                            <p>{{coord?.nombre}}</p>
-                            <p>{{coord?.descripcion}}</p>
-                        </agm-info-window>
-                    </agm-marker>
-                </agm-map>
+                <div *ngIf="bandera == false">
+                    <agm-map class="mapa" [latitude]="UbicacionCentral.latitud" [longitude]="UbicacionCentral.longitud" [zoom]="8.5">
+                        <agm-marker *ngFor="let coord of coordenadas" [latitude]="coord.latitud" [longitude]="coord.longitud">
+                            <agm-info-window [isOpen]="false">
+                                <p>{{coord?.nombre}}</p>
+                                <p>{{coord?.direccion}}</p>
+                                <p>{{coord?.descripcion}}</p>
+                            </agm-info-window>
+                        </agm-marker>
+                    </agm-map>
+                </div>
+                <div *ngIf="bandera == true">
+                    <agm-map class="mapa" [latitude]="UbicacionCentral.latitud" [longitude]="UbicacionCentral.longitud" [zoom]="13">
+                        <agm-marker *ngFor="let coord of coordenadas" [latitude]="coord.latitud" [longitude]="coord.longitud">
+                            <agm-info-window [isOpen]="false">
+                                <p>{{coord?.nombre}}</p>
+                                <p>{{coord?.direccion}}</p>
+                                <p>{{coord?.descripcion}}</p>
+                            </agm-info-window>
+                        </agm-marker>
+                    </agm-map>
+                </div>
+                    
             </div>
         </div>
     </div>

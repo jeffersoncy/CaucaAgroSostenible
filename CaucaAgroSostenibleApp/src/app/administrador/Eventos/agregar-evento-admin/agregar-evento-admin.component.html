@@ -37,7 +37,13 @@
                     <div class="invalid-feedback">Este campo es obligatorio.</div>
                 </div>
                 <div class="form-group">
-                    <label for="descripcion">Descripcion:</label>
+                    <label for="direccion">Dirección:</label>
+                    <input type="text" class="form-control" [(ngModel)]="evento.direccion" name="direccion" ngModel required>
+                    <div class="valid-feedback">Valido.</div>
+                    <div class="invalid-feedback">Este campo es obligatorio.</div>
+                </div>
+                <div class="form-group">
+                    <label for="descripcion">Descripción:</label>
                     <textarea class="form-control" id="descripcion" [(ngModel)]="evento.descripcion" name="descripcion" placeholder="Write something.." style="height:200px" ngModel required></textarea>
                     <div class="valid-feedback">Valido.</div>
                     <div class="invalid-feedback">Este campo es obligatorio.</div>

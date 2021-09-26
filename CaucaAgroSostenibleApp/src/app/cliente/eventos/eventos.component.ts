@@ -20,7 +20,7 @@ export class EventosComponent implements OnInit {
   constructor(private service:ServiceService, private router:Router) { }
 
   ngOnInit(): void {
-    this.UbicacionCentral = new Evento(this.lat,this.lng,"","");
+    this.UbicacionCentral = new Evento(this.lat,this.lng,"","","");
     this.obtenerDatos();
   }
 
@@ -33,7 +33,7 @@ export class EventosComponent implements OnInit {
 
   ubicar(coord:Evento){
     this.UbicacionCentral = coord;
-
+    this.bandera = true; 
   }
 
 }
