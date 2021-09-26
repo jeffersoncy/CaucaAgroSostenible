@@ -18,7 +18,7 @@
             <div class="col-70">
                 <agm-map class="mapa" [latitude]="UbicacionCentral.latitud" [longitude]="UbicacionCentral.longitud" [zoom]="12">
                     <agm-marker *ngFor="let coord of coordenadas" [latitude]="coord.latitud" [longitude]="coord.longitud">
-                        <agm-info-window>
+                        <agm-info-window [isOpen]="false">
                             <p>{{coord?.nombre}}</p>
                             <p>{{coord?.descripcion}}</p>
                         </agm-info-window>

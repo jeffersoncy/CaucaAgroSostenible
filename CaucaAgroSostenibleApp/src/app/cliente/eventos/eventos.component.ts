@@ -14,6 +14,7 @@ export class EventosComponent implements OnInit {
   lng = -76.6136989;
 
   UbicacionCentral: Evento;
+  bandera: boolean = false;
 
   coordenadas: Evento  [] = [];
   constructor(private service:ServiceService, private router:Router) { }
@@ -32,6 +33,7 @@ export class EventosComponent implements OnInit {
 
   ubicar(coord:Evento){
     this.UbicacionCentral = coord;
+
   }
 
 }
