@@ -2,9 +2,7 @@
     <h1>{{ title }}</h1>
     <div *ngIf="bandera == true;">
         <h2>Ubicación ingresada  <button (click)="cancelarUbicacion()" class="btn btn-outline-success">Cancelar Ubicación</button></h2>
-       
     </div>
-
     <div class="row">
         <div class="col-60">
             <div *ngIf="bandera == false; else mostrarMapa">

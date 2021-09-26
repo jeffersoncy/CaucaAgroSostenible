@@ -1,12 +1,30 @@
-<h1>{{ title }}</h1>
-
-<div class="container">
-    <agm-map class="mapa" [latitude]="UbicacionCentral.latitud" [longitude]="UbicacionCentral.longitud" [zoom]="12">
-        <agm-marker *ngFor="let coord of coordenadas" [latitude]="coord.latitud" [longitude]="coord.longitud">
-            <agm-info-window>
-                <p>{{coord?.nombre}}</p>
-                <p>{{coord?.descripcion}}</p>
-            </agm-info-window>
-        </agm-marker>
-    </agm-map>
+<div class="bodyeventos">
+    <div class="container">
+        <h1>{{ title }}</h1>
+        <div class="row">
+            <div class="col-30">
+                <div id="overflowTest">
+                    <br>
+                    <div *ngFor="let coord of coordenadas">
+                        <div class="card btn btn-outline-light text-dark">
+                            <div class="card-head">{{coord.nombre}}</div>
+                            <div class="card-body">{{coord.descripcion}}</div>
+                            <button type="button" class="btn btn-outline-success" (click)="ubicar(coord)">Ver ubicación</button>
+                        </div>
+                        <br>
+                    </div>
+                </div>
+            </div>
+            <div class="col-70">
+                <agm-map class="mapa" [latitude]="UbicacionCentral.latitud" [longitude]="UbicacionCentral.longitud" [zoom]="12">
+                    <agm-marker *ngFor="let coord of coordenadas" [latitude]="coord.latitud" [longitude]="coord.longitud">
+                        <agm-info-window>
+                            <p>{{coord?.nombre}}</p>
+                            <p>{{coord?.descripcion}}</p>
+                        </agm-info-window>
+                    </agm-marker>
+                </agm-map>
+            </div>
+        </div>
+    </div>
 </div>
