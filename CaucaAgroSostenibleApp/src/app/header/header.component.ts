@@ -42,7 +42,6 @@ export class HeaderComponent implements OnInit {
         }
         else{
           alert("Credenciales incorrectas");
-          //this.router.navigate(["home"]);
         }
       }
     )

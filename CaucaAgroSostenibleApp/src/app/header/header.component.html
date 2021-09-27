@@ -8,22 +8,18 @@
   </div>
   <div class="bnuser">
     <div *ngIf="user.role == 'ADMIN' or user.role == 'user'">
-      <P>Bienvenido {{user.nameuser}}</P>
+      <img src="../../assets/logoutt.png" class="imagenuser" (click)="logout()" routerLink="/" routerLinkActive="active" />
+      {{user.nameuser}}
     </div>
     <div *ngIf="user.role == 'user'" > 
-      <P>Bienvenido {{user.nameuser}}</P>
+      <img src="../../assets/logoutt.png" class="imagenuser" (click)="logout()" routerLink="/" routerLinkActive="active" />
+      {{user.nameuser}}
     </div>
     <div *ngIf="user.role == 'null'" >
       <img src="../../assets/login.png" class="imagenuser" data-toggle="modal" href="#myModal" />
     </div> 
   </div>
 </div>
-
-<!--<div class= "text-center" style="margin-bottom:0">
-		<img src="../../assets/BANN.jpg" width="100%" height="110px"/>
-    <img src="../../assets/logo.png" class="eye">
-    
-</div> -->
 <!--    ---   Barra de navegación Administrador     -->
 <div *ngIf="user.role == 'ADMIN'; else cliente">
   <!-- Barra de navegación -->
@@ -50,9 +46,6 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="/listareventos" routerLinkActive="active" href="#">EVENTOS</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" (click)="logout()" routerLink="/" routerLinkActive="active"> LOGOUT </a>
         </li>
       </ul>
     </div>
@@ -84,46 +77,9 @@
         <li class="nav-item">
           <a class="nav-link" routerLink="/vistaeventos" routerLinkActive="active" href="#">EVENTOS</a>
         </li>
-        <div *ngIf="user.role == 'user'; else cliente2">
-          <li class="nav-item">
-            <a class="nav-link" (click)="logout()" routerLink="/" routerLinkActive="active"> LOGOUT </a>
-          </li>
-        </div>
-        <ng-template #cliente2>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="modal" href="#myModal"> LOGIN </a>
-          </li>
-        </ng-template>
       </ul>
     </div>
   </nav>
-</ng-template>
-
-
-<ng-template #modalCarrito let-modal>
-  <div class="modal-header">
-    <h3>Mi Pedido</h3>
-    <button class="close" aria-label="close" type="button" (click)="modal.dismiss()">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <div class="modal-body">
-    <div>
-      <table class="table table-hover">
-        <tbody>
-          <!--<tr *ngFor = "let pedido of pedidos" class="text-center">
-                          <td>{{pedido.cantidad}}X</td>
-                          <td><strong>{{pedido.nomproducto}</strong></td>         
-                          <td>${{pedido.precio}}</td>
-                      </tr>-->
-        </tbody>
-      </table>
-      <!--<div style="text-align: center;"><strong>Total ${{pedido.getValorPedido()}}</strong>  </div> -->
-    </div>
-  </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-danger">Vaciar lista</button>
-  </div>
 </ng-template>
 
 <!-- The Modal -->
