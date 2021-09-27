@@ -23,6 +23,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     this.user.role = localStorage.getItem("role");
     this.user.nameuser = localStorage.getItem("nameuser");
+    this.user.nombre = localStorage.getItem("nombre");
   }
 
   login(parUser:Usuario){
@@ -33,6 +34,7 @@ export class HeaderComponent implements OnInit {
         this.user = data;
           localStorage.setItem("nameuser",this.user.nameuser);
           localStorage.setItem("role",this.user.role);
+          localStorage.setItem("nombre",this.user.nombre);
           if(this.user.role == "ADMIN"){
             this.router.navigate(["listar"]);
           } else {

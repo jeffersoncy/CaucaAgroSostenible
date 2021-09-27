@@ -7,15 +7,16 @@
     </div>
   </div>
   <div class="bnuser">
-    <div *ngIf="user.role == 'ADMIN' or user.role == 'user'">
+    <div  *ngIf="user.role == 'ADMIN' or user.role == 'user'" style="text-align: center;">
       <img src="../../assets/logoutt.png" class="imagenuser" (click)="logout()" routerLink="/" routerLinkActive="active" />
-      {{user.nameuser}}
+      <p class="etiqueta-admin">{{user.nameuser}}</p>
+      
     </div>
-    <div *ngIf="user.role == 'user'" > 
+    <div  *ngIf="user.role == 'user'" style="text-align: center;"> 
       <img src="../../assets/logoutt.png" class="imagenuser" (click)="logout()" routerLink="/" routerLinkActive="active" />
-      {{user.nameuser}}
+      <p class="etiqueta-user" >{{user.nombre}}</p>
     </div>
-    <div *ngIf="user.role == 'null'" >
+    <div *ngIf="user.role == 'null'" style="text-align: center;">
       <img src="../../assets/login.png" class="imagenuser" data-toggle="modal" href="#myModal" />
     </div> 
   </div>
