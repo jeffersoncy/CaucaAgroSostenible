@@ -38,6 +38,7 @@ export class CarritoComponent implements OnInit {
   obtenerDatos(){
     this.service.obtenerTodos().subscribe(data=>{
       this.pedidos = data;
+      localStorage.setItem("nropedidos",String(this.pedidos.length));
     })
   }
 

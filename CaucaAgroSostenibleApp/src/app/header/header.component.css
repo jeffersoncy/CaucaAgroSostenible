@@ -20,6 +20,7 @@
     border: 1px solid #d41010; 
     margin-right: 20px;
     float: right;
+    justify-content: center;
 }
 
 .bnuser {
@@ -65,4 +66,34 @@
     width: 120px;
     background: #55b02f;
     color: white;
+}
+
+.imagen:hover {
+    border: 1px solid #55b02f;
+    left: 0px;
+    width: 50px; 
+    margin-top: 20px;
+    margin-left: 21px;
+  }
+
+  .imagen {
+      margin-top: 22px;
+      margin-left: 23px;
+      cursor: pointer;
+      width: 45px;
+  }
+  
+  .circle{
+    width: 25px;
+    height: 25px;
+    background-color: #ffaa00;
+    border-radius: 100%;
+    position: absolute;
+    margin-left: 995px;
+}
+
+.circle:disabled,
+.circle[disabled]{
+    background: transparent;
+    color: transparent;
 }

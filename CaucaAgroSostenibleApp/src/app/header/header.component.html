@@ -3,7 +3,8 @@
   <div class="bnlogo"></div>
   <div class="bncarrito">
     <div *ngIf="user.role != 'ADMIN'" > 
-      <button class="miPedido" id="miPedido" routerLink="/carrito" routerLinkActive="active">ver mi pedido</button>
+        <div class="circle" id="circle"></div>
+      <img src="../../assets/carritocompras.png" class="imagen" routerLink="/carrito" routerLinkActive="active" />
     </div>
   </div>
   <div class="bnuser">
