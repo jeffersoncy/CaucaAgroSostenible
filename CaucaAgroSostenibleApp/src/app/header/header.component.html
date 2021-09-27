@@ -13,7 +13,9 @@
     <div *ngIf="user.role == 'user'" > 
       <P>Bienvenido {{user.nameuser}}</P>
     </div>
-
+    <div *ngIf="user.role == 'null'" >
+      <img src="../../assets/login.png" class="imagenuser" data-toggle="modal" href="#myModal" />
+    </div> 
   </div>
 </div>
 

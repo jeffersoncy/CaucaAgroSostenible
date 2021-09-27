@@ -17,7 +17,6 @@
 .bncarrito {
     width: 100px;
     height: 100%;
-    border: 1px solid #d41010; 
     margin-right: 20px;
     float: right;
     justify-content: center;
@@ -26,7 +25,6 @@
 .bnuser {
     width: 100px;
     height: 100%; 
-    border: 1px solid #1013d4; 
     float: right;
 }
 
@@ -73,28 +71,28 @@
     left: 0px;
     width: 50px; 
     margin-top: 20px;
-    margin-left: 21px;
+    margin-left: 46px;
   }
 
   .imagen {
       margin-top: 22px;
-      margin-left: 23px;
+      margin-left: 48px;
+      cursor: pointer;
+      width: 45px;
+  }
+
+  .imagenuser:hover {
+    border: 1px solid #55b02f;
+    left: 0px;
+    width: 50px; 
+    margin-top: 20px;
+    margin-left: 81px;
+  }
+
+  .imagenuser {
+      margin-top: 22px;
+      margin-left: 83px;
       cursor: pointer;
       width: 45px;
   }
   
-  .circle{
-    width: 25px;
-    height: 25px;
-    background-color: #ffaa00;
-    border-radius: 100%;
-    position: absolute;
-    margin-left: 55px;
-    margin-top: 5px;
-}
-
-.circle:disabled,
-.circle[disabled]{
-    background: transparent;
-    color: transparent;
-}
