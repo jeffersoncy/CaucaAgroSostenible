@@ -89,7 +89,8 @@
     background-color: #ffaa00;
     border-radius: 100%;
     position: absolute;
-    margin-left: 995px;
+    margin-left: 55px;
+    margin-top: 5px;
 }
 
 .circle:disabled,
