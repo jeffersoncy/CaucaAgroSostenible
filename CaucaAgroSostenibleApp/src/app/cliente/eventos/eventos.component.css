@@ -4,7 +4,7 @@ agm-map {
 
   .col-30 {
     float: left;
-    width: 30%;
+    width: 28%;
     margin-top: 6px;
     margin-left: 15px;
     border: 1px solid #acacac;
@@ -45,4 +45,8 @@ agm-map {
   .tituloEventos{
     text-align: center;
     margin-bottom: 20px;
+  }
+
+  .container-mapa{
+    display:inline-block;
   }
