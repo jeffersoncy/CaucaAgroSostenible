@@ -4,6 +4,7 @@ import { Organizacion } from 'src/app/Modelo/Organizacion';
 import { Error } from 'src/app/Modelo/Error';
 import { ServiceService } from 'src/app/Service/service.service';
 import { DomSanitizer } from '@angular/platform-browser';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'app-editarorg',
@@ -28,6 +29,7 @@ export class EditarorgComponent implements OnInit {
     let id = localStorage.getItem("idOrganizacion");
     this.service.getOrganizacionByID(+id).subscribe(data => {
       this.organizacion = data;
+      this.previsualizacion = "../../../../assets/Organizaciones/" + data.rutaimagen;
     })
   }
 
