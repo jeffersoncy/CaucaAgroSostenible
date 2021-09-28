@@ -138,3 +138,21 @@ input[type=number]::-webkit-outer-spin-button {
     text-shadow: 1px 1px 3px #55b02f;
     font-weight: bold;
 }
+
+@media screen and (max-width:800px){
+    .col-sm-2{
+        min-width:400px;
+    }
+
+    .nav-pills{
+        min-width:400px;
+    }
+
+    #container{
+    width:auto;
+    } 
+   
+    header h1 a{
+    width:auto;
+    }
+   }

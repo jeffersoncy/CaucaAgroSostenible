@@ -14,24 +14,16 @@ export class HomeComponent implements OnInit {
 
   productos!: Producto[];
   productosfiltrado!: Producto[];
-  productoAux: Producto;
   cantidad: number = 1;
-  pedidos: Pedido[];
   carrito: Pedido;
-  modal: NgbModalRef;
   categoria: string;
-  constructor(private service: ServiceService, private router: Router, public modalService: NgbModal) { 
+  constructor(private service: ServiceService, private router: Router) { 
     this.productosfiltrado = [ ]; 
   }
 
   ngOnInit(): void {
     this.listarProductos();
-    
     this.categoria="general";
-  }
-
-  cerrar() {
-    this.modal.close();
   }
 
   listarProductos() {
@@ -77,15 +69,11 @@ export class HomeComponent implements OnInit {
     if (tipo != "general") {
       this.categoria = tipo;
       for (let index = 0; index < this.productos.length; index++) {
-        console.log("entro al for");
         if (this.productos[index].tipo == tipo) {
-          console.log("entro al if");
           this.productosfiltrado.push(this.productos[index])
-          //console.log(this.productosfiltrado[index].nomProducto);
         }
       }
       productos = this.productosfiltrado;
-      console.log("entro");
     } else {
       this.categoria = "general"
     }
