@@ -4,9 +4,10 @@ export class Producto{
     rutaImagen: string;
     cantidad: number;
     precio: number;
+    tipo: string;
 
     compareTo(producto:Producto) : boolean{
-        if(producto.nomProducto == this.nomProducto && producto.rutaImagen == this.rutaImagen && producto.cantidad == this.cantidad && producto.precio == this.precio){
+        if(producto.nomProducto == this.nomProducto && producto.rutaImagen == this.rutaImagen && producto.cantidad == this.cantidad && producto.precio == this.precio && producto.tipo == this.tipo){
             return true;
         }
         return false;
@@ -24,7 +25,7 @@ export class Producto{
         return this.precio
     }
 
-    public getcantidad_producto():number{
+    getcantidad_producto():number{
         return this.cantidad
     }
 
@@ -35,6 +36,4 @@ export class Producto{
     setprecio_item(cantidad:number){
         this.precio=cantidad;
     }
-
-
 }
