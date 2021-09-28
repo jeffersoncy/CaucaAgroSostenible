@@ -13,13 +13,16 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class AgregarComponent implements OnInit {
 
+  tipos;
+  opcionSeleccionado: string  = '0';
+  verSeleccion: string = '';
   public previsualizacion:string;
   public ruta:string;
   producto:Producto = new Producto;
   public archivo: any = []
   errores?:Error[];
   constructor(private service:ServiceService, private router:Router, private sanitizer: DomSanitizer) {
-
+    this.tipos = ["Frutas y verduras","Pollo, Carne y Pescados","Huevos y derivados lacteos","Despensa"]
   }
 
 
@@ -31,6 +34,7 @@ export class AgregarComponent implements OnInit {
       {
       if (this.producto.compareTo(data)) {
         this.producto = data;
+        console.log(this.producto.tipo);
         alert("Producto añadido correctamente");
         this.router.navigate(["listar"]);
       }else{
