@@ -10,7 +10,7 @@
                         <div *ngFor="let coord of coordenadas">
                             <div class="card btn btn-outline-light text-dark">
                                 <div class="card-head">{{coord.nombre}}</div>
-                                <div class="card-body">Dirección: {{coord.direccion}}<br>{{coord.descripcion}}</div>
+                                <div class="card-body">{{coord.descripcion}}<br><br>Dirección: {{coord.direccion}}</div>
                                 <button type="button" class="btn btn-outline-success" (click)="ubicar(coord)">Ver ubicación</button>
                             </div>
                             <br>
@@ -23,8 +23,8 @@
                             <agm-marker *ngFor="let coord of coordenadas" [latitude]="coord.latitud" [longitude]="coord.longitud">
                                 <agm-info-window [isOpen]="false">
                                     <p>{{coord?.nombre}}</p>
-                                    <p>{{coord?.direccion}}</p>
                                     <p>{{coord?.descripcion}}</p>
+                                    <p>{{coord?.direccion}}</p>
                                 </agm-info-window>
                             </agm-marker>
                         </agm-map>
@@ -34,8 +34,8 @@
                             <agm-marker *ngFor="let coord of coordenadas" [latitude]="coord.latitud" [longitude]="coord.longitud">
                                 <agm-info-window [isOpen]="false">
                                     <p>{{coord?.nombre}}</p>
-                                    <p>{{coord?.direccion}}</p>
                                     <p>{{coord?.descripcion}}</p>
+                                    <p>{{coord?.direccion}}</p>
                                 </agm-info-window>
                             </agm-marker>
                         </agm-map>
