@@ -22,6 +22,7 @@ export class RegistroComponent implements OnInit {
     this.service.newUsuario(this.user).subscribe(data=>
       {
         alert("Registro completado");
+        localStorage.setItem("nombre",this.user.nombre);
         localStorage.setItem("nameuser",this.user.nameuser);
         localStorage.setItem("role","user");
         window.location.reload();

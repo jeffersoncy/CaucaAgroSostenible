@@ -24,5 +24,8 @@ export class InversionistasComponent implements OnInit {
       
     })
   }
+  send(){
+    alert("Correo enviado correctamente");
+  }
 
 }
