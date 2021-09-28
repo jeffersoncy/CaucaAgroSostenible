@@ -12,6 +12,7 @@
                     <div class="invalid-feedback">Este campo es obligatorio.</div>
                     <div class="alert">{{mensajeError("nomInvers")}}</div>
                 </div>
+
                 <!--  Preview de la imagen -->
                 <div *ngIf="previsualizacion">
                     <img [src]="previsualizacion" alt="" width="200px">
@@ -23,8 +24,9 @@
                     <div class="valid-feedback">Valido.</div>
 
                     <div class="invalid-feedback">Este campo es obligatorio.</div>
-                    <div class="alert">{{mensajeError("rutaImg")}}</div>
+                    <div class="alert">{{mensajeError("rutaImagen")}}</div>
                 </div>
+
                 <div class="form-group">
                     <label for="descripInvers">Descripción del Inversionista:</label>
                     <input type="text" class="form-control" [(ngModel)]="invers.descripcion" name="descripInvers"
