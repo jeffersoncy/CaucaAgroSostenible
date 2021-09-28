@@ -9,7 +9,7 @@ import co.unicauca.Usuario.presentation.rest.exceptions.UsuarioDomainException;
 /**
  * Interfaz de operaciones de la bd de usuario
  * 
- * @author Jefferson Campo y Danny Diaz
+ * @author Jefferson Campo - Danny Diaz - Christian Tobar
  *
  */
 public interface IUsuarioService {

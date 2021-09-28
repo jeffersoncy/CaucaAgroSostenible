@@ -4,7 +4,7 @@ import co.unicauca.eventos.domain.service.EnumErrorCodes;
 /**
  * Manejo de excepciones de un carrito
  * 
- * @author Jefferson Campo y Danny Diaz
+ * @author Jefferson Campo - Danny Diaz - Christian Tobar
  */
 public class EventosError {
 

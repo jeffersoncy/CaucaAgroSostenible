@@ -6,7 +6,7 @@ import co.unicauca.Usuario.domain.entity.Usuario;
 /**
  * Interfaz DAO de Usuario que extiende de la interfaz CrudRepository
  * 
- * @author Jefferson Campo y Danny Diaz
+ * @author Jefferson Campo - Danny Diaz - Christian Tobar
  *
  */
 public interface IUsuarioDao extends CrudRepository<Usuario, Long>{
