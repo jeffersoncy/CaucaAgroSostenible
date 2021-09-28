@@ -50,6 +50,47 @@ agm-map {
     display:inline-block;
   }
 
+  @media screen and (max-width:992px){
+    .col-70{
+      width: 100%;
+      float: center;
+      margin-right: auto;
+      margin-left: auto;
+      margin-top: 20px;
+    }
+    agm-map {
+      height: 300px;
+    }
+
+    .col-30 {
+      float: center;
+      width: 100%;
+      margin-top: 6px;
+      border: 1px solid #acacac;
+      border-radius: 5px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+    .container-mapa{
+      display:block;
+    }
+
+    #overflowTest {
+      color: white;
+      padding: 5px;
+      width: 100%;
+      height: 375px;
+      overflow: scroll;
+    }
+
+    .tituloEventos{
+      text-align: center;
+      margin-bottom: 15px;
+      font-size:25px
+    }
+
+   }
+
 
   
  

@@ -140,6 +140,11 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 @media screen and (max-width:800px){
+    
+    .fakeimg{
+        height: 120px;
+    }
+
     .col-sm-2{
         min-width:400px;
     }

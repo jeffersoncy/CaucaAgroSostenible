@@ -1,0 +1,20 @@
+@media screen and (max-width:768px){
+    .tituloev{
+      text-align: center;
+      margin-bottom: 15px;
+      font-size:25px
+    }
+  
+    .card-body{
+      font-size: 9px;
+    }
+
+    .titulo{
+        font-size: 16px;
+    }
+
+    .btn{
+        font-size: 8px;
+        margin-left: 0px;
+    }
+   }

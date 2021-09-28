@@ -1,0 +1,41 @@
+@media screen and (max-width:800px){
+    .tituloev{
+      text-align: center;
+      margin-bottom: 15px;
+      font-size:25px
+    }
+  
+    .card-body{
+      font-size: 10px;
+    }
+
+    .titulo{
+        font-size: 16px;
+    }
+
+    .btn{
+        font-size: 10px;
+        margin-left: 0px;
+    }
+   }
+
+   @media screen and (max-width:650px){
+    .tituloev{
+      text-align: center;
+      margin-bottom: 15px;
+      font-size:25px
+    }
+  
+    .card-body{
+      font-size: 7px;
+    }
+
+    .titulo{
+        font-size: 16px;
+    }
+
+    .btn{
+        font-size: 10px;
+        margin-left: 0px;
+    }
+   }

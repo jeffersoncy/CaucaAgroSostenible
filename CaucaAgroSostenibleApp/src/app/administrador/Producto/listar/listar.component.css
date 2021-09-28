@@ -1,0 +1,20 @@
+@media screen and (max-width:800px){
+    .tituloProd{
+      text-align: center;
+      margin-bottom: 15px;
+      font-size:25px
+    }
+  
+    .card-body{
+      font-size:  8px;
+    }
+
+    .titulo{
+        font-size: 16px;
+    }
+
+    .btn{
+        font-size: 9px;
+        margin-left: 0px;
+    }
+   }

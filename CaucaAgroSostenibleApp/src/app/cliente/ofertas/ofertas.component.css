@@ -128,3 +128,16 @@ div.gallery2 img {
   font-size: 30px;
   text-shadow: 3px 3px #343537;
 }
+
+@media screen and (max-width:800px){
+  .carousel-caption{
+      font-size: 22px;
+      text-shadow: 2px 2px #343537;
+  }
+  .carousel-inner{
+    height: 150px;
+  }
+  .carousel-item{
+    height: 150px;
+  }
+ }
