@@ -50,6 +50,7 @@ export class AgregarComponent implements OnInit {
   }
 
   capturarFile(event):any{
+    alert("Imagen previsualizada");
     const archivoCapturado = event.target.files[0]
     this.extraerBase64(archivoCapturado).then((imagen:any) => {
       this.previsualizacion = imagen.base;
