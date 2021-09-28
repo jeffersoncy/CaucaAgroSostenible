@@ -27,3 +27,12 @@
     background: gray;
     color: rgba(53, 44, 44, 0.767);
 }
+
+.sinproductos{
+    margin-top: 60px;
+    width: 25%;
+    height: 25%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

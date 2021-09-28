@@ -102,3 +102,9 @@
     cursor: pointer;
     width: 45px;
   }
+
+  .modal-header{
+    background-color: #343738;
+    color: white;
+    margin-top: 0px;
+  }
