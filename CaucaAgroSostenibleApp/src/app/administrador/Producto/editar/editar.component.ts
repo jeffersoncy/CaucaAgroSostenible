@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Producto } from 'src/app/Modelo/Producto';
 import { Error } from 'src/app/Modelo/Error';
 import { ServiceService } from 'src/app/Service/service.service';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-editar',
@@ -12,12 +13,15 @@ import { ServiceService } from 'src/app/Service/service.service';
 export class EditarComponent implements OnInit {
 
   tipos;
+  public previsualizacion:string;
+  public ruta:string;
   producto: Producto = new Producto;
   errores: Error[];
   bandera: boolean = false;
   prodTipo : string;
+  public archivo: any = []
   indice : number;
-  constructor(private service: ServiceService, private router: Router) {
+  constructor(private service: ServiceService, private router: Router, private sanitizer: DomSanitizer) {
     this.tipos = ["Frutas y verduras","Pollo, Carne y Pescados","Huevos y derivados lacteos","Despensa"]
    }
 
@@ -28,8 +32,10 @@ export class EditarComponent implements OnInit {
   obtenerDatos() {
     let id = localStorage.getItem("idProducto");
     this.service.getProductByID(+id).subscribe(data => {
+      
       this.producto = data;
       this.prodTipo = data.tipo;
+      this.previsualizacion = "../../../../assets/Productos/" + data.rutaImagen;
       for (let index = 0; index < this.tipos.length; index++) {
         if (this.tipos[index] == data.tipo) {
           this.indice = index;
@@ -58,6 +64,17 @@ export class EditarComponent implements OnInit {
     )
   }
 
+  capturarFile(event):any{
+    alert("Imagen actualizada correctamente");
+    const archivoCapturado = event.target.files[0]
+    this.extraerBase64(archivoCapturado).then((imagen:any) => {
+      this.previsualizacion = imagen.base;
+    })
+    this.archivo.push(archivoCapturado);
+    this.producto.rutaImagen = this.producto.rutaImagen.slice(12);
+    console.log(this.producto.rutaImagen);
+  }
+
   atras() {
     this.router.navigate(["listar"]);
   }
@@ -73,5 +90,26 @@ export class EditarComponent implements OnInit {
     }
     return "";
   }
+
+  extraerBase64 = async ($event: any) => new Promise((resolve, reject) => {
+    try {
+      const unsafeImg = window.URL.createObjectURL($event);
+      const image = this.sanitizer.bypassSecurityTrustUrl(unsafeImg);
+      const reader = new FileReader();
+      reader.readAsDataURL($event);
+      reader.onload = () => {
+        resolve ({
+          base:reader.result
+        });
+      };
+      reader.onerror = error => {
+        resolve({
+          base: null
+        });
+      };
+    } catch (e) {
+      return null;
+    }
+  })
 
 }

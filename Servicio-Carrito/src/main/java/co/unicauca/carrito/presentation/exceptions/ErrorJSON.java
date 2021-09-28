@@ -8,7 +8,7 @@ import co.unicauca.carrito.domain.service.EnumErrorCodes;
 /**
  * Maneja los errores en formato Json. Es utilizada por ErrorsPayload
  * 
- * @author Jefferson Campo y Danny Díaz
+ * @author Jefferson Campo - Danny Díaz - Christian Tobar
  *
  */
 

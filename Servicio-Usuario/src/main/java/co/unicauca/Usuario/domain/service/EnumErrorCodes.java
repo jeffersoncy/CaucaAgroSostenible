@@ -4,7 +4,7 @@ package co.unicauca.Usuario.domain.service;
  * Códigos de error. Lo usa IUsuarioImplService para hacer validaciones de
  * dominio
  * 
- * @author Jefferson Campo y Danny Diaz
+ * @author Jefferson Campo - Danny Diaz - Christian Tobar
  *
  */
 public enum EnumErrorCodes {
