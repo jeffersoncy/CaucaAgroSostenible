@@ -6,3 +6,4 @@ INSERT INTO oferta(id, nomoferta, precio, rutaimg, cantidad, descuento) values(1
 INSERT INTO oferta(id, nomoferta, precio, rutaimg, cantidad, descuento) values(1006,'Saco de café x50kg',65000,'bultocafe.png', 10, 8);
 INSERT INTO oferta(id, nomoferta, precio, rutaimg, cantidad, descuento) values(1007,'Saco de papa x25kg',35000,'bulto papa.png', 50, 7);
 INSERT INTO oferta(id, nomoferta, precio, rutaimg, cantidad, descuento) values(1008,'Saco de harina x50kg',75000,'bultoharina.png', 30, 17);
+INSERT INTO oferta(id, nomoferta, precio, rutaimg, cantidad, descuento) values(1009,'Tina de leche x40L',80000,'tinaleche.PNG', 10, 30);
