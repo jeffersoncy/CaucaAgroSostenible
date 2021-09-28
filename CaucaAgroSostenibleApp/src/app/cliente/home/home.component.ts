@@ -13,19 +13,21 @@ import { ServiceService } from 'src/app/Service/service.service';
 export class HomeComponent implements OnInit {
 
   productos!: Producto[];
-  productosfiltrado: Producto[];
+  productosfiltrado!: Producto[];
   productoAux: Producto;
   cantidad: number = 1;
   pedidos: Pedido[];
   carrito: Pedido;
   modal: NgbModalRef;
   categoria: string;
-  constructor(private service: ServiceService, private router: Router, public modalService: NgbModal) { }
+  constructor(private service: ServiceService, private router: Router, public modalService: NgbModal) { 
+    this.productosfiltrado = [ ]; 
+  }
 
   ngOnInit(): void {
     this.listarProductos();
-
-
+    
+    this.categoria="general";
   }
 
   cerrar() {
@@ -68,20 +70,25 @@ export class HomeComponent implements OnInit {
       input.value = 1;
       this.cantidad = 1;
     });
-    //if(this.pedido == undefined || this.pedido == null){
-    //document.getElementById("miPedido").removeAttribute("disabled");
-    //document.getElementById("circle").removeAttribute("disabled");
-    //} 
   }
 
-  tipo(tipo: string) {
+  tipo(productos:Producto[],tipo: string) {
+    this.productosfiltrado = [];
     if (tipo != "general") {
+      this.categoria = tipo;
       for (let index = 0; index < this.productos.length; index++) {
+        console.log("entro al for");
         if (this.productos[index].tipo == tipo) {
-          this.productosfiltrado.push(this.productos[index]);
+          console.log("entro al if");
+          this.productosfiltrado.push(this.productos[index])
+          //console.log(this.productosfiltrado[index].nomProducto);
         }
       }
-    } 
+      productos = this.productosfiltrado;
+      console.log("entro");
+    } else {
+      this.categoria = "general"
+    }
   }
-  
+
 }
