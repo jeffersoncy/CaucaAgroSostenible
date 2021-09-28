@@ -33,6 +33,10 @@ export class Producto{
         this.cantidad=cantidad;
     }
 
+    setnombre_producto(nombre:string){
+        this.nomProducto=nombre;
+    }
+
     setprecio_item(cantidad:number){
         this.precio=cantidad;
     }
