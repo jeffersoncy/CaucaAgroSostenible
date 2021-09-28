@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Error } from 'src/app/Modelo/Error';
 import { Oferta } from 'src/app/Modelo/Oferta';
 import { ServiceService } from 'src/app/Service/service.service';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-editarofer',
@@ -11,19 +12,24 @@ import { ServiceService } from 'src/app/Service/service.service';
 })
 export class EditaroferComponent implements OnInit {
 
+
+  public previsualizacion: String;
+  public ruta: string;
+  public archivo: any = []
   oferta: Oferta = new Oferta;
   errores: Error[];
   bandera: boolean = false;
-  constructor(private service: ServiceService, private router: Router) { }
+  constructor(private service: ServiceService, private router: Router, private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
     this.obtenerDatos();
   }
-
+ 
   obtenerDatos() {
     let id = localStorage.getItem("idOferta");
     this.service.getOfertaByID(+id).subscribe(data => {
       this.oferta = data;
+      this.previsualizacion = "../../../../assets/Ofertas/" + data.rutaImg;
     })
   }
 
@@ -46,6 +52,17 @@ export class EditaroferComponent implements OnInit {
     )
   }
 
+  capturarFile(event):any{
+    alert("Imagen actualizada correctamente");
+    const archivoCapturado = event.target.files[0]
+    this.extraerBase64(archivoCapturado).then((imagen:any) => {
+      this.previsualizacion = imagen.base;
+    })
+    this.archivo.push(archivoCapturado);
+    this.oferta.rutaImg = this.oferta.rutaImg.slice(12);
+    console.log(this.oferta.rutaImg);
+  }
+
   atras() {
     this.router.navigate(["listarofer"]);
   }
@@ -61,5 +78,27 @@ export class EditaroferComponent implements OnInit {
     }
     return "";
   }
+
+
+  extraerBase64 = async ($event: any) => new Promise((resolve, reject) => {
+    try {
+      const unsafeImg = window.URL.createObjectURL($event);
+      const image = this.sanitizer.bypassSecurityTrustUrl(unsafeImg);
+      const reader = new FileReader();
+      reader.readAsDataURL($event);
+      reader.onload = () => {
+        resolve ({
+          base:reader.result
+        });
+      };
+      reader.onerror = error => {
+        resolve({
+          base: null
+        });
+      };
+    } catch (e) {
+      return null;
+    }
+  })
 
 }

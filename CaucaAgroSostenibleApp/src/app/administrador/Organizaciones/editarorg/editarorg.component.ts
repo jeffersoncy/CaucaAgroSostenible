@@ -4,7 +4,6 @@ import { Organizacion } from 'src/app/Modelo/Organizacion';
 import { Error } from 'src/app/Modelo/Error';
 import { ServiceService } from 'src/app/Service/service.service';
 import { DomSanitizer } from '@angular/platform-browser';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'app-editarorg',
@@ -16,10 +15,10 @@ export class EditarorgComponent implements OnInit {
   organizacion: Organizacion = new Organizacion;
   errores: Error[];
   bandera: boolean = false;
-  public previsualizacion:String;
-  public ruta:string;
+  public previsualizacion: String;
+  public ruta: string;
   public archivo: any = []
-  constructor(private service: ServiceService, private router: Router,private sanitizer: DomSanitizer) { }
+  constructor(private service: ServiceService, private router: Router, private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
     this.obtenerDatosOrg();
@@ -54,9 +53,10 @@ export class EditarorgComponent implements OnInit {
     )
   }
 
-  capturarFile(event):any{
+  capturarFile(event): any {
+    alert("Imagen subida correctamente");
     const archivoCapturado = event.target.files[0]
-    this.extraerBase64(archivoCapturado).then((imagen:any) => {
+    this.extraerBase64(archivoCapturado).then((imagen: any) => {
       this.previsualizacion = imagen.base;
     })
     this.archivo.push(archivoCapturado);
@@ -86,8 +86,8 @@ export class EditarorgComponent implements OnInit {
       const reader = new FileReader();
       reader.readAsDataURL($event);
       reader.onload = () => {
-        resolve ({
-          base:reader.result
+        resolve({
+          base: reader.result
         });
       };
       reader.onerror = error => {
