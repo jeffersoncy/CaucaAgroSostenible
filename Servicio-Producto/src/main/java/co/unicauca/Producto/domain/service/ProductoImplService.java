@@ -15,7 +15,7 @@ import co.unicauca.Producto.presentation.rest.exceptions.ProductoDomainException
 
 /**
  * 
- * @author Jefferson Eduardo Campo - Danny Albeto Diaz
+ * @author Jefferson Eduardo Campo - Danny Albeto Diaz - Christian Tobar
  *
  */
 
@@ -88,6 +88,7 @@ public class ProductoImplService implements IProductoService{
 		prod.setCantidad(producto.getCantidad());
 		prod.setPrecio(producto.getPrecio());
 		prod.setRutaImagen(producto.getRutaImagen());
+		prod.setTipo(producto.getTipo());
 		return productoDao.save(prod);
 	}
 
@@ -126,6 +127,9 @@ public class ProductoImplService implements IProductoService{
 		if (prod.getPrecio() <= 0) {
 			errors.add(new ProductoError(EnumErrorCodes.INVALID_NUMBER, "Precio del producto",
 					"El precio del producto es obligatorio y mayor a cero"));
+		}
+		if(prod.getTipo() == null || prod.getTipo().isBlank()) {
+			errors.add(new ProductoError(EnumErrorCodes.EMPTY_FIELD, "tipo", "El tipo del producto es obligatorio"));
 		}
 		
 		return errors;

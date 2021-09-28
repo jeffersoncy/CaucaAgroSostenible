@@ -37,6 +37,9 @@ public class Producto implements Serializable{
 	
 	@Column
 	private double precio;
+	
+	@Column
+	private String tipo;
 
 	public long getId() {
 		return id;
@@ -77,6 +80,13 @@ public class Producto implements Serializable{
 	public void setPrecio(double precio) {
 		this.precio = precio;
 	}
-	
+
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
 
 }
