@@ -1,19 +1,32 @@
-<div class="fakeimg">
-    <img src="../../../assets/banner-06.png" class="fakeimg">
+<div *ngIf="">
+    <div class="fakeimg">
+        <img src="../../../assets/banner-06.png" class="fakeimg">
+    </div>
 </div>
-
 <div class="container">
     <div class="row">
         <div class="col-sm-2">
-            <app-sidebar></app-sidebar>
+            <h2 style="margin-top: 30px;">Filtros</h2>
+            <ul class="nav nav-pills flex-column">
+                <li class="nav-item ">
+                    <a class="nav-link" (click)="tipo('general')" href="#">De nuestra tierra</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" (click)="tipo('Fyv')" href="#">Frutas y verturas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" (click)="tipo('Carnes')" href="#">Pollo, Carne y Pescados</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" (click)="tipo('huevosyd')" href="#">Huevos y derivados lacteos </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" (click)="tipo('despensa')" href="#">Despensa </a>
+                </li>
+            </ul>
         </div>
-
         <div class="col-sm-10">
-            <!-- <div class="fakeimg">
-                <img src="../../../assets/banner-06.png" class="fakeimg">
-            </div> -->
-
-            <div class="galleryHome" *ngFor="let producto of productos"
+            <div class="galleryHome" *ngFor="let producto of productos.slice(0, productos.length)"
                 style="margin-top: 20px;">
                 <div *ngIf="producto.cantidad > 0; else productos">
                     <div class="imgProd"><img src="../../../../assets/Productos/{{producto.rutaImagen}}" width="200px"
@@ -49,27 +62,3 @@
         </div>
     </div>
 </div>
-
-
-<!--<ng-template #modalAgregarProducto let-modal>
-    <div class="modal-header">
-        <h3>Producto</h3>
-        <button class="close" aria-label="close" type="button" (click)="modal.dismiss()">
-            <span  aria-hidden="true">&times;</span>
-        </button>
-    </div>
-    <div class="modal-body">
-        <div>
-            <h3>{{productoAux.nomProducto}}</h3>
-                {{productoAux.precio}}
-        </div>
-    </div>
-    <div class="modal-footer">
-        <div class="quantity">
-            <button class="disminuir" (click)="disminuirInput(inputCantidad)">-</button>
-            <input #inputCantidad type="number" class="cantidad" value="1" min="1" max="20" (change)="actualizarPrecio(inputCantidad)">     
-            <button class="aumentar" (click)="aumentarInput(inputCantidad)">+</button>
-        </div>
-        <button type="button" class="btn btn-danger" (click)="agregarItem()">Agregar a mi pedido ({{productoAux.precio * cantidad}})</button>
-    </div>
-</ng-template>-->
