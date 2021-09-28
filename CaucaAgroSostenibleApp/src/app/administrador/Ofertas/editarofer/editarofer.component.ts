@@ -53,7 +53,7 @@ export class EditaroferComponent implements OnInit {
   }
 
   capturarFile(event):any{
-    alert("Imagen agregada correctamente");
+    alert("Imagen actualizada correctamente");
     const archivoCapturado = event.target.files[0]
     this.extraerBase64(archivoCapturado).then((imagen:any) => {
       this.previsualizacion = imagen.base;
