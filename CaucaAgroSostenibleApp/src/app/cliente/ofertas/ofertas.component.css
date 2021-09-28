@@ -123,3 +123,8 @@ div.gallery2 img {
   background: transparent;
   color: transparent;
 }
+
+.carousel-caption{
+  font-size: 50px;
+  text-shadow: 4px 4px #343537;
+}

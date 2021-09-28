@@ -29,6 +29,8 @@ INSERT INTO productos(ID, NOMPRODUCTO, RUTAIMAGEN, CANTIDAD, PRECIO, TIPO) value
 INSERT INTO productos(ID, NOMPRODUCTO, RUTAIMAGEN, CANTIDAD, PRECIO, TIPO) values(29, 'Leche caja x1L', 'leche.png',600, 3500,'Huevos y derivados lacteos');
 INSERT INTO productos(ID, NOMPRODUCTO, RUTAIMAGEN, CANTIDAD, PRECIO, TIPO) values(30, 'Carne molida x500g', 'carnemolida.png',30, 8000,'Pollo, Carne y Pescados');
 INSERT INTO productos(ID, NOMPRODUCTO, RUTAIMAGEN, CANTIDAD, PRECIO, TIPO) values(31, 'Camarones x500g', 'camarones.png',10, 22000,'Pollo, Carne y Pescados');
-
+INSERT INTO productos(ID, NOMPRODUCTO, RUTAIMAGEN, CANTIDAD, PRECIO, TIPO) values(32, 'Arroz x500g', 'arroz.PNG',60, 1400,'Despensa');
+INSERT INTO productos(ID, NOMPRODUCTO, RUTAIMAGEN, CANTIDAD, PRECIO, TIPO) values(33, 'Frijol x500g', 'frijol.PNG',90, 2500,'Despensa');
+INSERT INTO productos(ID, NOMPRODUCTO, RUTAIMAGEN, CANTIDAD, PRECIO, TIPO) values(34, 'Garbanzo x500g', 'garbanzo.PNG',90, 2300,'Despensa');
 
 
