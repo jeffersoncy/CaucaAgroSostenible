@@ -23,12 +23,14 @@ export class EditarorgComponent implements OnInit {
 
   ngOnInit(): void {
     this.obtenerDatosOrg();
+
   }
 
   obtenerDatosOrg() {
     let id = localStorage.getItem("idOrganizacion");
     this.service.getOrganizacionByID(+id).subscribe(data => {
       this.organizacion = data;
+      console.log(this.organizacion.rutaimagen);
       this.previsualizacion = "../../../../assets/Organizaciones/" + data.rutaimagen;
     })
   }
@@ -59,7 +61,6 @@ export class EditarorgComponent implements OnInit {
     })
     this.archivo.push(archivoCapturado);
     this.organizacion.rutaimagen = this.organizacion.rutaimagen.slice(12);
-    console.log(this.organizacion.rutaimagen);
   }
 
   atras() {
