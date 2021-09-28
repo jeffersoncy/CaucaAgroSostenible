@@ -1,4 +1,12 @@
-INSERT INTO productos(ID, NOMPRODUCTO, RUTAIMAGEN, CANTIDAD, PRECIO) values(1, 'Banano', 'banano.jpg', 100 , 2000);
-INSERT INTO productos(ID, NOMPRODUCTO, RUTAIMAGEN, CANTIDAD, PRECIO) values(2, 'Cebolla larga', 'cebollalarga.jpg', 150 , 3000);
-INSERT INTO productos(ID, NOMPRODUCTO, RUTAIMAGEN, CANTIDAD, PRECIO) values(3, 'Guanabana', 'guanabana.jpg', 200 , 5000);
-INSERT INTO productos(ID, NOMPRODUCTO, RUTAIMAGEN, CANTIDAD, PRECIO) values(4, 'Papa parda', 'papaparda.jpg', 250 , 4000);
+INSERT INTO productos(ID, NOMPRODUCTO, RUTAIMAGEN, CANTIDAD, PRECIO) values(1, 'Banano x500g', 'banano.jpg', 20 , 1000);
+INSERT INTO productos(ID, NOMPRODUCTO, RUTAIMAGEN, CANTIDAD, PRECIO) values(2, 'Cebolla larga x250g', 'cebollalarga.jpg', 50 , 500);
+INSERT INTO productos(ID, NOMPRODUCTO, RUTAIMAGEN, CANTIDAD, PRECIO) values(12, 'Carne en bistec x500g', 'carnebistec.png', 20, 8500);
+INSERT INTO productos(ID, NOMPRODUCTO, RUTAIMAGEN, CANTIDAD, PRECIO) values(3, 'Guanabana x1kg', 'guanabana.jpg', 60 , 3000);
+INSERT INTO productos(ID, NOMPRODUCTO, RUTAIMAGEN, CANTIDAD, PRECIO) values(4, 'Fresas x500g', 'fresas.jpeg', 50, 2500);
+INSERT INTO productos(ID, NOMPRODUCTO, RUTAIMAGEN, CANTIDAD, PRECIO) values(5, 'Trucha x500g', 'trucha.PNG', 800, 8000);
+INSERT INTO productos(ID, NOMPRODUCTO, RUTAIMAGEN, CANTIDAD, PRECIO) values(6, 'Cebolla morada x500g', 'cebollamorada.jpg', 80, 1500);
+INSERT INTO productos(ID, NOMPRODUCTO, RUTAIMAGEN, CANTIDAD, PRECIO) values(7, 'Papa parda x1kg', 'papaparda.jpg', 40, 3000);
+INSERT INTO productos(ID, NOMPRODUCTO, RUTAIMAGEN, CANTIDAD, PRECIO) values(8, 'Yuca x1kg', 'yuca.png', 100, 1500);
+INSERT INTO productos(ID, NOMPRODUCTO, RUTAIMAGEN, CANTIDAD, PRECIO) values(9, 'Naranja x2kg', 'prod1.png', 500, 2000);
+INSERT INTO productos(ID, NOMPRODUCTO, RUTAIMAGEN, CANTIDAD, PRECIO) values(10, 'Remolacha x1kg', 'remolacha.jpg', 700, 2000);
+INSERT INTO productos(ID, NOMPRODUCTO, RUTAIMAGEN, CANTIDAD, PRECIO) values(11, 'Mango Tommi x1kg', 'mango.jpeg', 300, 2000);
