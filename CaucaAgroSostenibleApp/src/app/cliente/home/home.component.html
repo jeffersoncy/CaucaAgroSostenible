@@ -13,7 +13,7 @@
                 <img src="../../../assets/banner-06.png" class="fakeimg">
             </div> -->
 
-            <div class="galleryHome" *ngFor="let producto of productos.slice(0, productos.length)"
+            <div class="galleryHome" *ngFor="let producto of productos"
                 style="margin-top: 20px;">
                 <div *ngIf="producto.cantidad > 0; else productos">
                     <div class="imgProd"><img src="../../../../assets/Productos/{{producto.rutaImagen}}" width="200px"

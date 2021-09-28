@@ -31,7 +31,7 @@
 <div class="containerOfer" style="margin-top:30px; margin-bottom:30px">
 
 
-    <div class="galleryOfer" *ngFor="let oferta of ofertas.slice(0, ofertas.length)" style="margin-top: 20px;">
+    <div class="galleryOfer" *ngFor="let oferta of ofertas" style="margin-top: 20px;">
       <div *ngIf="oferta.cantidad > 0; else ofertas">
         <div class="circle" id="circle">{{oferta.descuento}} % OFF</div>
         <div class="imgOfer"><img src="../../../../assets/Ofertas/{{oferta.rutaImg}}" width="200px" height="150px" /></div>

@@ -3,7 +3,7 @@
     <div class="vidOrg"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/hiP65ZX8WJs"></iframe> </div>
     <div class="containerOrg">
 
-        <div class="galleryOrg" *ngFor="let organizacion of organizaciones.slice(0, organizaciones.length)">
+        <div class="galleryOrg" *ngFor="let organizacion of organizaciones">
             <div class="imgOrg"><img src="../../../../assets/Organizaciones/{{organizacion.rutaimagen}}" width="150px" height="100px"/></div>
             <div class="nomOrg">{{ organizacion.nombre}} </div>
             <div class="descOrg">{{ organizacion.ubicacion}}</div>
