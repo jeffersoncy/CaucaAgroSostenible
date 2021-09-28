@@ -11,10 +11,15 @@ import { ServiceService } from 'src/app/Service/service.service';
 })
 export class EditarComponent implements OnInit {
 
+  tipos;
   producto: Producto = new Producto;
   errores: Error[];
   bandera: boolean = false;
-  constructor(private service: ServiceService, private router: Router) { }
+  prodTipo : string;
+  indice : number;
+  constructor(private service: ServiceService, private router: Router) {
+    this.tipos = ["Frutas y verduras","Pollo, Carne y Pescados","Huevos y derivados lacteos","Despensa"]
+   }
 
   ngOnInit(): void {
     this.obtenerDatos();
@@ -24,6 +29,13 @@ export class EditarComponent implements OnInit {
     let id = localStorage.getItem("idProducto");
     this.service.getProductByID(+id).subscribe(data => {
       this.producto = data;
+      this.prodTipo = data.tipo;
+      for (let index = 0; index < this.tipos.length; index++) {
+        if (this.tipos[index] == data.tipo) {
+          this.indice = index;
+          console.log(this.indice)
+        }
+      }
     })
   }
 
