@@ -34,7 +34,6 @@ export class AgregarorgComponent implements OnInit {
         this.router.navigate(["listarorg"]);
       }
     });
-    console.log(this.previsualizacion);
   }
 
   capturarFile(event):any{
@@ -45,7 +44,6 @@ export class AgregarorgComponent implements OnInit {
     })
     this.archivo.push(archivoCapturado);
     this.organizacion.rutaimagen = this.organizacion.rutaimagen.slice(12);
-    console.log(this.organizacion.rutaimagen);
   }
 
   atras(){

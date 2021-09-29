@@ -60,7 +60,6 @@ export class EditaroferComponent implements OnInit {
     })
     this.archivo.push(archivoCapturado);
     this.oferta.rutaImg = this.oferta.rutaImg.slice(12);
-    console.log(this.oferta.rutaImg);
   }
 
   atras() {

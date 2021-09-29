@@ -29,7 +29,6 @@ export class EditarorgComponent implements OnInit {
     let id = localStorage.getItem("idOrganizacion");
     this.service.getOrganizacionByID(+id).subscribe(data => {
       this.organizacion = data;
-      console.log(this.organizacion.rutaimagen);
       this.previsualizacion = "../../../../assets/Organizaciones/" + data.rutaimagen;
     })
   }

@@ -32,14 +32,12 @@ export class EditarComponent implements OnInit {
   obtenerDatos() {
     let id = localStorage.getItem("idProducto");
     this.service.getProductByID(+id).subscribe(data => {
-      
       this.producto = data;
       this.prodTipo = data.tipo;
       this.previsualizacion = "../../../../assets/Productos/" + data.rutaImagen;
       for (let index = 0; index < this.tipos.length; index++) {
         if (this.tipos[index] == data.tipo) {
           this.indice = index;
-          console.log(this.indice)
         }
       }
     })
@@ -72,7 +70,6 @@ export class EditarComponent implements OnInit {
     })
     this.archivo.push(archivoCapturado);
     this.producto.rutaImagen = this.producto.rutaImagen.slice(12);
-    console.log(this.producto.rutaImagen);
   }
 
   atras() {

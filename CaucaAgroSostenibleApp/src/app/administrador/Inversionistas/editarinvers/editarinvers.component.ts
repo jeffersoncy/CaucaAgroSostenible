@@ -28,7 +28,6 @@ export class EditarInversComponent implements OnInit {
     let id = localStorage.getItem("idInvers");
     this.service.getInversionistaByID(+id).subscribe(data => {
       this.invers = data;
-      console.log(this.invers.rutaimg);
       this.previsualizacion = "../../../../assets/Inversionistas/" + data.rutaimg;
     })
   }

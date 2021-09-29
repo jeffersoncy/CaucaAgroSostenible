@@ -46,7 +46,6 @@ export class AgregarInversComponent implements OnInit {
     })
     this.archivo.push(archivoCapturado);
     this.invers.rutaimg = this.invers.rutaimg.slice(12);
-    console.log(this.invers.rutaimg);
   }
 
   mensajeError(formato:String): String{

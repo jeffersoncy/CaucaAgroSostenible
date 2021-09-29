@@ -27,7 +27,6 @@ export class HeaderComponent implements OnInit {
   }
 
   login(parUser:Usuario){
-    console.log(parUser.clave);
     this.service.login(parUser).subscribe(data=>
       {
         if(data.role!=null){
