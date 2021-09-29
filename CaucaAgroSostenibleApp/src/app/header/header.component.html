@@ -1,6 +1,8 @@
 <!-- Banner -->
 <div class="banner">
-  <div class="bnlogo"></div>
+  <div class="bnlogo">
+    <img src="../../assets/logo.png" class="logo" routerLink="/home" routerLinkActive="active"/>
+  </div>
   <div class="bncarrito">
     <div *ngIf="user.role != 'ADMIN'" > 
       <img src="../../assets/carritocompras.png" class="imagen" routerLink="/carrito" routerLinkActive="active" />

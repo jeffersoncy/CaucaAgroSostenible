@@ -19,14 +19,15 @@ export class CarritoComponent implements OnInit {
   producto:Producto = new Producto;
   item:Item;
   modal: NgbModalRef;
-  constructor(private service: ServiceService, private router: Router,public modalService:NgbModal) { }
+  constructor(private service: ServiceService, private router: Router,public modalService:NgbModal) { 
+    this.pedidos = [];
+  }
 
   ngOnInit(): void {
     this.obtenerDatos();
     this.calcularvalortotal();
-    //document.getElementById("miPedido").setAttribute("disabled","true");
-    //document.getElementById("circle").setAttribute("disabled","true");
   }
+  
   calcularvalortotal():number{
     let valorTotal = 0;
     this.pedidos.forEach(pedido => {

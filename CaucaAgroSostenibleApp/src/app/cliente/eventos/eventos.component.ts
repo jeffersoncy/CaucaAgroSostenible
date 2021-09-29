@@ -14,10 +14,13 @@ export class EventosComponent implements OnInit {
   lng = -76.6136989;
 
   UbicacionCentral: Evento;
-  bandera: boolean = false;
+  bandera: boolean;
 
-  coordenadas: Evento  [] = [];
-  constructor(private service:ServiceService, private router:Router) { }
+  coordenadas: Evento[];
+  constructor(private service:ServiceService, private router:Router) { 
+    this.coordenadas = [];
+    this.bandera = false;
+  }
 
   ngOnInit(): void {
     this.UbicacionCentral = new Evento(this.lat,this.lng,"","","");

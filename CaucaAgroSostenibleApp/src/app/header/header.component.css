@@ -5,8 +5,13 @@
     background-color: #55b02f;  
 }
 
+.logo{
+    cursor: pointer;
+    width:100px;
+    height:100px;
+}
+
 .bnlogo {
-    background-image: url('../../assets/logo.png');
     background-size: cover;
     width: 100px;
     height: 100%;

@@ -52,10 +52,18 @@ export class HomeComponent implements OnInit {
     } else this.cantidad = +input.value;
   }
 
+ 
   agregarItem(productoAux: Producto, input): void {
-    console.log(productoAux.rutaImagen);
+    /*let bandera: Boolean = false;
+    for (let index = 0; index < this.productos.length; index++) {
+      if(this.productos[index].nomProducto == productoAux.nomProducto){
+        bandera = true;
+        break;
+      }
+    }
+    if(bandera){
+    }*/
     this.carrito = new Pedido(productoAux.nomProducto, productoAux.precio * this.cantidad, this.cantidad, "Productos/" + productoAux.rutaImagen);
-    console.log(this.carrito.rutaimg);
     this.service.addItem(this.carrito).subscribe(data => {
       this.carrito = data;
       alert("Producto añadido al carrito");

@@ -72,6 +72,6 @@ import { AgmCoreModule } from '@agm/core';
     NgbModule
   ],
   providers: [ServiceService],
-  bootstrap: [AppComponent,EventosComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
