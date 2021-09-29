@@ -1,7 +1,12 @@
 <!-- Banner -->
 <div class="banner">
   <div class="bnlogo">
-    <img src="../../assets/logo.png" class="logo" routerLink="/home" routerLinkActive="active"/>
+    <div *ngIf="user.role != 'ADMIN'; else admin" >
+      <img src="../../assets/logo.png" class="logo" routerLink="/home" routerLinkActive="active"/>
+    </div>
+    <ng-template #admin>
+      <img src="../../assets/logo.png" class="logo" routerLink="/listar" routerLinkActive="active"/>
+    </ng-template>
   </div>
   <div class="bncarrito">
     <div *ngIf="user.role != 'ADMIN'" > 
