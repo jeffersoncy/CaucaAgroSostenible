@@ -67,7 +67,7 @@
 }
 
 .descOrg {
-  color: rgba(255, 255, 255, 0.63);
+  color: rgb(255, 255, 255);
   margin-top: 4%;
   font-size: medium;
   width: 80%;
@@ -78,7 +78,7 @@
 }
 
 .telOrg {
-  color: rgba(255, 255, 255, 0.699);
+  color: rgb(255, 255, 255);
   margin-top: 4%;
   font-size: medium;
   width: 80%;
